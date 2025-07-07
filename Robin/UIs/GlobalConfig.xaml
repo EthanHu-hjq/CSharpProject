@@ -1,0 +1,188 @@
+﻿<mah:MetroWindow x:Class="Robin.UIs.GlobalConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Robin.UIs"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:testcore="clr-namespace:TestCore.Ctrls;assembly=TestCore"
+        mc:Ignorable="d" Name="self" ShowMinButton="False" ShowMaxRestoreButton="False"
+        Title="Global Configuration" Height="450" Width="800">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands ShowLastSeparator="True" ShowSeparators="True" HorizontalAlignment="Right" >
+            <Button Command="{Binding ElementName=self, Path=Reset}" IsEnabled="{Binding ElementName=self, Path=IsEditable}">Reset</Button>
+            <Button Command="{Binding ElementName=self, Path=Save}" IsEnabled="{Binding ElementName=self, Path=IsEditable}">Save</Button>
+            <Button Content="&#xE785;" FontFamily="Segoe MDL2 Assets" ToolTip="Unlock" Click="MI_LockClick"></Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <DockPanel>
+        <DockPanel.Resources>
+            <Style TargetType="DataGrid">
+                <Setter Property="IsReadOnly" Value="{Binding ElementName=self, Path=IsEditable, Converter={StaticResource InverseBooleanConverter}}"/>
+            </Style>
+            <!--<Style TargetType="Button"/>-->
+            <Style TargetType="GroupBox">
+                <Setter Property="IsEnabled" Value="{Binding ElementName=self, Path=IsEditable}"/>
+            </Style>
+        </DockPanel.Resources>
+        <!--<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="2" IsEnabled="{Binding ElementName=self, Path=IsEditable}">
+            <Button Command="{Binding ElementName=self, Path=Reset}">Reset</Button>
+            <Button Command="{Binding ElementName=self, Path=Save}">Save</Button>
+        </StackPanel>-->
+        <TabControl>
+            <TabItem Header="Variables">
+                <DataGrid ItemsSource="{Binding ElementName=self, Path=Variables}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Key" Binding="{Binding Key}"/>
+                        <DataGridTextColumn Header="Value" Binding="{Binding Value}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Group Definition">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Button DockPanel.Dock="Right" IsEnabled="{Binding ElementName=self, Path=IsEditable}" Click="btn_GotoDataDir_Click">Attachment Folder...</Button>
+                        <TextBlock Foreground="Red" DockPanel.Dock="Top">Key Name should not contains ":"</TextBlock>
+                        <TextBlock Foreground="Red" DockPanel.Dock="Top">If String contains :/, it will be treat as file</TextBlock>
+                    </DockPanel>
+                    
+                    <TabControl ItemsSource="{Binding ElementName=self,Path=Items}">
+                        <TabControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Key}"/>
+                            </DataTemplate>
+                        </TabControl.ItemTemplate>
+                        <TabControl.ContentTemplate>
+                            <DataTemplate>
+                                <DockPanel DataContext="{Binding Value}">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label DockPanel.Dock="Right" Content="{Binding Note}" MinWidth="40" ToolTip="Note"/>
+                                        <Label>Generator</Label>
+                                        <Button DockPanel.Dock="Right">Exec</Button>
+                                        <Button DockPanel.Dock="Right">...</Button>
+                                    
+                                        <TextBox Text="{Binding Generator}" ToolTip="This file will be saved into app path as Global"></TextBox>
+                                    </DockPanel>
+                                    <DataGrid ItemsSource="{Binding Items}">
+                                    </DataGrid>
+                                </DockPanel>
+                            </DataTemplate>
+                        </TabControl.ContentTemplate>
+                    </TabControl>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Hardware Definition">
+                <DockPanel>
+                    <DockPanel.Resources>
+                        <Style TargetType="testcore:HexNumber">
+                            <Setter Property="Width" Value="320"/>
+                        </Style>
+                    </DockPanel.Resources>
+
+                    <StackPanel DockPanel.Dock="Bottom">
+                        <TextBlock Foreground="Red">Name Could not be Duplicated. the last will be effective</TextBlock>
+                        <TextBlock Foreground="Red">Index is start from 0, NOT 1</TextBlock>
+                        <TextBlock Foreground="Red">Update will be effective after RESTART</TextBlock>
+                    </StackPanel>
+                    <GroupBox DockPanel.Dock="Top" Header="Misc">
+                        <DockPanel>
+                            <Label>Calib Valid Time</Label>
+                            <TextBox Text="14"></TextBox>
+                            <Label>Days</Label>
+                        </DockPanel>
+                    </GroupBox>
+                    <UniformGrid Columns="2">
+                        <GroupBox Header="Aux Out">
+                            <DockPanel>
+                                <GroupBox Header="General Control" DockPanel.Dock="Top">
+                                    <DockPanel>
+                                        <TextBlock Foreground="Red" DockPanel.Dock="Top">
+                                Aux Out Index, if does not control, set -1 as default
+                                        </TextBlock>
+                                        <UniformGrid Columns="3">
+                                            <DockPanel>
+                                                <Label>LED Ctrl:</Label>
+                                                <TextBox Text="{Binding ElementName=self, Path=DoorCtrl, Mode=TwoWay}"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel ToolTip="Such as PowerUp, Set Jig On Position">
+                                                <Label>Jig Ctrl:</Label>
+                                                <TextBox Text="{Binding ElementName=self, Path=JigCtrl, Mode=TwoWay}"></TextBox>
+                                            </DockPanel>
+                                            <DockPanel ToolTip="Such as PowerUp, Set Jig On Position">
+                                                <Label>DUT Ctrl:</Label>
+                                                <TextBox Text="{Binding ElementName=self, Path=DutCtrl, Mode=TwoWay}"></TextBox>
+                                            </DockPanel>
+                                        </UniformGrid>
+                                    </DockPanel>
+                                </GroupBox>
+                                <GroupBox Header="State Definition">
+                                    <DockPanel>
+                                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                            <Label>Mask:</Label>
+                                            <testcore:HexNumber BinBitLength="8" HexValue="{Binding ElementName=self, Path=ControlMask, Mode=TwoWay}"></testcore:HexNumber>
+                                        </StackPanel>
+                                        <DataGrid CanUserAddRows="True" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=self, Path=ControlStates}">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Name" Binding="{Binding Key}"></DataGridTextColumn>
+                                                <DataGridTextColumn Header="Aux Out Value" Binding="{Binding Value}"></DataGridTextColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </DockPanel>
+                                </GroupBox>
+
+                            </DockPanel>
+
+                        </GroupBox>
+                        <GroupBox Header="Aux In">
+                            <DockPanel>
+                                <GroupBox Header="General" DockPanel.Dock="Top">
+                                    <DockPanel>
+                                        <TextBlock Foreground="Red" DockPanel.Dock="Top">
+                                Aux In Index, if does not control, set -1 as default
+                                        </TextBlock>
+                                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                            <Label Width="50">Ready:</Label>
+                                            <testcore:HexNumber BinBitLength="8" HexValue="{Binding ElementName=self, Path=ReadyValue, Mode=TwoWay}"></testcore:HexNumber>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                            <Label Width="50">Mask:</Label>
+                                            <testcore:HexNumber BinBitLength="8" HexValue="{Binding ElementName=self, Path=ReadyMask, Mode=TwoWay}"></testcore:HexNumber>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </GroupBox>
+
+                                <GroupBox Header="Name Definition">
+                                    <DataGrid CanUserAddRows="True" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=self, Path=InputNames}" HeadersVisibility="All" LoadingRow="dg_LoadingRow" RowHeaderWidth="20">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Name" Binding="{Binding Key}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Index" Binding="{Binding Value}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </GroupBox>
+                            </DockPanel>
+                        </GroupBox>
+                    </UniformGrid>
+
+                </DockPanel>
+            </TabItem>
+            <!--<TabItem Header="Audio Precision">
+                <StackPanel IsEnabled="False">
+                    <CheckBox HorizontalAlignment="Right" x:Name="cb_ApLock">Switch AP Precision Lock</CheckBox>
+                    <GroupBox Header="Enable APx Path" IsEnabled="{Binding ElementName=cb_ApLock, Path=IsChecked}">
+                        <ListBox ItemsSource="{Binding ElementName=self, Path=ApxPaths}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <RadioButton GroupName="apgroup" Content="{Binding Version}" IsChecked="{Binding Enable}" ToolTip="{Binding Location}"></RadioButton>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </GroupBox>
+                    <TextBlock Foreground="Red" TextWrapping="WrapWithOverflow">
+                        Changing this may cause irreversible changes to the template files. Please restart Robin to implement the change after Saving
+                    </TextBlock>
+                </StackPanel>
+
+            </TabItem>-->
+        </TabControl>
+    </DockPanel>
+</mah:MetroWindow>

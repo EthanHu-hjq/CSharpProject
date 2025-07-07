@@ -1,0 +1,359 @@
+﻿<mah:MetroWindow x:Class="Robin.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:scott="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+                 xmlns:local="clr-namespace:Robin"
+                 xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+                 xmlns:avalon="http://schemas.xceed.com/wpf/xaml/avalondock"
+                 xmlns:ctrl="clr-namespace:Robin.Ctrls"
+                 Dialog:DialogParticipation.Register="{Binding}"
+                 mc:Ignorable="d" x:Name="Self" Background="AliceBlue" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+                 Title="Robin" TitleCharacterCasing="Normal" Height="640" WindowStyle="SingleBorderWindow" ShowIconOnTitleBar="True" Width="1280">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands ShowLastSeparator="False" HorizontalAlignment="Center">
+            <!--<CheckBox Margin="10,0,10,0" IsChecked="{Binding AttachResult}">Append Result</CheckBox>-->
+            <!--<TextBox x:Name="tb_Model" Text="{Binding Model}" mah:TextBoxHelper.Watermark="Model" mah:TextBoxHelper.AutoWatermark="True" Width="80" ToolTip="Model" VerticalContentAlignment="Center"/>-->
+            <!--<TextBox x:Name="tb_Description" Text="{Binding ModelDescription}" mah:TextBoxHelper.Watermark="Description" Width="80" ToolTip="Description" VerticalContentAlignment="Center"/>-->
+            <!--<TextBox x:Name="tb_VACS" Text="{Binding VacsData}" mah:TextBoxHelper.Watermark="VACS Data" Width="80" ToolTip="VACS Data" VerticalContentAlignment="Center"/>-->
+            <!--<TextBox x:Name="tb_DutSn" Text="{Binding DutSn}" mah:TextBoxHelper.Watermark="SUT SN" Width="80" ToolTip="SUT Serial Number" VerticalContentAlignment="Center"/>-->
+            <!--<Button Content="&#xF5B0;" FontFamily="Segoe MDL2 Assets" ToolTip="Run Sequence"></Button>-->
+            <Label VerticalAlignment="Center" Content="{Binding ApxVer}" ToolTip="Audio Precision Version" Foreground="White"></Label>
+            <Button Content="&#xF19D;" FontFamily="Segoe MDL2 Assets" ToolTip="Show/Hide APx UI" IsEnabled="{Binding IsSequenceIdle}" Click="MI_ApVisibleClick"></Button>
+            <Button Content="&#xE785;" FontFamily="Segoe MDL2 Assets" ToolTip="Unlock" IsEnabled="{Binding IsSequenceIdle}" Click="MI_LockClick"></Button>
+            <!--<Button Command="{Binding Document}" BorderBrush="YellowGreen" BorderThickness="2">
+                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE897;" ToolTip="Document" FontSize="12"/>
+            </Button>-->
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Menu>
+                <!--<Menu.Resources>
+                    <Style TargetType="MenuItem" x:Key="style_Login">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsTester}" Value="False">
+                                <Setter Property="Header" Value="_Login" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsTester}" Value="True">
+                                <Setter Property="Header" Value="_Logout" />
+                                <Setter Property="Icon">
+                                    <Setter.Value>
+                                        <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF8F8;"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Menu.Resources>-->
+                <MenuItem Height="30" Width="30" ToolTip="Menu">
+                    <MenuItem.Icon>
+                        <Image Source="tymphany.ico"/>
+                    </MenuItem.Icon>
+                    <!--<MenuItem.Header>
+                        <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
+                    </MenuItem.Header>-->
+                    <!--<MenuItem Command="{Binding Login}" 
+                              Style="{StaticResource style_Login}">
+                        <MenuItem.Icon>
+                            <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8FA;"/>
+                        </MenuItem.Icon>
+                    </MenuItem>-->
+                    <MenuItem Header="{DynamicResource File}" IsEnabled="True">
+                        <MenuItem.Icon>
+                            <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC51;"/>
+                        </MenuItem.Icon>
+                        <!--<MenuItem Header="Open Template"></MenuItem>-->
+                        <MenuItem Header="Open Sequence..." Command="{Binding OpenScript}" IsEnabled="False"></MenuItem>
+                        <MenuItem Header="Open Data Folder..." Click="ShowReportDir_Click"></MenuItem>
+                        <MenuItem Header="Template Dir..." Click="ShowTemplate_Click"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource View}">
+                        <MenuItem.Icon>
+                            <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7B3;"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="Show/Hide Apx UI" Click="MI_ApVisibleClick">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF19D;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Lock/Unlock" Click="MI_LockClick">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="Workbase" Click="MI_DockWorkbase_Click" IsChecked="True">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Template" Click="MI_DockTemplate_Click" IsChecked="True">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Variable" Click="MI_DockVariable_Click" IsChecked="True">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Conclusion" Click="MI_DockConclusion_Click" IsChecked="True">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE785;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <!--<MenuItem Header="{DynamicResource Theme}">
+                            <MenuItem Header="Light Red" Command="{Binding ChangeTheme}" CommandParameter="Light.Red"></MenuItem>
+                            <MenuItem Header="Dark Red" Command="{Binding ChangeTheme}" CommandParameter="Dark.Red"></MenuItem>
+                            <MenuItem Header="Light Blue" Command="{Binding ChangeTheme}" CommandParameter="Light.Blue"></MenuItem>
+                            <MenuItem Header="Dark Blue" Command="{Binding ChangeTheme}" CommandParameter="Dark.Blue"></MenuItem>
+                            <MenuItem Header="Light Green" Command="{Binding ChangeTheme}" CommandParameter="Light.Green"></MenuItem>
+                            <MenuItem Header="Dark Green" Command="{Binding ChangeTheme}" CommandParameter="Dark.Green"></MenuItem>
+                        </MenuItem>-->
+                        <!--<MenuItem Header="{DynamicResource Language}">
+                            <MenuItem Header="中文" Command="{Binding SwitchLanguage}" CommandParameter="中文"/>
+                            <MenuItem Header="English" Command="{Binding SwitchLanguage}" CommandParameter="English"/>
+                            <MenuItem Header="ภาษาไทย" Command="{Binding SwitchLanguage}" CommandParameter="ภาษาไทย"/>
+                        </MenuItem>-->
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Config}">
+                        <MenuItem.Icon>
+                            <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE82D;"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="Global Config..." Command="{Binding GlobalConfig}" ToolTip="BE CAREFUL. DO Know what you change before SAVING. Require Restart Application"/>
+                        <!--<MenuItem Header="Equipment Config..." Command="{Binding EquipmentConfig}"/>
+                        <MenuItem Header="Report Path" Command="{Binding SpecMerge}"/>-->
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Help}">
+                        <MenuItem.Icon>
+                            <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE897;"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="About Robin..." Command="{Binding ShowAbout}">
+                            <MenuItem.Icon>
+                                <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8BD;"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Exit}" Click="MI_Exit_Click" InputGestureText="Alt+F4">
+                        <MenuItem.Icon>
+                            <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE89F;" ToolTip="Exit"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <mah:MetroWindow.InputBindings>
+        <!--<KeyBinding Gesture="Alt+F4" Command="{Binding Exit}"/>-->
+        <KeyBinding Gesture="Shift+F5" Command="{Binding RunScript}"/>
+        <KeyBinding Gesture="F5" Command="{Binding RunAllSequence}"/>
+        <KeyBinding Gesture="Ctrl+Shift+H" Command="{Binding ShowAbout}"/>
+    </mah:MetroWindow.InputBindings>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem HorizontalAlignment="Right" DockPanel.Dock="Right">
+                <StackPanel Orientation="Horizontal" x:Name="sp_AuxInIndicators">
+                </StackPanel>
+            </StatusBarItem>
+            <StatusBarItem Content="{Binding Message}"/>
+        </StatusBar>
+
+        <avalon:DockingManager>
+            <avalon:DockingManager.Resources>
+                <Style TargetType="DataGrid">
+                </Style>
+                <Style TargetType="TabItem">
+                </Style>
+                <ContextMenu x:Key="cm_Spec">
+                    <MenuItem Header="Show Channel" IsCheckable="True" IsChecked="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:MainWindow}, Path=EnableShowChannels, Mode=TwoWay}"/>
+                    <MenuItem Header="Export Data" IsEnabled="False"/>
+                </ContextMenu>
+            </avalon:DockingManager.Resources>
+            <avalon:LayoutRoot>
+                <avalon:LayoutPanel>
+                    <avalon:LayoutAnchorablePane CanRepositionItems="False" DockWidth="240">
+                        <avalon:LayoutAnchorable x:Name="la_Workbase" Title="Workbase" CanClose="False" AutoHideWidth="100">
+                            <DockPanel>
+                                <ComboBox DockPanel.Dock="Top" ItemsSource="{Binding Sequences}" SelectedItem="{Binding ActiveSequence}" DisplayMemberPath="Name"
+                                          IsEnabled="{Binding IsSequenceIdle}" mah:TextBoxHelper.Watermark="Select One Sequence..."/>
+                                <Button DockPanel.Dock="Bottom" Command="{Binding WipeOutLatestData}" ToolTip="it will delete the file generated by the latest test permanently, and remove the graph it from appended data">Wipe out Latest Data</Button>
+                                <UniformGrid Rows="1" DockPanel.Dock="Bottom">
+                                    <Button Command="{Binding OpenScript}" IsEnabled="False" Visibility="Collapsed">Open...</Button>
+                                    <Button Command="{Binding RunAllSequence}" ToolTip="Run All Sequences (F5)">Run All (F5)</Button>
+                                    <Button Command="{Binding RunScript}">Run (Shift+F5)</Button>
+                                </UniformGrid>
+                                <TreeView Name="tv_spec" MinWidth="120" ItemsSource="{Binding Result.StepDatas}" SelectedItemChanged="ActiveStepDataChanged">
+                                    <TreeView.Resources>
+                                        <Style TargetType="TreeViewItem" x:Key="style_item">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Element.Result}" Value="Passed">
+                                                    <Setter Property="Background" Value="LimeGreen"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Element.Result}" Value="Failed">
+                                                    <Setter Property="Background" Value="Red"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Element.Result}" Value="Error">
+                                                    <Setter Property="Background" Value="Yellow"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                            <Setter Property="IsExpanded" Value="True"/>
+                                            <Setter Property="ContextMenu" Value="{StaticResource cm_Spec}"/>
+                                        </Style>
+                                        
+                                    </TreeView.Resources>
+                                    <!--<TreeView.ItemTemplate>
+                                        <HierarchicalDataTemplate ItemsSource="{Binding Children}" >
+                                            <TextBlock Text="{Binding Element.Name}"/>
+                                        </HierarchicalDataTemplate>
+                                    </TreeView.ItemTemplate>-->
+                                    <TreeView.ItemContainerStyle>
+                                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource style_item}">
+                                            <Setter Property="Header" Value="{Binding Element.Name}"/>
+                                            <Setter Property="ItemsSource" Value="{Binding Children}"/>
+                                            <Setter Property="ItemContainerStyle">
+                                                <Setter.Value>
+                                                    <Style TargetType="TreeViewItem" BasedOn="{StaticResource style_item}">
+                                                        <Setter Property="Header" Value="{Binding Element.Name}"/>
+                                                        <Setter Property="ItemsSource" Value="{Binding Children}"/>
+                                                        <Setter Property="ItemContainerStyle">
+                                                            <Setter.Value>
+                                                                <Style TargetType="TreeViewItem" BasedOn="{StaticResource style_item}">
+                                                                    <Setter Property="Header" Value="{Binding Element.Name}"/>
+                                                                    <Setter Property="ItemsSource" Value="{Binding Children}"/>
+                                                                    <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:MainWindow}, Path=EnableShowChannels}"/>
+                                                                </Style>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </TreeView.ItemContainerStyle>
+                                </TreeView>
+                            </DockPanel>
+                        </avalon:LayoutAnchorable>
+                    </avalon:LayoutAnchorablePane>
+                    <avalon:LayoutDocumentPane>
+                        <avalon:LayoutDocument Title="Latest Data" CanClose="False">
+                            <WpfPlot Name="wpfplot"/>
+                        </avalon:LayoutDocument>
+                        <avalon:LayoutDocument Title="Appended Data" CanClose="False" mah:VisibilityHelper.IsVisible="{Binding AttachResult}">
+                            <WpfPlot Name="wpfplot_attach"/>
+                        </avalon:LayoutDocument>
+                        <avalon:LayoutDocument Title="Project Properties" CanClose="False">
+                            <Grid DataContext="{Binding ElementName=Self, Path=DataContext}">
+                                
+                                <TabControl DataContext="{Binding ScriptEx}">
+                                    <TabControl.Resources>
+                                        <Style TargetType="DataGrid">
+                                            <Setter Property="IsReadOnly" Value="{Binding ElementName=Self, Path=DataContext.IsEditMode, Converter={StaticResource InverseBooleanConverter}}"/>
+                                        </Style>
+                                        <Style TargetType="GroupBox">
+                                            <Setter Property="IsEnabled" Value="{Binding ElementName=Self, Path=DataContext.IsEditMode}"/>
+                                        </Style>
+                                        <Style TargetType="UniformGrid">
+                                            <Setter Property="IsEnabled" Value="{Binding ElementName=Self, Path=DataContext.IsEditMode}"/>
+                                        </Style>
+                                        
+                                    </TabControl.Resources>
+                                    <TabItem Header="Misc">
+                                        <DockPanel>
+                                            <UniformGrid Columns="2" DockPanel.Dock="Top" >
+                                                <DockPanel>
+                                                </DockPanel>
+                                                <DockPanel>
+                                                    <Label>Script Last Saving Time</Label>
+                                                    <Label Content="{Binding ScriptTime}"></Label>
+                                                </DockPanel>
+                                                <CheckBox IsChecked="{Binding ShowInputSn}">Prompt for Serial Number</CheckBox>
+                                                <CheckBox IsChecked="{Binding CheckStartReady}">Check Start Ready</CheckBox>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <CheckBox IsChecked="{Binding MergeSequenceReport}">Merge Sequences as CSV Report</CheckBox>
+                                                    <!--<Button Height="20" Margin="10,0,0,0" ToolTip="Show Reports" Click="ShowReportDir_Click">...</Button>-->
+                                                </StackPanel>
+                                            </UniformGrid>
+                                            <DockPanel></DockPanel>
+                                        </DockPanel>
+                                    </TabItem>
+                                    <TabItem Header="Sequence Properties">
+                                        <TabControl ItemsSource="{Binding SequenceExtendeds}">
+                                            <TabControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Sequence.Name}"/>
+                                                </DataTemplate>
+                                            </TabControl.ItemTemplate>
+                                            <TabControl.ContentTemplate>
+                                                <DataTemplate>
+                                                    <ctrl:ApSequenceExtended DataContext="{Binding}" IsEnabled="{Binding ElementName=Self, Path=IsEditMode}"></ctrl:ApSequenceExtended>
+                                                </DataTemplate>
+                                            </TabControl.ContentTemplate>
+                                        </TabControl>
+                                    </TabItem>
+                                </TabControl>
+                                <StackPanel HorizontalAlignment="Right">
+                                    <Button IsEnabled="{Binding IsEditMode}" Command="{Binding SaveScriptEx}">Save</Button>
+                                </StackPanel>
+                            </Grid>
+                        </avalon:LayoutDocument>
+                    </avalon:LayoutDocumentPane>
+                    <avalon:LayoutAnchorablePaneGroup DockWidth="240" Orientation="Vertical">
+                        <avalon:LayoutAnchorablePane DockHeight="200">
+                            <avalon:LayoutAnchorable Title="Status" x:Name="la_Conclusion" CanHide="False" CanClose="False">
+                                <DockPanel>
+                                    <StackPanel DockPanel.Dock="Bottom">
+                                        <UniformGrid Columns="3">
+                                            <TextBox Margin="2" Text="{Binding Model}" mah:TextBoxHelper.Watermark="Model" mah:TextBoxHelper.AutoWatermark="True" ToolTip="Model"/>
+                                            <TextBox Margin="2" Text="{Binding ModelDescription}" mah:TextBoxHelper.Watermark="Description" ToolTip="Description"/>
+                                            <!--<TextBox Margin="2" Text="{Binding VacsData}" mah:TextBoxHelper.Watermark="VACS Data" ToolTip="VACS Data"/>-->
+                                            <CheckBox IsChecked="{Binding IsVacs}" ToolTip="true, VACS will be Save, otherwise it will be empty string" HorizontalAlignment="Center">VACS</CheckBox>
+                                        </UniformGrid>
+
+                                        <TextBox Margin="2" Text="{Binding DutSn}" mah:TextBoxHelper.Watermark="SUT SN" ToolTip="SUT Serial Number"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox Margin="10,0,10,0" IsChecked="{Binding AttachResult}">Append Result</CheckBox>
+                                            <Button ToolTip="Clear Attach Results" Click="ClearAttachResult_Click">Clear</Button>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <TextBox Name="tb_Conclusion" FontSize="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="No Script">
+                                    </TextBox>
+                                </DockPanel>
+                            </avalon:LayoutAnchorable>
+                        </avalon:LayoutAnchorablePane>
+                        <avalon:LayoutAnchorablePane>
+                            <avalon:LayoutAnchorable x:Name="la_Template" Title="Template" CanClose="False">
+                                <TreeView DataContext="{Binding ElementName=Self, Path=DataContext}" ItemsSource="{Binding Templates}">
+                                    <TreeView.ItemContainerStyle>
+                                        <Style TargetType="TreeViewItem">
+                                            <EventSetter Event="MouseDoubleClick" Handler="OpenTemplate_DoubleClick"></EventSetter>
+                                            <Setter Property="IsExpanded" Value="True"/>
+                                        </Style>
+                                    </TreeView.ItemContainerStyle>
+                                    <TreeView.ItemTemplate>
+                                        <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                            <TextBlock Text="{Binding Element.Name}" Tag="{Binding}"/>
+
+                                        </HierarchicalDataTemplate>
+                                    </TreeView.ItemTemplate>
+                                </TreeView>
+                            </avalon:LayoutAnchorable>
+                            <avalon:LayoutAnchorable Title="Variable" x:Name="la_Variables">
+                                <DataGrid DataContext="{Binding ElementName=Self, Path=DataContext}" ItemsSource="{Binding Variables}" AutoGenerateColumns="False" IsEnabled="{Binding IsEditMode}">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name, Mode=OneTime}"/>
+                                        <DataGridTextColumn Header="Value" IsReadOnly="{Binding ElementName=Self, Path=DataContext.IsEditMode}" Binding="{Binding Value}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </avalon:LayoutAnchorable>
+                        </avalon:LayoutAnchorablePane>
+                    </avalon:LayoutAnchorablePaneGroup>
+                    
+                </avalon:LayoutPanel>
+            </avalon:LayoutRoot>
+        </avalon:DockingManager>
+        
+    </DockPanel>
+</mah:MetroWindow>

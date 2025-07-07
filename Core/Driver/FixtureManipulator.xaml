@@ -1,0 +1,38 @@
+﻿<Window x:Class="ToucanCore.Driver.FixtureManipulator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ToucanCore.Driver" Name="self"
+        mc:Ignorable="d" Title="Fixture Manipulator"
+        Height="320" Width="480">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Foreground="Red">CAUTION: Manipulate the fixture directly might make the fixture in confliction state</TextBlock>
+        <UniformGrid Columns="2">
+            <UniformGrid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="4"></Setter>
+                </Style>
+            </UniformGrid.Resources>
+            <DockPanel>
+                <Label>Model:</Label>
+                <Label Content="{Binding Model, Mode=OneWay}" Margin="2"></Label>
+            </DockPanel>
+            <DockPanel>
+                <Label>Socket:</Label>
+                <TextBox Text="{Binding ElementName=self,Path=ActiveIndex}" Margin="2"></TextBox>
+            </DockPanel>
+            <Button Content="Open Front Door" Click="btn_OpenFrontDoor_Click"/>
+            <CheckBox Content="Front Door Opened" IsChecked="{Binding ElementName=self, Path=FrontDoorOpened}"/>
+            <!--<Button Content="Load DUT (Present)"/>-->
+            <Button Content="Close Front Door" Click="btn_CloseFrontDoor_Click"/>
+            <CheckBox Content="Front Door Closed" IsChecked="{Binding ElementName=self, Path=FrontDoorClosed}"/>
+            <!--<Button Content="Unload DUT (Absent) "/>-->
+            <Button Content="DUT In" Click="btn_DutIn_Click" />
+            <CheckBox Content="DUT In Done" IsChecked="{Binding ElementName=self, Path=DutIned}"/>
+            <!--<CheckBox Content="Safety OK"/>-->
+            <Button Content="DUT Out" Click="btn_DutOut_Click"/>
+            <CheckBox Content="DUT Out Done" IsChecked="{Binding ElementName=self, Path=DutOuted}"/>
+        </UniformGrid>
+    </DockPanel>
+</Window>

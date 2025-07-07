@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="C:\TymphanyPTE\Spec.xsl"?>
+<Spec name="Unrestricted" version="0.0.0.24" time="2021-11-23T17:00:53">
+  <author>Just4Test</author>
+  <note>Export limit directly. Please Modify it</note>
+  <Limit name="TYM" skip="false">
+    <Limit name="Pass/Fail Test" skip="false" lsl="1" usl="1" defect="Err-103" comp="EQ" sfc="true" type="Double" />
+    <Limit name="Current" skip="false" lsl="8" usl="11" defect="Err-104" unit="mA" comp="GE" sfc="true" type="Double" />
+    <Limit name="String Value Test" skip="false" lsl="asd" defect="Err-105" comp="MATCH" sfc="true" type="String" />
+    <Limit name="StringComparison" skip="false" lsl="Locals.exp" defect="Err-106" comp="LOG" sfc="true" type="String" />
+    <Limit name="Pass/Fail Test1" skip="false" lsl="1" usl="1" defect="Err-107" comp="EQ" sfc="true" type="Double" />
+    <Limit name="Voltage" skip="false" lsl="8" usl="11" defect="Err-109" unit="mV" comp="GELE" sfc="true" type="Double" />
+    <Limit name="Multiple" skip="false">
+      <Limit name="Measurement 0" skip="false" lsl="8" usl="11" defect="Err-112" comp="GELE" sfc="true" type="Double" />
+      <Limit name="Measurement 1" skip="false" lsl="8" usl="11" defect="Err-112" unit="m" comp="GELE" sfc="true" type="Double" />
+      <Limit name="Measurement 2" skip="false" lsl="8" usl="11" defect="Err-112" unit="mm" comp="GELE" sfc="true" type="Double" />
+      <Limit name="Measurement 3" skip="false" lsl="9" usl="11" defect="Err-112" unit="cc" comp="LOG" sfc="true" type="Double" />
+    </Limit>
+    <Limit name="Log" skip="false" lsl="9" usl="11" defect="Err-113" unit="mV" comp="LOG" sfc="true" type="Double" />
+    <Limit name="SequenceCallTest" skip="false">
+      <Limit name="SeqCurrent" skip="false" lsl="8" usl="11" defect="Err-115" unit="mA" comp="GELE" sfc="true" type="Double" />
+    </Limit>
+    <Limit name="SequenceNumericTest" skip="false" lsl="9" usl="11" defect="Err-116" comp="GELE" sfc="true" type="Double">
+      <Limit name="SequenceCallTest" skip="false">
+        <Limit name="SeqCurrent" skip="false" lsl="8" usl="11" defect="Err-118" unit="mA" comp="GELE" sfc="true" type="Double" />
+      </Limit>
+    </Limit>
+  </Limit>
+  <CheckValue>A01A03696EB917713EBE9EF96E72EDB4</CheckValue>
+</Spec>

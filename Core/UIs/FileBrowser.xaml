@@ -1,0 +1,48 @@
+﻿<Window x:Class="ToucanCore.UIs.FileBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToucanCore.UIs" Name="window"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="File Browser" Height="450" Width="400">
+    <Grid>
+        <DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Workbase:</Label>
+                <WrapPanel x:Name="wp_Nav">
+                    <WrapPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="MinWidth" Value="10"/>
+                            <Setter Property="Margin" Value="2"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                </WrapPanel>
+            </StackPanel>
+            <ListView Name="lv_Dir" ItemsSource="{Binding ElementName=window, Path=CurrentDir.Subs}" AllowDrop="True" ToolTip="Support Drag and Drop File"
+                      MouseDoubleClick="ListView_DoubleClick" Drop="ListView_Drop" MouseMove="ListView_MouseMove">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Icon">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Label FontFamily="Segoe MDL2 Assets" Content="{Binding Icon}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                            <GridViewColumn Header="LastWriteTime" DisplayMemberBinding="{Binding LastWriteTime}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button Width="40" Height="40" FontFamily="Segoe MDL2 Assets" Margin="2" Content="&#xE948;" Click="btn_Add_Click" ToolTip="Add New"></Button>
+            <Button Width="40" Height="40" FontFamily="Segoe MDL2 Assets" Margin="2" Content="&#xE72C;" Click="btn_Refresh_Click" ToolTip="Refresh"></Button>
+            <Button Width="40" Height="40" FontFamily="Segoe MDL2 Assets" Margin="2" Content="&#xE74D;" Click="btn_Delete_Click" ToolTip="Delete"></Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>

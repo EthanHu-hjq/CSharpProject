@@ -1,0 +1,261 @@
+﻿<Window x:Class="ToucanCore.UIs.HardwareSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ToucanCore.UIs"
+        xmlns:config="clr-namespace:ToucanCore.Abstraction.Configuration;assembly=ToucanCore.Abstraction"
+        xmlns:testcore="clr-namespace:TestCore.Ctrls;assembly=TestCore" Name="Self"
+        mc:Ignorable="d" Title="Hardware Setting" Height="680" Width="480" WindowStyle="ToolWindow"
+        d:DesignHeight="600" d:DesignWidth="450">
+    <Window.Resources>
+        <!--<Style TargetType="DataGrid">
+        </Style>-->
+        <!--<Style TargetType="TabControl"></Style>-->
+    </Window.Resources>
+    <DockPanel>
+        <UniformGrid DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Rows="1" Margin="4" IsEnabled="{Binding ElementName=Self, Path=IsEditable}">
+            <Button Click="btn_SaveAsClick">Save As</Button>
+            <Button Click="btn_LoadClick">Load</Button>
+            <Button Click="btn_OkClick">Save + OK</Button>
+            <Button Click="btn_CancelClick">Cancel</Button>
+        </UniformGrid>
+
+        <TabControl>
+            <TabItem Header="General">
+                <StackPanel IsEnabled="{Binding ElementName=Self, Path=IsEditable}">
+                    <StackPanel.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="Width" Value="64"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <GroupBox Header="Trigger 触发测试条件" ToolTip="触发测试条件">
+                        <UniformGrid Columns="2">
+                            <DockPanel>
+                                <Label>Type</Label>
+                                <ComboBox SelectedIndex="0" ItemsSource="{Binding ElementName=Self, Path=StartTriggers}" DisplayMemberPath="Name" SelectedItem="{Binding ElementName=Self, Path=StartTrigger}"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label>Source</Label>
+                                <ComboBox ItemsSource="{Binding ElementName=Self, Path=StartTrigger.TriggerSources}" SelectedItem="{Binding ElementName=Self,Path=StartTrigger.Source}"/>
+                            </DockPanel>
+                        </UniformGrid>
+                    </GroupBox>
+
+                    <GroupBox Header="Chamber 测试箱驱动">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Bottom">Auto means the holder and Door will be executed after trigged automatically</TextBlock>
+                            <Button DockPanel.Dock="Right" ToolTip="Update Fixture Definition, Only work for this Equipment" Click="btn_Customize_Click">Customize</Button>
+                            <UniformGrid Columns="1" DockPanel.Dock="Right" Margin="2">
+                                <CheckBox IsChecked="{Binding ElementName=Self,Path=ActiveFixture.AutoDutIn}" VerticalAlignment="Center" ToolTip="This will Close Door as well">Auto Dut In</CheckBox>
+                                <CheckBox IsChecked="{Binding ElementName=Self,Path=ActiveFixture.AutoDutOut}" VerticalAlignment="Center" ToolTip="This will Open Door as well">Auto Dut Out</CheckBox>
+                            </UniformGrid>
+                            <DockPanel DockPanel.Dock="Top">
+                                <Label>Type</Label>
+                                <ComboBox SelectedItem="{Binding ElementName=Self, Path=ActiveFixture}" ItemsSource="{Binding ElementName=Self, Path=Fixtures}" DisplayMemberPath="Support"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label>Resource</Label>
+                                <ComboBox IsEditable="True" ItemsSource="{Binding ElementName=Self,Path=HardwareResources}"
+                                                Text="{Binding ElementName=Self,Path=ActiveFixture.Resource}"
+                                                />
+                            </DockPanel>
+                        </DockPanel>
+                    </GroupBox>
+                    <GroupBox Header="Signal Router Appendix 信号路由附件">
+                        <StackPanel>
+                            <!--<TextBlock Foreground="Red">开关阵列用以在相应槽位PreUUT时执行的信号路由切换</TextBlock>-->
+                            <!--<Label Foreground="Red" Content="For 1 to 2, PingPong Test" HorizontalAlignment="Left" Width="200"/>-->
+                            <UniformGrid Columns="2">
+                                <DockPanel>
+                                    <Label>Type</Label>
+                                    <ComboBox SelectedItem="{Binding ElementName=Self,Path=ActiveRelayArray}" ItemsSource="{Binding ElementName=Self, Path=RelayArrays}" DisplayMemberPath="Model"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <Label>Resource</Label>
+                                    <ComboBox IsEditable="True" ItemsSource="{Binding ElementName=Self,Path=HardwareResources}"
+                                                Text="{Binding ElementName=Self,Path=ActiveRelayArray.Resource}"/>
+                                    <DockPanel>
+                                        <Label Width="72">Slot Count</Label>
+                                        <TextBlock Text="{Binding ElementName=Self,Path=SlotCount}" TextDecorations="Underline" VerticalAlignment="Center" />
+                                    </DockPanel>
+                                </DockPanel>
+                            </UniformGrid>
+
+                            <TextBlock Foreground="Red">Order by Slot Index. Set By Slot Index. For Rotation Door, 0->A, 1->B</TextBlock>
+                            <TextBlock Foreground="Red">-1 means do nothing</TextBlock>
+
+                            <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="True">
+                                <StackPanel Height="330">
+                                    <DataGrid ItemsSource="{Binding ElementName=Self,Path=SlotMasks}" AutoGenerateColumns="False" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Mask of Test Slot" HeaderStyle="{x:Null}">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <testcore:HexNumber BinBitLength="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=ActiveRelayArray.ChannelCount, Mode=OneWay}" HexValue="{Binding}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <DataGrid ItemsSource="{Binding ElementName=Self,Path=UutIdentifiedRelayValues}" AutoGenerateColumns="False" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Relay When UUT Identified. Such as Power DUT Up" HeaderStyle="{x:Null}">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <testcore:HexNumber BinBitLength="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=ActiveRelayArray.ChannelCount, Mode=OneWay}" HexValue="{Binding}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <DataGrid ItemsSource="{Binding ElementName=Self, Path=PreUutRelayValues}" AutoGenerateColumns="False" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Relay When PreUUT, Such as Signal Path Switch" HeaderStyle="{x:Null}">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <testcore:HexNumber BinBitLength="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=ActiveRelayArray.ChannelCount, Mode=OneWay}" HexValue="{Binding}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <DataGrid ItemsSource="{Binding ElementName=Self,Path=PostUutRelayValues}" AutoGenerateColumns="False" CanUserAddRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Relay When PostUUT. Such as Power DUT Down" HeaderStyle="{x:Null}">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <testcore:HexNumber BinBitLength="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=ActiveRelayArray.ChannelCount, Mode=OneWay}" HexValue="{Binding}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </StackPanel>
+                            </ScrollViewer>
+                            
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Automation">
+                <StackPanel IsEnabled="{Binding ElementName=Self, Path=IsEditable}">
+                    <GroupBox Header="SerialNumber Reader">
+                        <StackPanel>
+                            <DockPanel>
+                                <Label>Require fixture available</Label>
+                                <CheckBox HorizontalAlignment="Right" IsChecked="{Binding ElementName=Self,Path=TrigOnDutPresent}">Trig When DUT Present</CheckBox>
+                            </DockPanel>
+                            
+                            <DockPanel>
+                                <Label Width="72">Type</Label>
+                                <ComboBox SelectedItem="{Binding ElementName=Self,Path=ActiveSnReader}" ItemsSource="{Binding ElementName=Self, Path=SerialNumberReaders}" DisplayMemberPath="Model" IsEditable="True"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label Width="72">Resource</Label>
+                                <ComboBox IsEditable="True" ItemsSource="{Binding ElementName=Self,Path=HardwareResources}" Text="{Binding ElementName=Self,Path=ActiveSnReader.Resource}"/>
+                            </DockPanel>
+                            <Label HorizontalAlignment="Right">Trig When DUT Present</Label>
+                            <Label HorizontalAlignment="Right">Support Single SerialNumber Reader ONLY</Label>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Components Registers">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Right">The Duplication will be keep the last one only</TextBlock>
+                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" ItemsSource="{Binding ElementName=Self,Path=ComponentRegisters}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Key}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Value" Binding="{Binding Value}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Process Help">
+                <StackPanel IsEnabled="{Binding ElementName=Self, Path=IsEditable}">
+                    <GroupBox Header="Test Process">
+                        <UniformGrid Rows="1">
+                            <StackPanel Margin="10, 0, 0, 0">
+                                <TextBlock>IDLE(DUT OUT)</TextBlock>
+                                <TextBlock>Load UUT (Scanning SN)</TextBlock>
+                                <TextBlock>(Trigged Or Manual) DUT IN</TextBlock>
+                                <TextBlock>Door Close</TextBlock>
+                                <TextBlock>Pre UUT (Auto Scanning SN)</TextBlock>
+                                <TextBlock>Test</TextBlock>
+                                <TextBlock>Post UUT</TextBlock>
+                                <TextBlock>Door Open</TextBlock>
+                                <TextBlock>DUT Out</TextBlock>
+                            </StackPanel>
+                            <StackPanel Margin="10, 0, 0, 0">
+                                <TextBlock>空闲（DUT在外）</TextBlock>
+                                <TextBlock>上料（可能扫码）</TextBlock>
+                                <TextBlock>(手动或触发测试) DUT入</TextBlock>
+                                <TextBlock>关门</TextBlock>
+                                <TextBlock>测试前处理 (可能自动扫码)</TextBlock>
+                                <TextBlock>测试</TextBlock>
+                                <TextBlock>测试后处理</TextBlock>
+                                <TextBlock>开门</TextBlock>
+                                <TextBlock>DUT在外</TextBlock>
+                            </StackPanel>
+                        </UniformGrid>
+                    </GroupBox>
+                    <GroupBox Header="Process Hooks">
+                        <StackPanel Margin="10, 0, 0, 0">
+                            <TextBlock Foreground="Red" Text="*.bat file under %WorkBase%/Hooks will be executed when Run"/>
+                            <UniformGrid Rows="1">
+                                <StackPanel>
+                                    <TextBlock>OnInitializing.bat</TextBlock>
+                                    <TextBlock>OnPreUUTLoop.bat</TextBlock>
+                                    <TextBlock>OnPreUUTing.bat</TextBlock>
+                                    <TextBlock>OnPreUUTed.bat</TextBlock>
+                                    <TextBlock>OnUUTIdentified.bat</TextBlock>
+                                    <TextBlock>OnCheckStationError.bat</TextBlock>
+                                    <TextBlock>OnUUTPassed.bat</TextBlock>
+                                    <TextBlock>OnUUTFailed.bat</TextBlock>
+                                    <TextBlock>OnPostUUTing.bat</TextBlock>
+                                    <TextBlock>OnPostUUTed.bat</TextBlock>
+                                    <TextBlock>OnPostUUTLoop.bat</TextBlock>
+                                    <TextBlock>OnError.bat</TextBlock>
+                                    <TextBlock>OnQuit.bat</TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>工程文件启动(单次执行)</TextBlock>
+                                    <TextBlock>测试初始化</TextBlock>
+                                    <TextBlock>测试前处理开始</TextBlock>
+                                    <TextBlock>测试前处理完成</TextBlock>
+                                    <TextBlock>条码确认</TextBlock>
+                                    <TextBlock>过站检查失败</TextBlock>
+                                    <TextBlock>测试Passed</TextBlock>
+                                    <TextBlock>测试Failed</TextBlock>
+                                    <TextBlock>测试后处理开始</TextBlock>
+                                    <TextBlock>测试后处理完成</TextBlock>
+                                    <TextBlock>测试清理，释放资源</TextBlock>
+                                    <TextBlock>异常发生时</TextBlock>
+                                    <TextBlock>测试执行退出</TextBlock>
+                                </StackPanel>
+                            </UniformGrid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Task Manager">
+                <StackPanel Orientation="Vertical">
+                    <GroupBox Header="Task When Test Finished">
+                        <TextBlock Foreground="Red">refer to Hardware -> Process Help -> Process Hooks -> OnPostUUTed</TextBlock>
+                    </GroupBox>
+                    <GroupBox Header="Task When App Exit">
+                        <TextBlock Foreground="Red">refer to Hardware -> Process Help -> Process Hooks -> OnQuit</TextBlock>
+                    </GroupBox>
+                    <GroupBox Header="Task of PreCMD">
+                        <TextBlock Foreground="Red">refer to Hardware -> Process Help -> Process Hooks -> OnPreUUTing</TextBlock>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

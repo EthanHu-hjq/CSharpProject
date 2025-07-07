@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="Open">打开</sys:String>
+    <sys:String x:Key="File">文件</sys:String>
+    <sys:String x:Key="New">新建</sys:String>
+    <sys:String x:Key="View">视图</sys:String>
+    <sys:String x:Key="OpenFile">打开文件...</sys:String>
+    <sys:String x:Key="LockUnlock">加锁解锁</sys:String>
+    <sys:String x:Key="SaveFile">保存文件...</sys:String>
+    <sys:String x:Key="SaveFileTips">保存工程. 如果可用, 则打包并上传至Toolbox</sys:String>
+
+    <sys:String x:Key="Project">工程</sys:String>
+    <sys:String x:Key="ProjectSetting">工程设置...</sys:String>
+    <sys:String x:Key="HardwareSetting">硬件设置...</sys:String>
+    <sys:String x:Key="GoldenSampleManager">金样管理...</sys:String>
+    <sys:String x:Key="ProjectWorkbase">工程目录...</sys:String>
+    <sys:String x:Key="ReferenceFileBrowser">校样文件...</sys:String>
+    <sys:String x:Key="ProjectCalibration">工程校准...</sys:String>
+    <sys:String x:Key="SpecEditor">规格编辑...</sys:String>
+    <sys:String x:Key="GoldenSamplePick">金样规格...</sys:String>
+    <sys:String x:Key="SlotVariableSetting">_注入变量...</sys:String>
+
+    <sys:String x:Key="Calibration">校准</sys:String>
+    <sys:String x:Key="Reference">校样</sys:String>
+    <sys:String x:Key="Verification">验证</sys:String>
+
+    <sys:String x:Key="RunReference">运行校样</sys:String>
+    <sys:String x:Key="RunVerification">运行验证</sys:String>
+    <sys:String x:Key="LoopTest">连续测试...</sys:String>
+    <sys:String x:Key="HardwareCalibration">设备校准...</sys:String>
+
+    <sys:String x:Key="ShowRecordList">测试结果列表</sys:String>
+    <sys:String x:Key="ShowRecordChart">测试结果图表</sys:String>
+    <sys:String x:Key="ResetTestTable">重排表格</sys:String>
+    <sys:String x:Key="EngineUIVisible">显示/隐藏Engine UI</sys:String>
+    <sys:String x:Key="EngineSetting">引擎设置</sys:String>
+
+    <sys:String x:Key="Tools">工具</sys:String>
+    <sys:String x:Key="Setting">设置</sys:String>
+    <sys:String x:Key="QuickCode">快捷代码...</sys:String>
+    <sys:String x:Key="ClearSn">清除条码</sys:String>
+
+    <sys:String x:Key="ResultTag">结果标注</sys:String>
+
+    <sys:String x:Key="Help">帮助</sys:String>
+    <sys:String x:Key="Document">文档</sys:String>
+    <sys:String x:Key="ReportIssue">提交问题</sys:String>
+    <sys:String x:Key="ReportLink">报告链接</sys:String>
+    <sys:String x:Key="SharepointLink">文档链接</sys:String>
+
+    <sys:String x:Key="Exit">Exit</sys:String>
+    <sys:String x:Key="InputSnWatermark">输入被测条码</sys:String>
+    <sys:String x:Key="HistoricalSns">历史条码记录</sys:String>
+
+    <sys:String x:Key="SetPhysicalStationID">设置实体编号...</sys:String>
+    <sys:String x:Key="SetLineNo">设置线别...</sys:String>
+    <sys:String x:Key="GoldenSampleSnList">金样清单...</sys:String>
+
+    <sys:String x:Key="OpenBase">打开源规格</sys:String>
+    <sys:String x:Key="OpenTarget">打开新规格</sys:String>
+    <sys:String x:Key="SaveTarget">保存新规格</sys:String>
+    <sys:String x:Key="MergePlusSave">合并+保存</sys:String>
+
+    <sys:String x:Key="SpecMerge">规格合并...</sys:String>
+    <sys:String x:Key="SFCsDebug">MES调试...</sys:String>
+    <sys:String x:Key="FixtureManipulation">夹具控制...</sys:String>
+    <sys:String x:Key="MitsubishiPLCDebugger">三菱PLC调试...</sys:String>
+    <sys:String x:Key="ModbusDebugger">Modbus调试...</sys:String>
+    <sys:String x:Key="DriverDebugger">驱动调试...</sys:String>
+
+    <sys:String x:Key="SelfTest">自检测试...</sys:String>
+    <sys:String x:Key="NetworkHelper">网络助手...</sys:String>
+
+    <sys:String x:Key="SecondarySpecNote">添加等级标签并在菜单中点击保存，才能使能附加规格</sys:String>
+    <sys:String x:Key="Warn_AutoDutInEnabled">自动关门已使能</sys:String>
+    <sys:String x:Key="Warn_AutoDutOutEnabled">自动开门已使能</sys:String>
+    <sys:String x:Key="Warn_AutoDutInOutEnabled">自动开关门已使能</sys:String>
+</ResourceDictionary>
