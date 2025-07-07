@@ -1,0 +1,32 @@
+﻿<Window x:Class="Robin.UIs.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Robin.UIs"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="About" Width="600">
+    <StackPanel>
+        <Image Source="SplashScreen.png" Width="120" DockPanel.Dock="Top" HorizontalAlignment="Right"/>
+        
+        <TextBlock TextWrapping="WrapWithOverflow" Margin="4">
+            Robin is a application to simplify the user interacion on integrating the Audio Precision sequence with Hardware operation.            
+        </TextBlock>
+        <GroupBox Header="SOP">
+            <StackPanel>
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="4">
+            1. Engineer could define what the equipment it is and list kinds of APx setting with friendly name in Menu Config -> GlobalSetting
+                </TextBlock>
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="4">
+            2. Import the template file into specified directory C:/ProgramData/TYMPTE/Softwares/Robin/Template (it will be create when you run the app)
+                </TextBlock>
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="4">
+            3. Open a template and Customize the extended setting, and then save it
+                </TextBlock>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock TextWrapping="WrapWithOverflow" Margin="4" HorizontalAlignment="Center">
+            if any question or feedback, you could contact with Joey.Zhou@tymphany.com or Dan.Majak@tymphany.com.
+        </TextBlock>
+    </StackPanel>
+</Window>

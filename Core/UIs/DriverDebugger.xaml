@@ -1,0 +1,168 @@
+﻿<Window x:Class="ToucanCore.UIs.DriverDebugger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ToucanCore.UIs" Name="Self"
+        mc:Ignorable="d" Width="480" Height="600"
+        d:DesignHeight="600" d:DesignWidth="480">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem >
+                <Label Content="{Binding Message}"></Label>
+            </StatusBarItem>
+        </StatusBar>
+        <!--<StackPanel></StackPanel>-->
+        <TextBlock DockPanel.Dock="Bottom" Foreground="Red">Note: this Driver State might be remained even closed</TextBlock>
+        <TextBlock DockPanel.Dock="Bottom" Foreground="Red">Note: this UI will not resolve the action CONFLICTION. please do care</TextBlock>
+        <TabControl>
+            <TabItem Header="Fixture">
+                <StackPanel>
+                    <GroupBox Header="Setting">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <DockPanel DockPanel.Dock="Top" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label>Type</Label>
+                                <ComboBox SelectedItem="{Binding ElementName=Self, Path=FixtureType}" ItemsSource="{x:Static local:DriverDebugger.FixtureList}" DisplayMemberPath="Model"/>
+                            </DockPanel>
+                            <DockPanel Grid.Column="2" Grid.ColumnSpan="2">
+                                <Label>Resource</Label>
+                                <Button DockPanel.Dock="Right" Content="Open" Command="{Binding ElementName=Self, Path=OpenFixture}">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=Self,Path=ActiveFixture.IsInitialized}">
+                                                    <Setter Property="Content" Value="Close"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <ComboBox IsEditable="True" ItemsSource="{Binding ElementName=Self,Path=HardwareResources}"
+                                          Text="{Binding ElementName=Self,Path=ActiveResource}"
+                                          ToolTip="Only Changed when not initialize"/>
+                            </DockPanel>
+                            <DockPanel ToolTip="Start from 0" Grid.Column="4">
+                                <Label>Socket</Label>
+                                <TextBox Text="{Binding ElementName=Self,Path=SocketIndex}"></TextBox>
+                            </DockPanel>
+                        </Grid>
+                    </GroupBox>
+                    <Grid>
+                        <GroupBox Header="State / Sensor">
+                            <UniformGrid Columns="2">
+                                <UniformGrid.Resources>
+                                    <Style TargetType="ToggleButton">
+                                        <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                                        <Setter Property="IsThreeState" Value="True"></Setter>
+                                    </Style>
+                                </UniformGrid.Resources>
+                                <ToggleButton IsChecked="{Binding ElementName=Self,Path=FrontDoorOpenned}">Front Door Openned</ToggleButton>
+                                <ToggleButton IsChecked="{Binding ElementName=Self,Path=FrontDoorClosed}">Front Door Closed</ToggleButton>
+                                <ToggleButton>Rear Door Openned</ToggleButton>
+                                <ToggleButton>Rear Door Closed</ToggleButton>
+                                <ToggleButton IsChecked="{Binding ElementName=Self,Path=DutInDone}">DUT In Done</ToggleButton>
+                                <ToggleButton IsChecked="{Binding ElementName=Self,Path=DutOutDone}">DUT Out Done</ToggleButton>
+                                <ToggleButton IsChecked="{Binding ElementName=Self,Path=DutPresent}">DUT Present</ToggleButton>
+                                <ToggleButton>Safety</ToggleButton>
+                            </UniformGrid>
+                        </GroupBox>
+                        <Button HorizontalAlignment="Right" VerticalAlignment="Top" ToolTip="Refresh State"
+                                Command="{Binding ElementName=Self, Path=RefreshState}">
+                            <Button.Content>
+                                <TextBlock Text="&#xE777;" FontFamily="Segoe MDL2 Assets" ></TextBlock>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    <GroupBox Header="Function">
+                        <UniformGrid Columns="2">
+                            <UniformGrid.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="Margin" Value="4"/>
+                                </Style>
+                            </UniformGrid.Resources>
+                            <Button Command="{Binding ElementName=Self, Path=OpenFrontDoor}">Open Front Door</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}">Close Front Door</Button>
+                            <Button Command="{Binding ElementName=Self, Path=OpenRearDoor}">Open Rear Door</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseRearDoor}">Close Rear Door</Button>
+                            <Button Command="{Binding ElementName=Self, Path=DutIn}">DUT In</Button>
+                            <Button Command="{Binding ElementName=Self, Path=DutOut}">DUT Out</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}" IsEnabled="False">Load DUT</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}" IsEnabled="False">Unload DUT</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}" >Emergence Stop</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}" IsEnabled="False">Normal Indicator</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}" IsEnabled="False">Warn Indicator</Button>
+                            <Button Command="{Binding ElementName=Self, Path=CloseFrontDoor}" IsEnabled="False">Error Indicator</Button>
+                        </UniformGrid>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Relay Array">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <DockPanel>
+                            <Label>Type</Label>
+                            <ComboBox MinWidth="160" SelectedItem="{Binding ElementName=Self, Path=ActiveRelayArray}" ItemsSource="{x:Static local:DriverDebugger.RelayArrayList}" DisplayMemberPath="Model"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label>Resource</Label>
+                            <Button DockPanel.Dock="Right" Content="Open" Command="{Binding ElementName=Self, Path=OpenRelayArray}">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Self,Path=ActiveRelayArray.IsInitialized}">
+                                                <Setter Property="Content" Value="Close"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <ComboBox IsEditable="True" ItemsSource="{Binding ElementName=Self,Path=HardwareResources}"
+                                      Text="{Binding ElementName=Self,Path=ActiveResource}"
+                                      ToolTip="Only Changed when not initialize"/>
+                        </DockPanel>
+                    </DockPanel>
+                    <TextBlock DockPanel.Dock="Bottom" Foreground="Red">Note: ChA/ChB类开关, ChB在ChA序号后顺排</TextBlock>
+                    <UniformGrid Name="ug_RelayArray"></UniformGrid>
+
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="SN Reader">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <DockPanel>
+                            <Label>Type</Label>
+                            <ComboBox MinWidth="160" SelectedItem="{Binding ElementName=Self, Path=ActiveSnReader}" ItemsSource="{x:Static local:DriverDebugger.SerialNumberReaderList}" DisplayMemberPath="Model"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label>Resource</Label>
+                            <Button DockPanel.Dock="Right" Content="Open" Command="{Binding ElementName=Self, Path=OpenSnReader}">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Self,Path=ActiveRelayArray.IsInitialized}">
+                                                <Setter Property="Content" Value="Close"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <ComboBox IsEditable="True" ItemsSource="{Binding ElementName=Self,Path=HardwareResources}"
+                                      Text="{Binding ElementName=Self,Path=ActiveResource}"
+                                      ToolTip="Only Changed when not initialize"/>
+                        </DockPanel>
+                    </DockPanel>
+                    <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="2" Command="{Binding ElementName=Self, Path=ReadSn}">Read</Button>
+                    <TextBox Margin="2" IsReadOnly="True" Text="{Binding ElementName=Self,Path=ContentSnRead}"></TextBox>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+    
+</Window>

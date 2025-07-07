@@ -1,0 +1,56 @@
+﻿<DockPanel x:Class="ApEngine.Ctrls.Ctrl_Calibration_AcousticInput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ApEngine.Ctrls"
+             mc:Ignorable="d" x:Name="self"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <GroupBox Header="Calibration" DockPanel.Dock="Top" HorizontalAlignment="Left" Width="500">
+        <UniformGrid>
+            <DockPanel>
+                <Label Width="108">Connector Type:</Label>
+                <Label Content="{Binding ConnectorType}"></Label>
+            </DockPanel>
+
+            <DockPanel>
+                <Label Width="75">Level:</Label>
+                <TextBox Text="{Binding Level}"></TextBox>
+            </DockPanel>
+
+            <DockPanel>
+                <Label Width="108">Frequency:</Label>
+                <Label DockPanel.Dock="Right">Hz</Label>
+                <TextBox Text="{Binding Frequency}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="75">Tolerance:</Label>
+                <Label DockPanel.Dock="Right">Hz</Label>
+                <TextBox Text="{Binding Tolerance}"></TextBox>
+            </DockPanel>
+        </UniformGrid>
+
+    </GroupBox>
+     <Label DockPanel.Dock="Top" HorizontalAlignment="Right" Foreground="Red">Note: Be Care of the Unit</Label>
+    <DataGrid CanUserAddRows="True" AutoGenerateColumns="False"
+              ItemsSource="{Binding ElementName=self, Path=ChannelsData}">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Index" Binding="{Binding Index, Mode=OneWay}" SortDirection="Ascending"/>
+            <DataGridTextColumn Header="Channel" Binding="{Binding Channel, Mode=OneWay}"/>
+            <DataGridTextColumn Header="Serial No" Binding="{Binding SerialNo, Mode=OneWay}"/>
+            <DataGridTextColumn Header="Level" Binding="{Binding Level, Mode=OneWay}"/>
+            <DataGridTextColumn Header="Sensitivity mV/Pa" Binding="{Binding Sensitivity}"/>
+            <DataGridTemplateColumn Header="Calibration">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Content="Calibration" Command="{Binding Calibration}">
+                        </Button>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Frequency /Hz" Binding="{Binding Frequency}"/>
+            <DataGridTextColumn Header="Expected Sensitivity nV/Pa" Binding="{Binding ExpectedSensitivity}"/>
+            <DataGridTextColumn Header="Sensitivity Tolerance/dB" Binding="{Binding SensitivityTolerance}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</DockPanel>

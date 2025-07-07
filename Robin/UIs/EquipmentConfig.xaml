@@ -1,0 +1,115 @@
+﻿<Window x:Class="Robin.UIs.EquipmentConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Robin.UIs"
+        xmlns:testcore="clr-namespace:TestCore.Ctrls;assembly=TestCore"
+        mc:Ignorable="d" Name="self"
+        Title="Equipment Config" Height="450" Width="800">
+    <DockPanel>
+        <DockPanel.Resources>
+            <Style TargetType="DataGrid"/>
+            <Style TargetType="testcore:HexNumber">
+                <Setter Property="Width" Value="320"/>
+            </Style>
+        </DockPanel.Resources>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
+            <Button Click="btn_Reset_Click">Reset</Button>
+            <Button Click="btn_Save_Click">Save</Button>
+        </StackPanel>
+        
+        <StackPanel DockPanel.Dock="Bottom">
+            <TextBlock Foreground="Red">Name Could not be Duplicated. the last will be effective</TextBlock>
+            <TextBlock Foreground="Red">Index is start from 0, NOT 1</TextBlock>
+            <TextBlock Foreground="Red">Update will be effective after RESTART</TextBlock>
+        </StackPanel>
+        <GroupBox DockPanel.Dock="Top" Header="Misc">
+            <DockPanel>
+                <Label>Calib Valid Time</Label>
+                <TextBox Text="14"></TextBox>
+                <Label>Days</Label>
+            </DockPanel>
+        </GroupBox>
+        <UniformGrid Columns="2">
+            <GroupBox Header="Aux Out">
+                <DockPanel>
+                    <GroupBox Header="General Control" DockPanel.Dock="Top">
+                        <DockPanel>
+                            <TextBlock Foreground="Red" DockPanel.Dock="Top">
+                                Aux Out Index, if does not control, set -1 as default
+                            </TextBlock>
+                            <UniformGrid Columns="3">
+                                <DockPanel>
+                                    <Label>Door Ctrl:</Label>
+                                    <TextBox Text="{Binding ElementName=self, Path=DoorCtrl, Mode=TwoWay}"></TextBox>
+                                </DockPanel>
+                                <DockPanel ToolTip="Such as PowerUp, Set Jig On Position">
+                                    <Label>Jig Ctrl:</Label>
+                                    <TextBox Text="{Binding ElementName=self, Path=JigCtrl, Mode=TwoWay}"></TextBox>
+                                </DockPanel>
+                                <DockPanel ToolTip="Such as PowerUp, Set Jig On Position">
+                                    <Label>DUT Ctrl:</Label>
+                                    <TextBox Text="{Binding ElementName=self, Path=DutCtrl, Mode=TwoWay}"></TextBox>
+                                </DockPanel>
+                            </UniformGrid>
+                        </DockPanel>
+                    </GroupBox>
+                    <GroupBox Header="State Definition">
+                        <DockPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <Label>Mask:</Label>
+                                <testcore:HexNumber BinBitLength="8" HexValue="{Binding ElementName=self, Path=ControlMask, Mode=TwoWay}"></testcore:HexNumber>
+                            </StackPanel>
+                            <DataGrid CanUserAddRows="True" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=self, Path=ControlStates}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Key}"></DataGridTextColumn>
+                                    <!--<DataGridTemplateColumn Header="Value">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <testcore:HexNumber BinBitLength="8" IntValue="{Binding Value, Mode=TwoWay}">
+                                                </testcore:HexNumber>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>-->
+                                    <DataGridTextColumn Header="Aux Out Value" Binding="{Binding Value}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </GroupBox>
+                    
+                </DockPanel>
+                
+            </GroupBox>
+            <GroupBox Header="Aux In">
+                <DockPanel>
+                    <GroupBox Header="General" DockPanel.Dock="Top">
+                        <DockPanel>
+                            <TextBlock Foreground="Red" DockPanel.Dock="Top">
+                                Aux In Index, if does not control, set -1 as default
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <Label Width="50">Ready:</Label>
+                                <testcore:HexNumber BinBitLength="8" HexValue="{Binding ElementName=self, Path=ReadyValue, Mode=TwoWay}"></testcore:HexNumber>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <Label Width="50">Mask:</Label>
+                                <testcore:HexNumber BinBitLength="8" HexValue="{Binding ElementName=self, Path=ReadyMask, Mode=TwoWay}"></testcore:HexNumber>
+                            </StackPanel>
+                        </DockPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Name Definition">
+                        <DataGrid CanUserAddRows="True" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=self, Path=InputNames}" HeadersVisibility="All" LoadingRow="dg_LoadingRow" RowHeaderWidth="20">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Key}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Index" Binding="{Binding Value}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                </DockPanel>
+            </GroupBox>
+        </UniformGrid>
+        
+    </DockPanel>
+</Window>

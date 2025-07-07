@@ -1,0 +1,41 @@
+﻿<Window x:Class="Toucan_WPF.UIs.RestoreLocalReportWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Toucan_WPF.UIs"
+        mc:Ignorable="d" WindowStyle="SingleBorderWindow" Name="self"
+        Title="Restore Local Report Wizard" Height="450" Width="800">
+    <DockPanel>
+        <GroupBox Header="Remote Info" DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal">
+                <Label>Host:</Label>
+                <Label DockPanel.Dock="Top" Content="{Binding ElementName=self, Path=ReportService.Host}"></Label>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Folder Info">
+            <DockPanel>
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Button DockPanel.Dock="Right" Click="btn_Upload_Click">
+                            Upload Selected
+                        </Button>
+                        <Button DockPanel.Dock="Right" Click="btn_SelectDir_Click" ToolTip="Please select the folder which contain daytime folder">
+                            Select Folder...
+                        </Button>
+                        <Label>Report Folder:</Label>
+                        <TextBox Text="{Binding ElementName=self, Path=RootFolder}"></TextBox>
+                    </DockPanel>
+                    <!--<Button DockPanel.Dock="Bottom" HorizontalAlignment="Right">Clear Upload Buffer</Button>-->
+
+                    <DataGrid ItemsSource="{Binding ElementName=self, Path=SubFolders}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="Is Checked" Binding="{Binding IsChecked}"></DataGridCheckBoxColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Data}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </DockPanel>
+        </GroupBox>
+    </DockPanel>
+</Window>

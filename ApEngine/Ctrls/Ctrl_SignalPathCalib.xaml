@@ -1,0 +1,111 @@
+﻿<TabControl x:Class="ApEngine.Ctrls.Ctrl_SignalPathCalib"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ApEngine.Ctrls"
+             mc:Ignorable="d" x:Name="self"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <TabControl.Resources>
+        <Style TargetType="TabItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding}" Value="{x:Null}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </TabControl.Resources>
+    <TabControl.Items>
+        <TabItem Header="EQ" DataContext="{Binding}">
+            <DockPanel>
+                <UniformGrid DockPanel.Dock="Top" Columns="2">
+                    <GroupBox Header="Input EQ" DataContext="{Binding InputEq}">
+                        <DockPanel Margin="2">
+                            <Button DockPanel.Dock="Right" Click="ChangeFile_Click" Tag="{Binding ElementName=tb_inputeq}">...</Button>
+                            <Label></Label>
+                            <TextBox Text="{Binding EqPath}" Name="tb_inputeq"></TextBox>
+                        </DockPanel>
+                    </GroupBox>
+                    <GroupBox Header="Output EQ" DataContext="{Binding OutputEq}">
+                        <DockPanel Margin="2">
+                            <Button DockPanel.Dock="Right" Click="ChangeFile_Click" Tag="{Binding ElementName=tb_outputeq}">...</Button>
+                            <Label></Label>
+                            <TextBox Text="{Binding EqPath}" Name="tb_outputeq"></TextBox>
+                        </DockPanel>
+                    </GroupBox>
+                </UniformGrid>
+                <GroupBox Header="EQ Tables">
+                    <DataGrid ItemsSource="{Binding EqTableFiles}" AutoGenerateColumns="False" CanUserAddRows="False" Name="dg_eqtable">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Measurement Name" Binding="{Binding StepName}" IsReadOnly="True"/>
+                            <DataGridComboBoxColumn Header="EQ Type" ItemsSource="{x:Static local:CtrlStatic.EqTypes}" SelectedItemBinding="{Binding EqType}" IsReadOnly="False"/>
+                            <DataGridTextColumn Header="EQ File Path" Binding="{Binding EqFile}" MinWidth="80" IsReadOnly="False"/>
+                            <DataGridTemplateColumn Header="Load">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Click="ChangeFile_Click" Tag="{Binding ElementName=dg_eqtable}">...</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+            </DockPanel>
+        </TabItem>
+        
+        <TabItem Header="Acoustic Input" DataContext="{Binding AcousticInput}">
+            <local:Ctrl_Calibration_AcousticInput/>
+        </TabItem>
+        <TabItem Header="Acoustic Output" DataContext="{Binding AcousticOutput}">
+            <local:Ctrl_Calibration_AcousticOutput />
+        </TabItem>
+        <TabItem Header="Aanlog Input" DataContext="{Binding AnalogInput}">
+            <local:Ctrl_Calibration_AnalogInput />
+        </TabItem>
+        <TabItem Header="Analog Output" DataContext="{Binding AnalogOutput}">
+            <local:Ctrl_Calibration_AnalogOutput/>
+        </TabItem>
+        
+        <!--<TabItem Header="Multitone Analyzer" DataContext="{Binding MultitoneAnalyzer}">
+            
+        </TabItem>-->
+        <TabItem Header="Impedance/Thiele-Small" DataContext="{Binding ImpedanceThieleSmalls}">
+            <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dg_imp">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Measurement Name" Binding="{Binding StepName}" IsReadOnly="True"/>
+                    <DataGridComboBoxColumn Header="TestConfiguration" ItemsSource="{x:Static local:CtrlStatic.ImpedanceConfigurations}" SelectedItemBinding="{Binding TestConfiguration}" IsReadOnly="False"/>
+                    <DataGridTextColumn Header="Amplifier Gain" Binding="{Binding AmplifierGain}"/>
+                    <DataGridTextColumn Header="Sense R" Binding="{Binding SenseR}"/>
+                    <DataGridTextColumn Header="CorrectionCurve" Binding="{Binding CorrectionCurve}" MinWidth="80"/>
+
+                    <DataGridTemplateColumn Header="Load">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="ChangeFile_Click" Tag="{Binding ElementName=dg_imp}">...</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+        <TabItem Header="Loudspeaker Production Test" DataContext="{Binding LoudspeakerProductionTests}">
+            <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dg_loudspeaker">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Measurement Name" Binding="{Binding StepName}" IsReadOnly="True"/>
+                    <DataGridComboBoxColumn Header="TestConfiguration" ItemsSource="{x:Static local:CtrlStatic.LoudspeakerTestConfigurations}" SelectedItemBinding="{Binding TestConfiguration}" IsReadOnly="False"/>
+                    <DataGridTextColumn Header="Amplifier Gain" Binding="{Binding AmplifierGain}"/>
+                    <DataGridTextColumn Header="Sense R" Binding="{Binding SenseR}"/>
+                    <DataGridTextColumn Header="CorrectionCurve" Binding="{Binding CorrectionCurve}" MinWidth="80"/>
+                    
+                    <DataGridTemplateColumn Header="Load">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="ChangeFile_Click" Tag="{Binding ElementName=dg_loudspeaker}">...</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+    </TabControl.Items>
+</TabControl>

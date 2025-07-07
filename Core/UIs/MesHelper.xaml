@@ -1,0 +1,98 @@
+﻿<Window x:Class="ToucanCore.UIs.MesHelper"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mes ="clr-namespace:Mes;assembly=Mes"
+             xmlns:local="clr-namespace:ToucanCore.UIs"
+             mc:Ignorable="d" Title="MES Helper" Name="self"
+             d:DesignHeight="450" d:DesignWidth="600" Width="600" Height="450">
+    <DockPanel>
+        <GroupBox Header="Setting" DockPanel.Dock="Top" Margin="2">
+            <UniformGrid Rows="2">
+                <UniformGrid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="Width" Value="80"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                    </Style>
+                </UniformGrid.Resources>
+                <DockPanel>
+                    <Label>Location</Label>
+                    <ComboBox IsEditable="True" SelectedItem="{Binding ElementName=self, Path=Location}" ItemsSource="{x:Static local:MesHelper.Locations}" />
+
+                </DockPanel>
+                <DockPanel>
+                    <Label>Product</Label>
+                    <TextBox Text="{Binding ElementName=self, Path=Product}" ToolTip="若异地调试SFC, TYM SFC机制要求Product前面增加Site名前缀"></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label>Station</Label>
+                    <TextBox Text="{Binding ElementName=self, Path=Station}"></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label>TableName</Label>
+                    <TextBox Text="{Binding ElementName=self, Path=TableName}"></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label>Version</Label>
+                    <TextBox Text="{Binding ElementName=self, Path=Version}"></TextBox>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Right">
+                    <Button Margin="10,0,10,0" Click="btn_Initialize_Click">Initialize</Button>
+                    <Button Click="btn_Execute_Click">Execute</Button>
+                </DockPanel>
+                
+            </UniformGrid>
+        </GroupBox>
+        <GroupBox Header="Log" DockPanel.Dock="Bottom" Height="200">
+            <TextBox IsReadOnly="True" TextWrapping="WrapWithOverflow" VerticalScrollBarVisibility="Auto" x:Name="tb_Log" MinHeight="80"></TextBox>
+        </GroupBox>
+        
+        <TabControl Name="tb_Func">
+            <TabItem Header="Check Station">
+                <StackPanel>
+                    <!--<DockPanel>
+                        <Label Width="72">Part No.</Label>
+                        <TextBox Text="{Binding ElementName=self, Path=PartNo}"></TextBox>
+                    </DockPanel>-->
+                    <DockPanel>
+                        <Label Width="72">Line No.</Label>
+                        <TextBox Text="{Binding ElementName=self, Path=LineNo}"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Width="72" >Serial No.</Label>
+                        <TextBox Text="{Binding ElementName=self, Path=SerialNumber}"></TextBox>
+                    </DockPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Call API">
+                <StackPanel>
+                    <DockPanel>
+                        <Label Width="72">API</Label>
+                        <TextBox Text="{Binding ElementName=self, Path=MesApi}"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Width="72">Parameter</Label>
+                        <TextBox Text="{Binding ElementName=self, Path=Parameter}"></TextBox>
+                    </DockPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Insert Data" ToolTip="Not Supoort Yet">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" Foreground="Red">Not Support Yet</TextBlock>
+                    <DockPanel>
+                        <Label Width="72">Columns</Label>
+                        <TextBox Name="tb_ExtCols" MaxLines="2" TextWrapping="WrapWithOverflow" Height="40" AcceptsReturn="True"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Width="72" >Values</Label>
+                        <TextBox Name="tb_ExtVals" MaxLines="2" Height="40" TextWrapping="WrapWithOverflow"></TextBox>
+                    </DockPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Query Data">
+                <TextBlock>Not Implement Yet</TextBlock>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

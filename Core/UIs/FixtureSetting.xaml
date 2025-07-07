@@ -1,0 +1,105 @@
+﻿<Window x:Class="ToucanCore.UIs.FixtureSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToucanCore.UIs" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+             mc:Ignorable="d" Title="Fixture Definition" Width="450" Height="480">
+    <StackPanel>
+        <Label DockPanel.Dock="Top" Foreground="Red">Warning: this is a Global setting for current Physical Equipment</Label>
+        <Label DockPanel.Dock="Top" Foreground="Red">so do care if the IPC will move to other fixtures</Label>
+        <Label DockPanel.Dock="Top" Foreground="Red">the setting would be interpret by Driver</Label>
+        <UniformGrid>
+            
+        </UniformGrid>
+        <GroupBox Header="Front Door">
+            <UniformGrid Rows="1">
+                <DockPanel>
+                    <Label Content="Control"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Opened Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Closed Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                
+                
+            </UniformGrid>
+            
+        </GroupBox>
+        <GroupBox Header="Rear Door">
+            <UniformGrid Rows="1">
+                <DockPanel>
+                    <Label Content="Control"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Opened Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Closed Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+
+
+            </UniformGrid>
+
+        </GroupBox>
+        <GroupBox Header="DUT">
+            <UniformGrid Rows="2">
+                <DockPanel>
+                    <Label Content="Control"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="In Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Out Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Present Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Socket Sensor"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+            </UniformGrid>
+        </GroupBox>
+        <GroupBox Header="Misc">
+            <DockPanel>
+                <Label Content="Safety Sensor"/>
+                <TextBox></TextBox>
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Header="Status Indicator Control">
+            <UniformGrid Rows="1">
+                <DockPanel>
+                    <Label Content="Work"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Warn"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Error"/>
+                    <TextBox></TextBox>
+                </DockPanel>
+            </UniformGrid>
+        </GroupBox>
+        <UniformGrid Rows="1">
+            <Button Margin="4" Content="Clear"></Button>
+            <Button Margin="4" Content="Save"></Button>
+            <Button Margin="4" Content="Cancel"></Button>
+        </UniformGrid>
+    </StackPanel>
+</Window>
