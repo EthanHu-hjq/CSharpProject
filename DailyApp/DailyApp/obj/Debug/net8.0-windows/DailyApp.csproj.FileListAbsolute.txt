@@ -34,3 +34,5 @@ D:\Project\Git\CSharpProject\DailyApp\DailyApp\bin\Debug\net8.0-windows\Prism.dl
 D:\Project\Git\CSharpProject\DailyApp\DailyApp\bin\Debug\net8.0-windows\Prism.DryIoc.Wpf.dll
 D:\Project\Git\CSharpProject\DailyApp\DailyApp\bin\Debug\net8.0-windows\Prism.Events.dll
 D:\Project\Git\CSharpProject\DailyApp\DailyApp\bin\Debug\net8.0-windows\Prism.Wpf.dll
+D:\Project\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net8.0-windows\Views\LoginUC.g.cs
+D:\Project\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net8.0-windows\Views\LoginUC.baml

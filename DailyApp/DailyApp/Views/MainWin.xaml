@@ -8,7 +8,77 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
-        Title="MainWin" Height="450" Width="800">
+        Height="450" Width="800">
+    <Window.InputBindings>
+        <KeyBinding Gesture="F1" Command="{Binding Save_cmd}"/>
+    </Window.InputBindings>
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Menu VerticalAlignment="Center">
+                <MenuItem ToolTip="Menu">
+                    <MenuItem.Header>
+                        <!--<mah:FontIcon Glyph="&#xEDE3;" FontFamily="Segoe MDL2 Assets"></mah:FontIcon>-->
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Foreground="Lime">P</TextBlock>
+                            <TextBlock Margin="-1,0,-1,0" >T</TextBlock>
+                            <TextBlock Foreground="Red">E</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="Open" Command="{Binding Open}" ToolTip="Open From Toolbox" InputGestureText="Ctrl+O">
+                        <MenuItem.Icon>
+                            <mah:FontIcon Glyph="&#xE74C;" FontFamily="Segoe MDL2 Assets"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Help">
+                        <MenuItem.Icon>
+                            <mah:FontIcon Glyph="&#xF142;" FontFamily="Segoe MDL2 Assets"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="Web Report Viewer" Command="{Binding ShowWebReportViewer}">
+                            <MenuItem.Icon>
+                                <mah:FontIcon Glyph="&#xEB9D;" FontFamily="Segoe MDL2 Assets"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Self Test" Command="{Binding ShowSelfTest}">
+                            <MenuItem.Icon>
+                                <mah:FontIcon Glyph="&#xE8EC;" FontFamily="Segoe MDL2 Assets"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="NetworkHelper" Command="{Binding ShowNetworkHelper}">
+                            <MenuItem.Icon>
+                                <mah:FontIcon Glyph="&#xEC27;" FontFamily="Segoe MDL2 Assets"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="Document" Command="{Binding Link}" CommandParameter="document" InputGestureText="F1">
+                            <MenuItem.Icon>
+                                <mah:FontIcon Glyph="&#xF180;" FontFamily="Segoe MDL2 Assets"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="ReportIssue" Command="{Binding ReportIssue}" InputGestureText="F12">
+                            <MenuItem.Icon>
+                                <mah:FontIcon Glyph="&#xEBE8;" FontFamily="Segoe MDL2 Assets"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="ReportLink" Command="{Binding Link}" CommandParameter="report">
+                            <MenuItem.Icon>
+                                <mah:FontIcon Glyph="&#xEBC3;" FontFamily="Segoe MDL2 Assets"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="btn_OpenToolbox" Content="&#xE74C;" FontFamily="Segoe MDL2 Assets" Command="{Binding Open}" ToolTip="Open Toolbox"/>
+            <Button x:Name="btn_Save" Content="&#xE8B7;" FontFamily="Segoe MDL2 Assets" Command="{Binding Save_cmd}" ToolTip="Save"/>
+            <Button x:Name="btn_SaveAs" Content="&#xE74E;" FontFamily="Segoe MDL2 Assets" Command="{Binding SaveAs_cmd}" ToolTip="Save As"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
     <Grid>
         <Button Content="Click me" Command="{Binding Click_btn}" Height="40" Width="100"/>
     </Grid>
