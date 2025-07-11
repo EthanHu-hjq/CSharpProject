@@ -10,6 +10,22 @@
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d"
              >
+    <UserControl.Resources>
+        <Style x:Key="HandCursorTextBlock" TargetType="TextBlock">
+            <Setter Property="Cursor" Value="Arrow" />
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Foreground" Value="LightBlue"/>
+                    <Setter Property="FontSize" Value="14"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <prism:Dialog.WindowStyle>
         <Style TargetType="Window">
             <Setter Property="Background" Value="White" />
@@ -33,15 +49,16 @@
                 <DockPanel Margin="10" VerticalAlignment="Center">
                     <TextBlock Text="欢迎使用" FontSize="24" DockPanel.Dock="Top" />
                     <TextBox md:HintAssist.Hint="请输入用户名" Height="30" Width="300" DockPanel.Dock="Top" />
-                    <PasswordBox md:HintAssist.Hint="请输入密码" ex:PasswordHelper.Pwd="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                 Height="30" Width="300" DockPanel.Dock="Top">
+                    <PasswordBox md:HintAssist.Hint="请输入密码" 
+                                 ex:PasswordHelper.Pwd="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30" Width="300" Margin="0,0,0,8" DockPanel.Dock="Top">
                         <i:Interaction.Behaviors>
                             <ex:PasswordBoxBehavior/>
                         </i:Interaction.Behaviors>
                     </PasswordBox>
                     <Button Content="登录" Command="{Binding LoginCommand}" DockPanel.Dock="Top" />
                     <DockPanel DockPanel.Dock="Top" Margin="0,5" LastChildFill="False">
-                        <TextBlock Text="注册">
+                        <TextBlock Text="注册" Style="{StaticResource HandCursorTextBlock}">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="MouseLeftButtonUp">
                                     <prism:InvokeCommandAction Command="{Binding ShowRegisterViewCommand}" CommandParameter="1" />
