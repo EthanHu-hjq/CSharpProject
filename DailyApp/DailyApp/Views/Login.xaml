@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="DailyApp.Views.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:DailyApp.Views"
+             xmlns:ex="clr-namespace:DailyApp.Extensions"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d"
+             >
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="ResizeMode" Value="NoResize" />
+            <Setter Property="Height" Value="350" />
+            <Setter Property="Width" Value="600" />
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions> 
+        <!--在第一列填充图片，要求图片填满整个屏幕-->
+        <Image Source="/Images/Login.png" Stretch="UniformToFill" Margin="10"/>
+        <!--在第二列填充登录、注册界面-->
+        <md:Transitioner Grid.Column="1" SelectedIndex="{Binding SelectedIndex, FallbackValue=0}">
+            <!--第一块登录界面-->
+            <md:TransitionerSlide>
+                <DockPanel Margin="10" VerticalAlignment="Center">
+                    <TextBlock Text="欢迎使用" FontSize="24" DockPanel.Dock="Top" />
+                    <TextBox md:HintAssist.Hint="请输入用户名" Height="30" Width="300" DockPanel.Dock="Top" />
+                    <PasswordBox md:HintAssist.Hint="请输入密码" ex:PasswordHelper.Pwd="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30" Width="300" DockPanel.Dock="Top">
+                        <i:Interaction.Behaviors>
+                            <ex:PasswordBoxBehavior/>
+                        </i:Interaction.Behaviors>
+                    </PasswordBox>
+                    <Button Content="登录" Command="{Binding LoginCommand}" DockPanel.Dock="Top" />
+                    <DockPanel DockPanel.Dock="Top" Margin="0,5" LastChildFill="False">
+                        <TextBlock Text="注册">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                    <prism:InvokeCommandAction Command="{Binding ShowRegisterViewCommand}" CommandParameter="1" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBlock>
+                        <TextBlock Text="忘记密码" DockPanel.Dock="Right"/>
+                    </DockPanel>
+                </DockPanel>
+            </md:TransitionerSlide>
+            <!--注册界面-->
+            <md:TransitionerSlide>
+                <DockPanel Margin="10" VerticalAlignment="Center">
+                    <TextBlock Text="注册" FontSize="24" DockPanel.Dock="Top" />
+                    <TextBox md:HintAssist.Hint="请输入用户名" DockPanel.Dock="Top" />
+                    <PasswordBox md:HintAssist.Hint="请输入密码" DockPanel.Dock="Top" />
+                    <PasswordBox md:HintAssist.Hint="请再次输入密码" DockPanel.Dock="Top" Margin="0,0,0,5" />
+                    <Button Content="注册" Command="{Binding RegisterCommand}" DockPanel.Dock="Top" />
+                    <Button Content="返回" Margin="0,10"
+                            Command="{Binding ShowRegisterViewCommand}" CommandParameter="0"
+                            Style="{StaticResource MaterialDesignOutlinedButton}" DockPanel.Dock="Top" />
+                </DockPanel>
+            </md:TransitionerSlide>
+        </md:Transitioner> 
+    </Grid>
+</UserControl>

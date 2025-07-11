@@ -1,26 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\book.ico</ApplicationIcon>
   </PropertyGroup>
-
   <ItemGroup>
-    <None Remove="Images\book.ico" />
     <None Remove="Images\Login.png" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
-    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    <Content Include="Images\book.ico" />
   </ItemGroup>
-
   <ItemGroup>
-    <Resource Include="Images\book.ico" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\Login.png" />
   </ItemGroup>
-
 </Project>

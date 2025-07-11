@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\DailyApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\views\\loginuc.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\views\\loginuc.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\views\\loginuc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\views\\loginuc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\extensions\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\extensions\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\viewmodels\\loginucviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\viewmodels\\loginucviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\views\\mainwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\views\\mainwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B6BAD4F9-8036-4233-B63C-607019F9B2CC}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,77 +34,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginUC.xaml.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\LoginUC.xaml.cs",
-              "RelativeDocumentMoniker": "DailyApp\\Views\\LoginUC.xaml.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\LoginUC.xaml.cs",
-              "RelativeToolTip": "DailyApp\\Views\\LoginUC.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T00:26:01.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\App.xaml",
-              "RelativeDocumentMoniker": "DailyApp\\App.xaml",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\App.xaml",
-              "RelativeToolTip": "DailyApp\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-09T06:57:05.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\App.xaml.cs",
-              "RelativeDocumentMoniker": "DailyApp\\App.xaml.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\App.xaml.cs",
-              "RelativeToolTip": "DailyApp\\App.xaml.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAqwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T06:52:55.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginUC.xaml",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\LoginUC.xaml",
-              "RelativeDocumentMoniker": "DailyApp\\Views\\LoginUC.xaml",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\LoginUC.xaml*",
-              "RelativeToolTip": "DailyApp\\Views\\LoginUC.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-09T06:38:39.404Z",
+              "Title": "PasswordHelper.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Extensions\\PasswordHelper.cs",
+              "RelativeDocumentMoniker": "DailyApp\\Extensions\\PasswordHelper.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Extensions\\PasswordHelper.cs",
+              "RelativeToolTip": "DailyApp\\Extensions\\PasswordHelper.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T06:35:58.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginUCViewModel.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\LoginUCViewModel.cs",
-              "RelativeDocumentMoniker": "DailyApp\\ViewModels\\LoginUCViewModel.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\LoginUCViewModel.cs",
-              "RelativeToolTip": "DailyApp\\ViewModels\\LoginUCViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "DailyApp\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "DailyApp\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAA7wDcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T06:15:39.568Z",
+              "WhenOpened": "2025-07-11T02:39:18.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWin.xaml",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\MainWin.xaml",
-              "RelativeDocumentMoniker": "DailyApp\\Views\\MainWin.xaml",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\MainWin.xaml",
-              "RelativeToolTip": "DailyApp\\Views\\MainWin.xaml",
+              "DocumentIndex": 3,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "DailyApp\\ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "DailyApp\\ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T02:38:55.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\Login.xaml",
+              "RelativeDocumentMoniker": "DailyApp\\Views\\Login.xaml",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\Login.xaml",
+              "RelativeToolTip": "DailyApp\\Views\\Login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-08T07:52:56.841Z",
+              "WhenOpened": "2025-07-11T02:22:17.704Z",
               "EditorCaption": ""
             }
           ]
