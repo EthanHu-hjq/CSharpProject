@@ -9,8 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\book.ico" />
+    <None Remove="Images\Login.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\book.ico" />
+    <Resource Include="Images\Login.png" />
   </ItemGroup>
 
 </Project>

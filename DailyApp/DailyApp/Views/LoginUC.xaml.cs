@@ -24,5 +24,17 @@ namespace DailyApp.Views
         {
             InitializeComponent();
         }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginGrid.Visibility = Visibility.Hidden; // 隐藏登录页面
+            RegisterGrid.Visibility = Visibility.Visible; // 显示注册页面
+        }
+
+        private void BackToLoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterGrid.Visibility = Visibility.Hidden; // 隐藏注册页面
+            LoginGrid.Visibility = Visibility.Visible; // 显示登录页面
+        }
     }
 }

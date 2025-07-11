@@ -4,10 +4,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DailyApp.Views"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:prism="http://prismlibrary.com/"
              mc:Ignorable="d" 
              Height="700" Width="1200">
-    <Grid>
-        <Button Content="Login" FontSize="19" Height="50" Width="100" Command="{Binding Login}" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid Background="white">
+        <!--<Button Content="Login" FontSize="19" Height="50" Width="100" Command="{Binding Login}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Images/Login.png" Margin="10,0"/>
+        <Grid Grid.Column="1" Margin="10,0" VerticalAlignment="Center">
+            <!-- 登录页面 -->
+            <DockPanel  Visibility="Visible">
+                <Label Content="登录" FontSize="24" DockPanel.Dock="Top"/>
+                <TextBox Name="LoginUsername" mah:TextBoxHelper.Watermark="用户名" Height="30" DockPanel.Dock="Top"/>
+                <PasswordBox Name="LoginPassword" mah:TextBoxHelper.Watermark="密码" Height="30" DockPanel.Dock="Top"/>
+                <Button Content="登录" Height="30" DockPanel.Dock="Top" Background="#FF4CAF50" />
+                <Button Content="注册" Height="30" DockPanel.Dock="Top" Click="RegisterButton_Click"/>
+            </DockPanel>
+
+            <!-- 注册页面 -->
+            <Grid Name="RegisterGrid" Visibility="Hidden">
+                <TextBox Name="RegisterUsername" mah:TextBoxHelper.Watermark="用户名" Margin="20,10,20,0" Height="30" VerticalAlignment="Top"/>
+                <PasswordBox Name="RegisterPassword" mah:TextBoxHelper.Watermark="密码" Margin="20,50,20,0" Height="30" VerticalAlignment="Top"/>
+                <PasswordBox Name="RegisterConfirmPassword" mah:TextBoxHelper.Watermark="确认密码" Margin="20,90,20,0" Height="30" VerticalAlignment="Top"/>
+                <Button Content="注册" Margin="20,130,20,0" Height="30" VerticalAlignment="Top"/>
+                <Button Content="返回登录" Margin="20,170,20,0" Height="30" VerticalAlignment="Top" Click="BackToLoginButton_Click"/>
+            </Grid>
+        </Grid>
+
+        
     </Grid>
 </UserControl>
