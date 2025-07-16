@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj": {}
+    "D:\\Project\\Git\\Temp\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj": {}
   },
   "projects": {
-    "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj": {
+    "D:\\Project\\Git\\Temp\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj",
+        "projectUniqueName": "D:\\Project\\Git\\Temp\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj",
         "projectName": "DailyApp.API",
-        "projectPath": "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj",
+        "projectPath": "D:\\Project\\Git\\Temp\\DailyApp.API\\DailyApp.API\\DailyApp.API.csproj",
         "packagesPath": "C:\\Users\\ethan.hu\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\obj\\",
+        "outputPath": "D:\\Project\\Git\\Temp\\DailyApp.API\\DailyApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

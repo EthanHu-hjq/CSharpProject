@@ -1,17 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DailyApp.API.DataModel
+﻿namespace DailyApp.API.DTOs
 {
-    [Table("AccountInfo")]//自定义表名
-    public class AccountInfo
+    /// <summary>
+    /// 账户信息DTO 用来接收账户信息
+    /// </summary>
+    public class AccountInfoDTO
     {
-        /// <summary>
-        /// 账户ID
-        /// </summary>
-        [Key]//主键 自增长
-        public int AccountId { get; set; }
-
         /// <summary>
         /// 账号
         /// </summary>
@@ -42,5 +35,4 @@ namespace DailyApp.API.DataModel
         /// </summary>
         public DateTime? RegisterTime { get; set; }
     }
-
 }

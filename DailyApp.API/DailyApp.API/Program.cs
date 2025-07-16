@@ -15,9 +15,13 @@ namespace DailyApp.API
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            //注入DbContext
-            builder.Services.AddDbContext<DailyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
+            builder.Services.AddSwaggerGen(m =>
+            {
+                var path = AppContext.BaseDirectory + "DailyApp.API.xml";
+                m.IncludeXmlComments(path, true);
+            });
+            //注册数据库上下文
+            builder.Services.AddDbContext<DailyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnStr")));
 
             var app = builder.Build();
 

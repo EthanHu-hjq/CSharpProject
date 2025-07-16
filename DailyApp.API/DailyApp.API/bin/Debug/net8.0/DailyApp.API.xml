@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DailyApp.API</name>
+    </assembly>
+    <members>
+        <member name="P:DailyApp.API.ApiResponses.ApiResponse.ResultCode">
+            <summary>
+            结果编码
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.ApiResponses.ApiResponse.ResultMessage">
+            <summary>
+            结果消息
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.ApiResponses.ApiResponse.ResultData">
+            <summary>
+            结果数据
+            </summary>
+        </member>
+        <member name="T:DailyApp.API.Controllers.AccountController">
+            <summary>
+            账户接口
+            </summary>
+        </member>
+        <member name="M:DailyApp.API.Controllers.AccountController.Register(DailyApp.API.DTOs.AccountInfoDTO)">
+            <summary>
+            注册
+            </summary>
+            <param name="account">账户信息</param>
+            <returns></returns>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.AccountId">
+            <summary>
+            账户ID
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.AccountInfo.RegisterTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DataModel.DailyDbContext.AccountInfo">
+            <summary>
+            账号信息表
+            </summary>
+        </member>
+        <member name="T:DailyApp.API.DTOs.AccountInfoDTO">
+            <summary>
+            账户信息DTO 用来接收账户信息
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DTOs.AccountInfoDTO.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DTOs.AccountInfoDTO.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DTOs.AccountInfoDTO.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DTOs.AccountInfoDTO.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DTOs.AccountInfoDTO.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:DailyApp.API.DTOs.AccountInfoDTO.RegisterTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="T:DailyApp.API.Migrations.hjq250716">
+            <inheritdoc />
+        </member>
+        <member name="M:DailyApp.API.Migrations.hjq250716.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DailyApp.API.Migrations.hjq250716.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DailyApp.API.Migrations.hjq250716.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyApp.API", "DailyApp.API\DailyApp.API.csproj", "{7F372BFE-5951-40EB-9C39-96E5A1D64FE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyApp.API", "DailyApp.API\DailyApp.API.csproj", "{0D1A1571-B8E4-423B-878C-79A6F035919F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F372BFE-5951-40EB-9C39-96E5A1D64FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F372BFE-5951-40EB-9C39-96E5A1D64FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F372BFE-5951-40EB-9C39-96E5A1D64FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F372BFE-5951-40EB-9C39-96E5A1D64FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1A1571-B8E4-423B-878C-79A6F035919F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1A1571-B8E4-423B-878C-79A6F035919F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1A1571-B8E4-423B-878C-79A6F035919F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1A1571-B8E4-423B-878C-79A6F035919F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DBB2242A-341F-4D98-8DDE-4DB5C60A4943}
+		SolutionGuid = {189F8DC4-C863-472F-A686-159C7D46370B}
 	EndGlobalSection
 EndGlobal

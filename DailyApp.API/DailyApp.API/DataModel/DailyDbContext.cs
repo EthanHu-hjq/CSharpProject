@@ -10,8 +10,8 @@ namespace DailyApp.API.DataModel
         }
 
         /// <summary>
-        /// DailyAppUsers table
+        /// 账号信息表
         /// </summary>
-        public DbSet<AccountInfo> AccountInfo { get; set; }
+        public DbSet <AccountInfo> AccountInfo { get; set; }
     }
 }
