@@ -4,6 +4,11 @@
         <name>DailyApp.API</name>
     </assembly>
     <members>
+        <member name="T:DailyApp.API.ApiResponses.ApiResponse">
+            <summary>
+            API响应
+            </summary>
+        </member>
         <member name="P:DailyApp.API.ApiResponses.ApiResponse.ResultCode">
             <summary>
             结果编码
@@ -19,17 +24,39 @@
             结果数据
             </summary>
         </member>
+        <member name="T:DailyApp.API.AutoMappers.AutoMapperSettings">
+            <summary>
+            自动匹配转换DTO
+            </summary>
+        </member>
+        <member name="M:DailyApp.API.AutoMappers.AutoMapperSettings.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
         <member name="T:DailyApp.API.Controllers.AccountController">
             <summary>
             账户接口
             </summary>
         </member>
+        <member name="M:DailyApp.API.Controllers.AccountController.#ctor(DailyApp.API.DataModel.DailyDbContext,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="db">数据库上下文</param>
+            <param name="mapper">DTO映射器</param>
+        </member>
         <member name="M:DailyApp.API.Controllers.AccountController.Register(DailyApp.API.DTOs.AccountInfoDTO)">
             <summary>
             注册
             </summary>
-            <param name="account">账户信息</param>
+            <param name="accountInfoDTO">账户信息</param>
             <returns></returns>
+        </member>
+        <member name="T:DailyApp.API.DataModel.AccountInfo">
+            <summary>
+            账户信息
+            </summary>
         </member>
         <member name="P:DailyApp.API.DataModel.AccountInfo.AccountId">
             <summary>
@@ -117,6 +144,17 @@
         </member>
         <member name="M:DailyApp.API.Migrations.hjq250716.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="T:DailyApp.API.Program">
+            <summary>
+            Program class
+            </summary>
+        </member>
+        <member name="M:DailyApp.API.Program.Main(System.String[])">
+            <summary>
+            Main method
+            </summary>
+            <param name="args"></param>
         </member>
     </members>
 </doc>

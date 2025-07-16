@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DailyApp.API.DataModel
 {
+    /// <summary>
+    /// 账户信息
+    /// </summary>
     [Table("AccountInfo")]//自定义表名
     public class AccountInfo
     {

@@ -1,5 +1,8 @@
 ﻿namespace DailyApp.API.ApiResponses
 {
+    /// <summary>
+    /// API响应
+    /// </summary>
     public class ApiResponse
     {
         /// <summary>

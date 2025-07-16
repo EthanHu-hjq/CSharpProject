@@ -1,4 +1,5 @@
-﻿using DailyApp.API.ApiResponses;
+﻿using AutoMapper;
+using DailyApp.API.ApiResponses;
 using DailyApp.API.DataModel;
 using DailyApp.API.DTOs;
 using Microsoft.AspNetCore.Http;
@@ -16,15 +17,24 @@ namespace DailyApp.API.Controllers
         //数据库上下文字段
         private readonly DailyDbContext _db;
 
-        public AccountController(DailyDbContext db)
+        //AutoMapper字段
+        private readonly IMapper _mapper;
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="db">数据库上下文</param>
+        /// <param name="mapper">DTO映射器</param>
+        public AccountController(DailyDbContext db, IMapper mapper)
         {
             _db = db;
+            _mapper = mapper;
         }
 
         /// <summary>
         /// 注册
         /// </summary>
-        /// <param name="account">账户信息</param>
+        /// <param name="accountInfoDTO">账户信息</param>
         /// <returns></returns>
         [HttpPost]
         public IActionResult Register(AccountInfoDTO accountInfoDTO)
@@ -42,15 +52,7 @@ namespace DailyApp.API.Controllers
                     return Ok(response);
                 }
                 //2.创建账户
-                AccountInfo newAccount = new AccountInfo()
-                {
-                    Account = accountInfoDTO.Account,
-                    Name = accountInfoDTO.Name,
-                    Password = accountInfoDTO.Password,
-                    Email = accountInfoDTO.Email,
-                    Phone = accountInfoDTO.Phone,
-                    RegisterTime = DateTime.Now
-                };
+                AccountInfo newAccount = _mapper.Map<AccountInfo>(accountInfoDTO);
                 _db.AccountInfo.Add(newAccount);
                 int result = _db.SaveChanges();
                 if(result > 0)

@@ -12,6 +12,7 @@
         ],
         "summary": "注册",
         "requestBody": {
+          "description": "账户信息",
           "content": {
             "application/json": {
               "schema": {
