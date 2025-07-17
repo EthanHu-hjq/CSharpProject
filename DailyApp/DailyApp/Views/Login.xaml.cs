@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DailyApp.Models;
+using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,24 @@ namespace DailyApp.Views
     /// </summary>
     public partial class Login : UserControl
     {
-        public Login()
+        /// <summary>
+        /// 事件聚合器
+        /// </summary>
+        private readonly IEventAggregator _eventAggregator;
+        public Login(IEventAggregator eventAggregator)
         {
             InitializeComponent();
+            _eventAggregator = eventAggregator;// 注册事件
+            _eventAggregator.GetEvent<MsgEvent>().Subscribe(Sub);// 订阅消息
+        }
+
+        /// <summary>
+        /// 订阅消息
+        /// </summary>
+        /// <param name="obj"></param>
+        private void Sub(string obj)
+        {
+            RegLoginBar.MessageQueue.Enqueue(obj);// 显示消息
         }
     }
 }

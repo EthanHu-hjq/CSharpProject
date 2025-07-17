@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace DailyApp.HttpClients
 {
-    /// <summary>
-    /// 接收模型
-    /// </summary>
     public class ApiResponse
     {
         /// <summary>
@@ -19,11 +16,11 @@ namespace DailyApp.HttpClients
         /// <summary>
         /// 结果消息
         /// </summary>
-        public string ResultMessage { get; set; }
+        public string? ResultMessage { get; set; }
 
         /// <summary>
         /// 结果数据
         /// </summary>
-        public object ResultData { get; set; }
+        public object? ResultData { get; set; }
     }
 }

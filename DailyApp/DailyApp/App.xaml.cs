@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows;
+using DailyApp.HttpClients;
 using DailyApp.ViewModels;
 using DailyApp.Views;
+using DryIoc;
+using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Services.Dialogs;
 
@@ -19,7 +22,10 @@ namespace DailyApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            //登录窗体注册
             containerRegistry.RegisterDialog<Login, LoginViewModel>();
+            //API调用请求注册
+            containerRegistry.GetContainer().Register<HttpRestClient>(made:Parameters.Of.Type<string>(serviceKey: "webUrl"));
         }
 
         protected override void OnInitialized()

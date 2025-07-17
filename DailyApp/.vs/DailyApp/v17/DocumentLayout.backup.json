@@ -1,14 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\CSharpProject\\DailyApp\\",
+  "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\DailyApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\git\\csharpproject\\dailyapp\\dailyapp\\httpclients\\apirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\httpclients\\apirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\git\\csharpproject\\dailyapp\\dailyapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\models\\passwordencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\models\\passwordencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\dtos\\accountinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\dtos\\accountinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\httpclients\\httprestclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\httpclients\\httprestclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|d:\\project\\git\\csharpproject\\dailyapp\\dailyapp\\httpclients\\apirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AD5AC1F-AD88-4245-B089-6358529C446F}|DailyApp\\DailyApp.csproj|solutionrelative:dailyapp\\httpclients\\apirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +38,93 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApiRequest.cs",
-              "DocumentMoniker": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\HttpClients\\ApiRequest.cs",
-              "RelativeDocumentMoniker": "DailyApp\\HttpClients\\ApiRequest.cs",
-              "ToolTip": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\HttpClients\\ApiRequest.cs",
-              "RelativeToolTip": "DailyApp\\HttpClients\\ApiRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PasswordEncryptor.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Models\\PasswordEncryptor.cs",
+              "RelativeDocumentMoniker": "DailyApp\\Models\\PasswordEncryptor.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Models\\PasswordEncryptor.cs",
+              "RelativeToolTip": "DailyApp\\Models\\PasswordEncryptor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T14:25:27.524Z",
+              "WhenOpened": "2025-07-17T07:27:55.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "DailyApp\\Models\\RegisterModel.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "DailyApp\\Models\\RegisterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T07:03:56.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HttpRestClient.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\HttpClients\\HttpRestClient.cs",
+              "RelativeDocumentMoniker": "DailyApp\\HttpClients\\HttpRestClient.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\HttpClients\\HttpRestClient.cs",
+              "RelativeToolTip": "DailyApp\\HttpClients\\HttpRestClient.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T06:14:14.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountInfoDTO.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\DTOs\\AccountInfoDTO.cs",
+              "RelativeDocumentMoniker": "DailyApp\\DTOs\\AccountInfoDTO.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\DTOs\\AccountInfoDTO.cs",
+              "RelativeToolTip": "DailyApp\\DTOs\\AccountInfoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T03:29:05.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "DailyApp\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "DailyApp\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAewGMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T03:28:12.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApiRequest.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\HttpClients\\ApiRequest.cs",
+              "RelativeDocumentMoniker": "DailyApp\\HttpClients\\ApiRequest.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\HttpClients\\ApiRequest.cs",
+              "RelativeToolTip": "DailyApp\\HttpClients\\ApiRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T03:26:33.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Login.xaml",
-              "DocumentMoniker": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\Login.xaml",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\Login.xaml",
               "RelativeDocumentMoniker": "DailyApp\\Views\\Login.xaml",
-              "ToolTip": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\Login.xaml",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\Views\\Login.xaml",
               "RelativeToolTip": "DailyApp\\Views\\Login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-16T08:52:46.778Z",

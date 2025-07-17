@@ -7,18 +7,15 @@ using System.Threading.Tasks;
 
 namespace DailyApp.HttpClients
 {
-    /// <summary>
-    /// 请求模型
-    /// </summary>
     public class ApiRequest
     {
         /// <summary>
-        /// 请求地址/API路由地址
+        /// 请求地址/api路由地址
         /// </summary>
         public string Route { get; set; }
 
         /// <summary>
-        /// 请求方式
+        /// 请求方法
         /// </summary>
         public Method Method { get; set; }
 

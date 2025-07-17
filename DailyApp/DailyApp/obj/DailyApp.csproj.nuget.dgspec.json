@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj": {}
+    "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj": {}
   },
   "projects": {
-    "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj": {
+    "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj",
+        "projectUniqueName": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj",
         "projectName": "DailyApp",
-        "projectPath": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj",
-        "packagesPath": "C:\\Users\\37463\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\CSharpProject\\DailyApp\\DailyApp\\obj\\",
+        "projectPath": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\DailyApp.csproj",
+        "packagesPath": "C:\\Users\\ethan.hu\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\Git\\CSharpProject\\DailyApp\\DailyApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\SoftWare\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\37463\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ethan.hu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -78,6 +78,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -86,7 +104,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
