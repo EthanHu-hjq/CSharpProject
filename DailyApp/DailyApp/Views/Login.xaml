@@ -42,22 +42,22 @@
         </Grid.ColumnDefinitions> 
 
         <!--消息提示框-->
-        <md:Snackbar x:Name="RegLoginBar" Grid.Column="2" 
-                     HorizontalAlignment="Center" VerticalAlignment="Bottom"
+        <md:Snackbar x:Name="RegLoginBar" Grid.ColumnSpan="2"
                      MessageQueue="{md:MessageQueue}" 
                      />
         
         <!--在第一列填充图片，要求图片填满整个屏幕-->
-        <Image Source="/Images/Login.png" Stretch="UniformToFill" Margin="10"/>
+        <Image Source="/Images/Login.png" Margin="10"/>
         <!--在第二列填充登录、注册界面-->
         <md:Transitioner Grid.Column="1" SelectedIndex="{Binding SelectedIndex, FallbackValue=0, Mode=TwoWay}">
             <!--第一块登录界面-->
             <md:TransitionerSlide>
                 <DockPanel Margin="10" VerticalAlignment="Center">
                     <TextBlock Text="欢迎使用" FontSize="24" DockPanel.Dock="Top" />
-                    <TextBox md:HintAssist.Hint="请输入用户名" Height="30" Width="300" DockPanel.Dock="Top" />
+                    <TextBox md:HintAssist.Hint="请输入账号" Text="{Binding RegisterModel.Account,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             Height="30" Width="300" DockPanel.Dock="Top" />
                     <PasswordBox md:HintAssist.Hint="请输入密码" 
-                                 ex:PasswordHelper.Pwd="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 ex:PasswordHelper.Pwd="{Binding RegisterModel.Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                  Height="30" Width="300" Margin="0,0,0,8" DockPanel.Dock="Top">
                         <i:Interaction.Behaviors>
                             <ex:PasswordBoxBehavior/>

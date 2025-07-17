@@ -31,7 +31,8 @@ namespace DailyApp.API
                 m.IncludeXmlComments(path, true);
             });
             //注册数据库上下文
-            builder.Services.AddDbContext<DailyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnStr")));
+            builder.Services.AddDbContext<DailyDbContext>(
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnStr")));
             //注册AutoMapper,映射配置AutoMapperSettings
             builder.Services.AddAutoMapper(typeof(AutoMapperSettings));
             

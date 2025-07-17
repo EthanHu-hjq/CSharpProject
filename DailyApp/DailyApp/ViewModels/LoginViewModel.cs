@@ -96,7 +96,9 @@ namespace DailyApp.ViewModels
             }
             if(AccountInfoDTO.Password != AccountInfoDTO.ConfirmPassword)
             {
-                MessageBox.Show("两次密码输入不一致，请重新输入！");
+                _eventAggregator.GetEvent<MsgEvent>().Publish("两次输入密码不一致，请重新输入");
+                RegisterModel.Password = "";
+                RegisterModel.ConfirmPassword = "";
                 return;
             }
 
@@ -116,7 +118,7 @@ namespace DailyApp.ViewModels
             }
             else
             {
-                MessageBox.Show(apiResponse.ResultMessage);
+                _eventAggregator.GetEvent<MsgEvent>().Publish(apiResponse.ResultMessage);
             }
         }
 
@@ -138,13 +140,37 @@ namespace DailyApp.ViewModels
         /// </summary>
         private void OnLogin()
         {
-            string password = RegisterModel.Password;
-            if (password == "123456")
+            if(string.IsNullOrEmpty(RegisterModel.Account) || string.IsNullOrEmpty(RegisterModel.Password))
+            {
+                _eventAggregator.GetEvent<MsgEvent>().Publish("登录信息不全");
+                return;
+            }
+            //密码加密处理
+            RegisterModel.Password = encryptor.EncryptPassword(RegisterModel.Password);
+
+            //登录请求逻辑
+            ApiRequest apiRequest = new ApiRequest();
+            apiRequest.Method = RestSharp.Method.GET;
+            apiRequest.Route = $"Account/Login?account={RegisterModel.Account}&password={RegisterModel.Password}";
+
+            ApiResponse apiResponse = _httpRestClient.Execute(apiRequest);
+
+            if(apiResponse.ResultCode == 0)
             {
                 //登录成功
                 RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
             }
-
+            else if(apiResponse.ResultCode == -1)
+            {
+                RegisterModel.Account = "";
+                RegisterModel.Password = "";
+                _eventAggregator.GetEvent<MsgEvent>().Publish(apiResponse.ResultMessage);
+            }
+            else
+            {
+                RegisterModel.Password = "";
+                _eventAggregator.GetEvent<MsgEvent>().Publish(apiResponse.ResultMessage);
+            }
         }
 
         public string Title => "DailyApp";

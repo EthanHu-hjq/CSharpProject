@@ -53,6 +53,14 @@
             <param name="accountInfoDTO">账户信息</param>
             <returns></returns>
         </member>
+        <member name="M:DailyApp.API.Controllers.AccountController.Login(System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+            <param name="account">账户信息</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
         <member name="T:DailyApp.API.DataModel.AccountInfo">
             <summary>
             账户信息
@@ -92,6 +100,17 @@
             <summary>
             注册时间
             </summary>
+        </member>
+        <member name="T:DailyApp.API.DataModel.DailyDbContext">
+            <summary>
+            DailyApp数据库上下文
+            </summary>
+        </member>
+        <member name="M:DailyApp.API.DataModel.DailyDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{DailyApp.API.DataModel.DailyDbContext})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="options"></param>
         </member>
         <member name="P:DailyApp.API.DataModel.DailyDbContext.AccountInfo">
             <summary>
@@ -133,16 +152,16 @@
             注册时间
             </summary>
         </member>
-        <member name="T:DailyApp.API.Migrations.hjq250716">
+        <member name="T:DailyApp.API.Migrations.hjq0717">
             <inheritdoc />
         </member>
-        <member name="M:DailyApp.API.Migrations.hjq250716.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:DailyApp.API.Migrations.hjq0717.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:DailyApp.API.Migrations.hjq250716.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:DailyApp.API.Migrations.hjq0717.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:DailyApp.API.Migrations.hjq250716.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:DailyApp.API.Migrations.hjq0717.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:DailyApp.API.Program">

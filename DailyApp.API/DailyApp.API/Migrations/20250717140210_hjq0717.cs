@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DailyApp.API.Migrations
 {
     /// <inheritdoc />
-    public partial class hjq250716 : Migration
+    public partial class hjq0717 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

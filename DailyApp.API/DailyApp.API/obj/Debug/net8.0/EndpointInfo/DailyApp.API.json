@@ -38,6 +38,37 @@
         }
       }
     },
+    "/api/Account/Login": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "登录",
+        "parameters": [
+          {
+            "name": "account",
+            "in": "query",
+            "description": "账户信息",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "密码",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [

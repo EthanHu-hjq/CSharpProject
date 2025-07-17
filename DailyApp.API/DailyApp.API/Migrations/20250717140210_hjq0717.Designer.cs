@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DailyApp.API.Migrations
 {
     [DbContext(typeof(DailyDbContext))]
-    [Migration("20250716015633_hjq250716")]
-    partial class hjq250716
+    [Migration("20250717140210_hjq0717")]
+    partial class hjq0717
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
