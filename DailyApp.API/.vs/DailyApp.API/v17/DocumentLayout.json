@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\CSharpProject\\DailyApp.API\\",
+  "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D1A1571-B8E4-423B-878C-79A6F035919F}|DailyApp.API\\DailyApp.API.csproj|d:\\git\\csharpproject\\dailyapp.api\\dailyapp.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D1A1571-B8E4-423B-878C-79A6F035919F}|DailyApp.API\\DailyApp.API.csproj|d:\\project\\git\\csharpproject\\dailyapp.api\\dailyapp.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D1A1571-B8E4-423B-878C-79A6F035919F}|DailyApp.API\\DailyApp.API.csproj|solutionrelative:dailyapp.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,21 +14,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "DailyApp.API\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\DailyApp.API\\DailyApp.API\\Controllers\\AccountController.cs",
               "RelativeToolTip": "DailyApp.API\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAQwFUAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAFAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-16T02:14:17.769Z",
               "EditorCaption": ""

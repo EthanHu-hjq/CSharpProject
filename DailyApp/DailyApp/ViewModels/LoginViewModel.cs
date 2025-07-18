@@ -78,6 +78,7 @@ namespace DailyApp.ViewModels
         }
 
         #region 命令实现方法
+
         /// <summary>
         /// 注册
         /// </summary>
@@ -122,6 +123,10 @@ namespace DailyApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// 切换注册、登录视图
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnShowRegisterView(string obj)
         {
             int index = int.Parse(obj);

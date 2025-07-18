@@ -28,18 +28,18 @@ namespace DailyApp
             containerRegistry.GetContainer().Register<HttpRestClient>(made:Parameters.Of.Type<string>(serviceKey: "webUrl"));
         }
 
-        protected override void OnInitialized()
-        {
-            var dialog = Container.Resolve<IDialogService>();
-            dialog.ShowDialog("Login", callback =>
-            {
-                if (callback.Result != ButtonResult.OK)
-                {
-                    Environment.Exit(0);
-                    return;
-                }
-                base.OnInitialized();
-            });
-        }
+        //protected override void OnInitialized()
+        //{
+        //    var dialog = Container.Resolve<IDialogService>();
+        //    dialog.ShowDialog("Login", callback =>
+        //    {
+        //        if (callback.Result != ButtonResult.OK)
+        //        {
+        //            Environment.Exit(0);
+        //            return;
+        //        }
+        //        base.OnInitialized();
+        //    });
+        //}
     }
 }

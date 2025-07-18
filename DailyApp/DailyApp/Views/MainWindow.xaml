@@ -3,8 +3,64 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
-    <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-    </Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="{Binding Title}" Height="750" Width="1200" >
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1"/>
+    </WindowChrome.WindowChrome>
+    <materialDesign:DialogHost DialogTheme="Inherit"
+                            Identifier="RootDialog"
+                            SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">
+
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+            <!-- 左侧导航栏 -->
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <!--菜单-->
+                <DockPanel MinWidth="220">
+                    
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+
+            <!-- 头部 -->
+            <DockPanel>
+                <materialDesign:ColorZone Padding="16"
+                                 materialDesign:ElevationAssist.Elevation="Dp4"
+                                 DockPanel.Dock="Top"
+                                 Mode="PrimaryMid">
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton x:Name="MenuToggleButton"
+                           AutomationProperties.Name="HamburgerToggleButton"
+                           IsChecked="False"
+                           Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+
+                            <Button Margin="24,0,0,0" 
+                            materialDesign:RippleAssist.Feedback="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"
+                            Command="{Binding MovePrevCommand}"
+                            Content="{materialDesign:PackIcon Kind=ArrowLeft,Size=24}"
+                            Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            ToolTip="Previous Item" />
+
+                            <Button Margin="16,0,0,0"
+                            materialDesign:RippleAssist.Feedback="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"
+                            Command="{Binding MoveNextCommand}"
+                            Content="{materialDesign:PackIcon Kind=ArrowRight,Size=24}"
+                            Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"
+                            Style="{StaticResource MaterialDesignToolButton}"
+                            ToolTip="Next Item" />
+
+                            <TextBlock Margin="15,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            AutomationProperties.Name="MyDaily"
+                            FontSize="22"
+                            Text="MyDaily" />
+                        </StackPanel>
+                    </DockPanel>
+                </materialDesign:ColorZone>
+            </DockPanel>
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
 </Window>

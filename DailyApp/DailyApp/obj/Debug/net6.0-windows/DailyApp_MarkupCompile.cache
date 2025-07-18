@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\
+D:\Project\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\
 DailyApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Git\CSharpProject\DailyApp\DailyApp\App.xaml
+D:\Project\Git\CSharpProject\DailyApp\DailyApp\App.xaml
 21819176243
 1-248759394
 132119815257
-203322118135
+2032090257571
 Views\Login.xaml;Views\MainWindow.xaml;
 
 False
