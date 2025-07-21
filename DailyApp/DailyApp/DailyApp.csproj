@@ -9,7 +9,7 @@
     <None Remove="Images\Login.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\book.ico" />
+    <Resource Include="Images\book.ico" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />

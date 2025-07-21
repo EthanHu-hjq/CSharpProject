@@ -89,7 +89,6 @@ D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\MainWindow
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\Login.g.cs
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\App.g.cs
-D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\DailyApp_Content.g.cs
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\DailyApp_MarkupCompile.cache
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\DailyApp_MarkupCompile.lref

@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="{Binding Title}" Height="750" Width="1200" >
 
@@ -18,8 +20,26 @@
             <materialDesign:DrawerHost.LeftDrawerContent>
                 <!--菜单-->
                 <DockPanel MinWidth="220">
-                    
+                    <StackPanel Margin="0,20" DockPanel.Dock="Top">
+                        <Image Source="/Images/book.ico" Height="50" Width="50">
+                            <Image.Clip>
+                                <EllipseGeometry Center="24,24" RadiusX="24" RadiusY="24"/>
+                            </Image.Clip>
+                        </Image>
+                    </StackPanel>
+
+                    <ListBox ItemsSource="{Binding LeftMenuList}" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="{Binding Icon}" Margin="15,0"/>
+                                    <TextBlock Text="{Binding MenuName}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </DockPanel>
+
             </materialDesign:DrawerHost.LeftDrawerContent>
 
             <!-- 头部 -->
@@ -27,8 +47,25 @@
                 <materialDesign:ColorZone Padding="16"
                                  materialDesign:ElevationAssist.Elevation="Dp4"
                                  DockPanel.Dock="Top"
+                                 MouseDoubleClick="ColorZone_MouseDoubleClick"
                                  Mode="PrimaryMid">
-                    <DockPanel>
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                            <Image Source="/Images/book.ico" Height="25" Width="25">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="12,12" RadiusX="12" RadiusY="12"/>
+                                </Image.Clip>
+                            </Image>
+                            <Button x:Name="btnMin" FontFamily="Segoe MDL2 Assets" Content="&#xE738;" 
+                                    Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                    Click="btnMin_Click"/>
+                            <Button x:Name="btnMax" FontFamily="Segoe MDL2 Assets" Content="&#xE71A;"
+                                    Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                    Click="btnMax_Click"/>
+                            <Button x:Name="btnClose" FontFamily="Segoe MDL2 Assets" Content="&#xE711;"
+                                    Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                    Click="btnClose_Click"/>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <ToggleButton x:Name="MenuToggleButton"
                            AutomationProperties.Name="HamburgerToggleButton"
