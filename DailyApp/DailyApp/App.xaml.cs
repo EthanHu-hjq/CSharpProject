@@ -26,6 +26,13 @@ namespace DailyApp
             containerRegistry.RegisterDialog<Login, LoginViewModel>();
             //API调用请求注册
             containerRegistry.GetContainer().Register<HttpRestClient>(made:Parameters.Of.Type<string>(serviceKey: "webUrl"));
+
+            //注册导航页
+            containerRegistry.RegisterForNavigation<HomeUC, HomeUCViewModel>();
+            containerRegistry.RegisterForNavigation<WaitUC, WaitUCViewModel>();
+            containerRegistry.RegisterForNavigation<MemoUC, MemoUCViewModel>();
+            containerRegistry.RegisterForNavigation<SettingUC, SettingUCViewModel>();
+
         }
 
         //protected override void OnInitialized()

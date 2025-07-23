@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Git\CSharpProject\DailyApp\DailyApp\App.xaml
-21819176243
+62147440289
 
-141358622928
+22838851312
 203322118135
-Views\Login.xaml;Views\MainWindow.xaml;
+Views\HomeUC.xaml;Views\Login.xaml;Views\MainWindow.xaml;Views\MemoUC.xaml;Views\SettingUC.xaml;Views\WaitUC.xaml;
 
 False
 

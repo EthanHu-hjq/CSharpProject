@@ -46,5 +46,10 @@ namespace DailyApp.Views
                 WindowState = WindowState.Maximized;
             }
         }
+
+        private void lbMenu_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            drawerHost.IsLeftDrawerOpen = false;
+        }
     }
 }

@@ -106,3 +106,11 @@ D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\refint\DailyApp.
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\DailyApp.pdb
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\DailyApp.genruntimeconfig.cache
 D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\ref\DailyApp.dll
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\HomeUC.g.cs
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\MemoUC.g.cs
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\SettingUC.g.cs
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\WaitUC.g.cs
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\HomeUC.baml
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\MemoUC.baml
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\SettingUC.baml
+D:\Git\CSharpProject\DailyApp\DailyApp\obj\Debug\net6.0-windows\Views\WaitUC.baml
