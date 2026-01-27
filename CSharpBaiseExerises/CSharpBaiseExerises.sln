@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpBaiseExerises", "CSharpBaiseExerises\CSharpBaiseExerises.csproj", "{C07B88FA-3D3D-4456-96B3-87E9B0661EF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueType", "值类型\ValueType.csproj", "{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C07B88FA-3D3D-4456-96B3-87E9B0661EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07B88FA-3D3D-4456-96B3-87E9B0661EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07B88FA-3D3D-4456-96B3-87E9B0661EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07B88FA-3D3D-4456-96B3-87E9B0661EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83D0C299-5191-468F-99CB-3CD0D41586EE}
+	EndGlobalSection
+EndGlobal
