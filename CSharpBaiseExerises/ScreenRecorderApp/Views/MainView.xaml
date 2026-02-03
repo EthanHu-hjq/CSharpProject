@@ -1,0 +1,25 @@
+﻿<Window x:Class="ScreenRecorderApp.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="屏幕录制器" Height="200" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- 录屏控制按钮 -->
+            <Button Command="{Binding ToggleRecordingCommand}" 
+                    Width="150" Height="50" 
+                    Margin="0,0,0,20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding ButtonIcon}" FontSize="16" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding ButtonText}" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <!-- 录屏时间显示 -->
+            <TextBlock Text="{Binding TimeDisplay}" 
+                       FontSize="24" 
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

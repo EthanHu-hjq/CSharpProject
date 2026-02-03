@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\CSharpProject\\CSharpBaiseExerises\\",
+  "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}|\u503C\u7C7B\u578B\\\u503C\u7C7B\u578B.csproj|d:\\git\\csharpproject\\csharpbaiseexerises\\\u503C\u7C7B\u578B\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}|\u503C\u7C7B\u578B\\\u503C\u7C7B\u578B.csproj|solutionrelative:\u503C\u7C7B\u578B\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13D9BCD5-48D1-421B-A929-318BA7428232}|ScreenRecorderApp\\ScreenRecorderApp.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\screenrecorderapp\\viewmodels\\recorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13D9BCD5-48D1-421B-A929-318BA7428232}|ScreenRecorderApp\\ScreenRecorderApp.csproj|solutionrelative:screenrecorderapp\\viewmodels\\recorderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13D9BCD5-48D1-421B-A929-318BA7428232}|ScreenRecorderApp\\ScreenRecorderApp.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\screenrecorderapp\\views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{13D9BCD5-48D1-421B-A929-318BA7428232}|ScreenRecorderApp\\ScreenRecorderApp.csproj|solutionrelative:screenrecorderapp\\views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +18,31 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Git\\CSharpProject\\CSharpBaiseExerises\\\u503C\u7C7B\u578B\\Program.cs",
-              "RelativeDocumentMoniker": "\u503C\u7C7B\u578B\\Program.cs",
-              "ToolTip": "D:\\Git\\CSharpProject\\CSharpBaiseExerises\\\u503C\u7C7B\u578B\\Program.cs",
-              "RelativeToolTip": "\u503C\u7C7B\u578B\\Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAswBYAAAAgAAAAAAAAAA==",
+              "Title": "RecorderViewModel.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ScreenRecorderApp\\ViewModels\\RecorderViewModel.cs",
+              "RelativeDocumentMoniker": "ScreenRecorderApp\\ViewModels\\RecorderViewModel.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ScreenRecorderApp\\ViewModels\\RecorderViewModel.cs*",
+              "RelativeToolTip": "ScreenRecorderApp\\ViewModels\\RecorderViewModel.cs*",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAuwFMBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T15:10:20.44Z",
+              "WhenOpened": "2026-02-03T08:00:07.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainView.xaml",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ScreenRecorderApp\\Views\\MainView.xaml",
+              "RelativeDocumentMoniker": "ScreenRecorderApp\\Views\\MainView.xaml",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ScreenRecorderApp\\Views\\MainView.xaml",
+              "RelativeToolTip": "ScreenRecorderApp\\Views\\MainView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-03T07:58:46.843Z",
               "EditorCaption": ""
             }
           ]
