@@ -1,0 +1,7 @@
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\bin\Debug\ProcessA.exe.config
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\bin\Debug\ProcessA.exe
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\bin\Debug\ProcessA.pdb
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\obj\Debug\ProcessA.csproj.AssemblyReference.cache
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\obj\Debug\ProcessA.csproj.CoreCompileInputs.cache
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\obj\Debug\ProcessA.exe
+D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessA\obj\Debug\ProcessA.pdb
