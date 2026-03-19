@@ -1,7 +1,0 @@
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\bin\Debug\ProcessB.exe.config
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\bin\Debug\ProcessB.exe
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\bin\Debug\ProcessB.pdb
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\obj\Debug\ProcessB.csproj.AssemblyReference.cache
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\obj\Debug\ProcessB.csproj.CoreCompileInputs.cache
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\obj\Debug\ProcessB.exe
-D:\Project\Git\CSharpProject\CSharpBaiseExerises\ProcessB\obj\Debug\ProcessB.pdb

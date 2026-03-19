@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{581A68C2-3A4E-4F86-836E-654B7CA3DB86}|ProcessA\\ProcessA.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\processa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{581A68C2-3A4E-4F86-836E-654B7CA3DB86}|ProcessA\\ProcessA.csproj|solutionrelative:processa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E773F14-D814-4868-B06B-FB2469FAC730}|ProcessB\\ProcessB.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\processb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E773F14-D814-4868-B06B-FB2469FAC730}|ProcessB\\ProcessB.csproj|solutionrelative:processb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -18,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ProcessB\\Program.cs",
-              "RelativeDocumentMoniker": "ProcessB\\Program.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ProcessB\\Program.cs",
-              "RelativeToolTip": "ProcessB\\Program.cs",
-              "ViewState": "AgIAABQBAAAAAAAAAADwvzMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T08:20:29.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ProcessA\\Program.cs",
-              "RelativeDocumentMoniker": "ProcessA\\Program.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ProcessA\\Program.cs",
-              "RelativeToolTip": "ProcessA\\Program.cs",
-              "ViewState": "AgIAAI4BAAAAAAAAAADwv5ABAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T08:19:47.93Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -15,10 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFmpeg.AutoGenExample", "FF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenRecorder", "ScreenRecorder\ScreenRecorder.csproj", "{1724BC20-A19B-4E28-8BB5-D21B39399FA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessA", "ProcessA\ProcessA.csproj", "{581A68C2-3A4E-4F86-836E-654B7CA3DB86}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessB", "ProcessB\ProcessB.csproj", "{5E773F14-D814-4868-B06B-FB2469FAC730}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,22 +71,6 @@ Global
 		{1724BC20-A19B-4E28-8BB5-D21B39399FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1724BC20-A19B-4E28-8BB5-D21B39399FA8}.Release|x64.ActiveCfg = Release|Any CPU
 		{1724BC20-A19B-4E28-8BB5-D21B39399FA8}.Release|x64.Build.0 = Release|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Debug|x64.Build.0 = Debug|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Release|Any CPU.Build.0 = Release|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Release|x64.ActiveCfg = Release|Any CPU
-		{581A68C2-3A4E-4F86-836E-654B7CA3DB86}.Release|x64.Build.0 = Release|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Debug|x64.Build.0 = Debug|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Release|x64.ActiveCfg = Release|Any CPU
-		{5E773F14-D814-4868-B06B-FB2469FAC730}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
