@@ -1,0 +1,7 @@
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\bin\Debug\ProgramA.exe.config
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\bin\Debug\ProgramA.exe
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\bin\Debug\ProgramA.pdb
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\obj\Debug\ProgramA.csproj.AssemblyReference.cache
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\obj\Debug\ProgramA.csproj.CoreCompileInputs.cache
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\obj\Debug\ProgramA.exe
+D:\Project\Git\CSharpProject\NamePipeTest\ProgramA\obj\Debug\ProgramA.pdb
