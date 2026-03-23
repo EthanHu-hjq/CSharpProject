@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ProgramB
 {
@@ -12,9 +13,22 @@ namespace ProgramB
     {
         private static CancellationTokenSource _cancellationTokenSource;
         private static NamedPipeServerStream _pipeServer;
-        private static readonly ConcurrentQueue<string> _messageQueue = new ConcurrentQueue<string>();
+        private static readonly ConcurrentQueue<MessageItem> _messageQueue = new ConcurrentQueue<MessageItem>();
         private static readonly SemaphoreSlim _messageAvailable = new SemaphoreSlim(0, int.MaxValue);
         private static bool _isSending = false;
+
+        // 存储待确认的消息（消息内容 -> 发送时间+重发标记）
+        private static readonly ConcurrentDictionary<string, (DateTime SendTime, bool IsRetried)> _pendingAckMessages = new ConcurrentDictionary<string, (DateTime, bool)>();
+        // 确认消息超时时间（单位：毫秒）
+        private const int AckTimeoutMs = 3000;
+
+        // 新增：消息项实体，包含原始消息和是否已重发标记
+        private class MessageItem
+        {
+            public string Content { get; set; }
+            public DateTime SendTime { get; set; }
+            public bool IsRetried { get; set; }
+        }
 
         static async Task Main(string[] args)
         {
@@ -38,14 +52,17 @@ namespace ProgramB
                 _cancellationTokenSource = new CancellationTokenSource();
                 var cancellationToken = _cancellationTokenSource.Token;
 
-                // 清空消息队列
+                // 清空消息队列和待确认消息字典
                 while (_messageQueue.TryDequeue(out _)) { }
+                _pendingAckMessages.Clear();
                 _isSending = false;
 
                 // 创建接收、发送和输入任务
                 var receiveTask = Task.Run(() => ReceiveMessagesAsync(_pipeServer, cancellationToken), cancellationToken);
                 var sendTask = Task.Run(() => SendMessagesAsync(_pipeServer, cancellationToken), cancellationToken);
                 var inputTask = Task.Run(() => HandleConsoleInputAsync(cancellationToken), cancellationToken);
+                // 新增：检查确认超时的任务
+                //var ackCheckTask = Task.Run(() => CheckAckTimeoutAsync(cancellationToken), cancellationToken);
 
                 try
                 {
@@ -83,7 +100,7 @@ namespace ProgramB
         }
 
         /// <summary>
-        /// 接收来自客户端的消息
+        /// 接收来自客户端的消息（修改后：接收到消息回复确认 + 处理客户端的确认消息）
         /// </summary>
         private static async Task ReceiveMessagesAsync(NamedPipeServerStream pipeServer, CancellationToken cancellationToken)
         {
@@ -100,6 +117,22 @@ namespace ProgramB
                         {
                             string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                             Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 收到客户端消息: {message}");
+
+                            // 1. 判断是否是客户端的确认消息
+                            if (message.StartsWith("ACK: "))
+                            {
+                                // 提取原始消息内容（格式：ACK: 已收到消息 -> 原消息）
+                                string originalMsg = message.Substring(message.IndexOf("-> ") + 3);
+                                if (_pendingAckMessages.TryRemove(originalMsg, out _))
+                                {
+                                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 收到客户端确认: {originalMsg}");
+                                }
+                                continue; // 确认消息无需回复，直接跳过
+                            }
+
+                            // 2. 非确认消息：回复确认回执
+                            string ackMessage = $"ACK: 已收到消息 -> {message}";
+                            await SendAckMessageAsync(pipeServer, ackMessage, cancellationToken);
                         }
                         else if (bytesRead == 0)
                         {
@@ -128,7 +161,7 @@ namespace ProgramB
         }
 
         /// <summary>
-        /// 发送消息给客户端
+        /// 发送消息给客户端（修改后：记录发送状态 + 支持重发）
         /// </summary>
         private static async Task SendMessagesAsync(NamedPipeServerStream pipeServer, CancellationToken cancellationToken)
         {
@@ -145,12 +178,19 @@ namespace ProgramB
                             break;
 
                         // 从队列中获取消息
-                        if (_messageQueue.TryDequeue(out var message) && !string.IsNullOrWhiteSpace(message))
+                        if (_messageQueue.TryDequeue(out var messageItem) && !string.IsNullOrWhiteSpace(messageItem.Content))
                         {
                             _isSending = true;
-                            byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+                            byte[] messageBytes = Encoding.UTF8.GetBytes(messageItem.Content);
                             await pipeServer.WriteAsync(messageBytes, 0, messageBytes.Length, cancellationToken);
-                            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 已发送: {message}");
+                            await pipeServer.FlushAsync(cancellationToken); // 强制刷新缓冲区
+                            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 已发送: {messageItem.Content} ");
+
+                            // 记录待确认的消息（仅首次发送/未重发过的消息需要确认）
+                            if (!messageItem.IsRetried)
+                            {
+                                _pendingAckMessages[messageItem.Content] = (messageItem.SendTime, messageItem.IsRetried);
+                            }
                             _isSending = false;
                         }
                     }
@@ -174,7 +214,83 @@ namespace ProgramB
         }
 
         /// <summary>
-        /// 处理控制台输入
+        /// 新增：发送确认消息给客户端
+        /// </summary>
+        private static async Task SendAckMessageAsync(NamedPipeServerStream pipeServer, string ackMessage, CancellationToken cancellationToken)
+        {
+            if (pipeServer == null || !pipeServer.IsConnected || cancellationToken.IsCancellationRequested)
+                return;
+
+            try
+            {
+                byte[] ackBytes = Encoding.UTF8.GetBytes(ackMessage);
+                await pipeServer.WriteAsync(ackBytes, 0, ackBytes.Length, cancellationToken);
+                await pipeServer.FlushAsync(cancellationToken);
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 已回复确认消息: {ackMessage}");
+            }
+            catch (OperationCanceledException)
+            {
+                // 取消操作，无需处理
+            }
+            catch (Exception ex) when (ex is IOException || ex is ObjectDisposedException)
+            {
+                Console.WriteLine($"发送确认消息异常: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"发送确认消息失败: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 新增：检查待确认消息的超时，超时则重发一次
+        /// </summary>
+        private static async Task CheckAckTimeoutAsync(CancellationToken cancellationToken)
+        {
+            try
+            {
+                while (!cancellationToken.IsCancellationRequested)
+                {
+                    await Task.Delay(500, cancellationToken); // 每500ms检查一次
+
+                    // 遍历所有待确认的消息
+                    foreach (var msg in _pendingAckMessages.ToArray())
+                    {
+                        string message = msg.Key;
+                        var (sendTime, isRetried) = msg.Value;
+
+                        // 检查是否超时（超过3秒）且未重发过
+                        if (DateTime.Now - sendTime > TimeSpan.FromMilliseconds(AckTimeoutMs) && !isRetried)
+                        {
+                            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 消息[{message}]确认超时，准备重发...");
+
+                            // 标记为已重发
+                            _pendingAckMessages[message] = (sendTime, true);
+
+                            // 将消息重新加入发送队列（标记为已重发）
+                            _messageQueue.Enqueue(new MessageItem
+                            {
+                                Content = message,
+                                SendTime = DateTime.Now,
+                                IsRetried = true
+                            });
+                            _messageAvailable.Release(); // 通知发送任务
+                        }
+                    }
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                // 任务被取消
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"检查确认超时任务异常: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 处理控制台输入（修改后：封装MessageItem）
         /// </summary>
         private static async Task HandleConsoleInputAsync(CancellationToken cancellationToken)
         {
@@ -193,8 +309,13 @@ namespace ProgramB
 
                         if (!string.IsNullOrWhiteSpace(input))
                         {
-                            // 将消息加入队列
-                            _messageQueue.Enqueue(input);
+                            // 将消息封装为MessageItem加入队列
+                            _messageQueue.Enqueue(new MessageItem
+                            {
+                                Content = input,
+                                SendTime = DateTime.Now,
+                                IsRetried = false
+                            });
                             _messageAvailable.Release(); // 通知发送任务有消息可发送
                         }
                     }
@@ -212,7 +333,7 @@ namespace ProgramB
         }
 
         /// <summary>
-        /// 异步读取控制台输入
+        /// 异步读取控制台输入（无修改）
         /// </summary>
         private static Task<string> ReadConsoleLineAsync(CancellationToken cancellationToken)
         {
@@ -246,7 +367,7 @@ namespace ProgramB
         }
 
         /// <summary>
-        /// 等待任务完成，支持取消操作
+        /// 等待任务完成，支持取消操作（无修改）
         /// </summary>
         private static async Task<T> WaitForTaskWithCancellation<T>(Task<T> task, CancellationToken cancellationToken)
         {
