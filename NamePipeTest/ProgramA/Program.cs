@@ -31,31 +31,10 @@ namespace ProgramA
 
             try
             {
-                // 1. 初始化客户端
-                Console.WriteLine("[1] 初始化命名管道客户端...");
-                _client = new SimpleNamedPipeClient("myPipe");
-                Console.WriteLine($"  管道名称: {_client.PipeName}");
-                Console.WriteLine($"  服务器名称: {_client.ServerName}");
-                Console.WriteLine($"  连接超时: {_client.ConnectTimeout}ms");
-                Console.WriteLine("初始化完成！");
-
-                // 订阅事件
-                SubscribeToEvents();
-
-                // 2. 连接到服务器
-                Console.WriteLine("\n[2] 正在连接到服务器...");
-                try
-                {
-                    _client.Connect(); // 同步连接
-                    Console.WriteLine("连接成功！");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"连接失败: {ex.Message}");
-                    Console.WriteLine("请确保服务器程序正在运行，然后按任意键重试...");
-                    Console.ReadKey();
-                    return;
-                }
+                // 0. 检查服务器进程是否在运行，如果没有则启动服务器
+                CheckServerProcess();
+                // 1. 初始化客户端并连接到服务器
+                InitClient();                
 
                 // 3. 发送消息循环
                 Console.WriteLine("\n[3] 进入消息发送模式...");
@@ -131,6 +110,51 @@ namespace ProgramA
         }
 
         /// <summary>
+        /// 检查服务器进程是否在运行，如果没有则启动服务器
+        /// </summary>
+        private static void CheckServerProcess()
+        {
+            Console.WriteLine("[0] 检查服务器进程...");
+            if (!ProcessManager.IsProcessRunning("ProgramB"))
+            {
+                Console.WriteLine("服务器未运行，正在启动服务器...");
+                ProcessManager.StartProcess(@"D:\Project\Git\CSharpProject\NamePipeTest\ProgramB\bin\Debug\ProgramB.exe");
+                Thread.Sleep(2000); // 等待服务器启动
+            }
+            else
+            {
+                Console.WriteLine("服务器已在运行");
+            }
+        }
+
+        /// <summary>
+        /// 初始化客户端并订阅事件,连接到服务器
+        /// </summary>
+        private static void InitClient()
+        {
+            Console.WriteLine("[1] 初始化命名管道客户端...");
+            _client = new SimpleNamedPipeClient("myPipe");
+            Console.WriteLine($"  管道名称: {_client.PipeName}");
+            Console.WriteLine($"  服务器名称: {_client.ServerName}");
+            Console.WriteLine($"  连接超时: {_client.ConnectTimeout}ms");
+            Console.WriteLine("初始化完成！");
+            SubscribeToEvents();
+            // 2. 连接到服务器
+            Console.WriteLine("\n正在连接到服务器...");
+            try
+            {
+                _client.Connect(); // 同步连接
+                Console.WriteLine("连接成功！");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"连接失败: {ex.Message}");
+                Console.ReadKey();
+                return;
+            }
+        }
+
+        /// <summary>
         /// 清理资源
         /// </summary>
         private static async Task CleanupResources()
@@ -196,6 +220,9 @@ namespace ProgramA
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"[收到] {e.Message} (时间: {e.Timestamp:HH:mm:ss.fff})");
                 Console.ResetColor();
+                Thread.Sleep(100);
+                //Console.WriteLine($"客户端已收到消息: {e.Message}");
+                _client.Send(e.Message); // 同步发送
                 _receivedEvent.Set(); // 通知主线程已收到消息
             };
 
@@ -287,7 +314,7 @@ namespace ProgramA
                 _receivedEvent.Reset();
 
                 // 设置超时等待
-                bool received = _receivedEvent.Wait(3000); // 等待3秒
+                bool received = _receivedEvent.Wait(1000); // 等待3秒
 
                 if (received)
                 {
