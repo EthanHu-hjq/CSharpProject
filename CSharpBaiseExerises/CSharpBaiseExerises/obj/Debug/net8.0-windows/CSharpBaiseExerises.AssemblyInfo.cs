@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpBaiseExerises")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+650dc3304b38835db50443f608e8d334737c5fbd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4287324432dd009fbe330b8d39e01a76a8426883")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpBaiseExerises")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpBaiseExerises")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
