@@ -118,7 +118,7 @@ namespace ProgramA
             if (!ProcessManager.IsProcessRunning("ProgramB"))
             {
                 Console.WriteLine("服务器未运行，正在启动服务器...");
-                ProcessManager.StartProcess(@"D:\Project\Git\CSharpProject\NamePipeTest\ProgramB\bin\Debug\ProgramB.exe");
+                ProcessManager.StartProcess(@"D:\Project\Git\Ethan-Personal-Project\TYM_DataUploadTool\TYM_DataUploadTool\bin\Debug\net8.0-windows\TYM_DataUploadTool.exe");
                 Thread.Sleep(2000); // 等待服务器启动
             }
             else

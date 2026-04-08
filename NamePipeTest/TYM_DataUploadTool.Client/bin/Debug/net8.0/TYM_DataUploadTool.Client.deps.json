@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TYM_DataUploadTool.Client/1.0.0": {
+        "runtime": {
+          "TYM_DataUploadTool.Client.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TYM_DataUploadTool.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

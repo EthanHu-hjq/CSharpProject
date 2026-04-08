@@ -1,0 +1,15 @@
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\bin\Debug\net8.0\TYM_DataUploadTool.Client.exe
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\bin\Debug\net8.0\TYM_DataUploadTool.Client.deps.json
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\bin\Debug\net8.0\TYM_DataUploadTool.Client.runtimeconfig.json
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\bin\Debug\net8.0\TYM_DataUploadTool.Client.dll
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\bin\Debug\net8.0\TYM_DataUploadTool.Client.pdb
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.AssemblyInfoInputs.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.AssemblyInfo.cs
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.csproj.CoreCompileInputs.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.sourcelink.json
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.dll
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\refint\TYM_DataUploadTool.Client.dll
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.pdb
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\TYM_DataUploadTool.Client.genruntimeconfig.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TYM_DataUploadTool.Client\obj\Debug\net8.0\ref\TYM_DataUploadTool.Client.dll

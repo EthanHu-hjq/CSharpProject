@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2684BFE-2FDB-4F28-AB89-FDF648FAD543}|ProgramA\\ProgramA.csproj|D:\\Project\\Git\\CSharpProject\\NamePipeTest\\programa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2684BFE-2FDB-4F28-AB89-FDF648FAD543}|ProgramA\\ProgramA.csproj|solutionrelative:programa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2684BFE-2FDB-4F28-AB89-FDF648FAD543}|ProgramA\\ProgramA.csproj|D:\\Project\\Git\\CSharpProject\\NamePipeTest\\programa\\processmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2684BFE-2FDB-4F28-AB89-FDF648FAD543}|ProgramA\\ProgramA.csproj|solutionrelative:programa\\processmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2684BFE-2FDB-4F28-AB89-FDF648FAD543}|ProgramA\\ProgramA.csproj|D:\\Project\\Git\\CSharpProject\\NamePipeTest\\programa\\namedpipeclientlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2684BFE-2FDB-4F28-AB89-FDF648FAD543}|ProgramA\\ProgramA.csproj|solutionrelative:programa\\namedpipeclientlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08E55E14-B9D1-485B-ABBB-784A87ED2B73}|ProgramB\\ProgramB.csproj|d:\\project\\git\\csharpproject\\namepipetest\\programb\\namedpipeservertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08E55E14-B9D1-485B-ABBB-784A87ED2B73}|ProgramB\\ProgramB.csproj|solutionrelative:programb\\namedpipeservertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08E55E14-B9D1-485B-ABBB-784A87ED2B73}|ProgramB\\ProgramB.csproj|d:\\project\\git\\csharpproject\\namepipetest\\programb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08E55E14-B9D1-485B-ABBB-784A87ED2B73}|ProgramB\\ProgramB.csproj|solutionrelative:programb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DB001E90-6819-4990-9F91-3648BE5E6D8C}|TYM_DataUploadTool.Client\\TYM_DataUploadTool.Client.csproj|d:\\project\\git\\csharpproject\\namepipetest\\tym_datauploadtool.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB001E90-6819-4990-9F91-3648BE5E6D8C}|TYM_DataUploadTool.Client\\TYM_DataUploadTool.Client.csproj|solutionrelative:tym_datauploadtool.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,67 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NamedPipeServerTool.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramB\\NamedPipeServerTool.cs",
-              "RelativeDocumentMoniker": "ProgramB\\NamedPipeServerTool.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramB\\NamedPipeServerTool.cs",
-              "RelativeToolTip": "ProgramB\\NamedPipeServerTool.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAAlwN0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T00:31:54.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramB\\Program.cs",
-              "RelativeDocumentMoniker": "ProgramB\\Program.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramB\\Program.cs",
-              "RelativeToolTip": "ProgramB\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAcwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T02:36:43.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProcessManager.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramA\\ProcessManager.cs",
-              "RelativeDocumentMoniker": "ProgramA\\ProcessManager.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramA\\ProcessManager.cs",
-              "RelativeToolTip": "ProgramA\\ProcessManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T00:09:58.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NamedPipeClientLibrary.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramA\\NamedPipeClientLibrary.cs",
-              "RelativeDocumentMoniker": "ProgramA\\NamedPipeClientLibrary.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramA\\NamedPipeClientLibrary.cs",
-              "RelativeToolTip": "ProgramA\\NamedPipeClientLibrary.cs",
-              "ViewState": "AgIAACYCAAAAAAAAAAAYwEYCAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T06:22:31.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramA\\Program.cs",
-              "RelativeDocumentMoniker": "ProgramA\\Program.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\ProgramA\\Program.cs",
-              "RelativeToolTip": "ProgramA\\Program.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAswN8AAAA9AAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TYM_DataUploadTool.Client\\Program.cs",
+              "RelativeDocumentMoniker": "TYM_DataUploadTool.Client\\Program.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TYM_DataUploadTool.Client\\Program.cs",
+              "RelativeToolTip": "TYM_DataUploadTool.Client\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwA4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T09:15:10.859Z",
+              "WhenOpened": "2026-04-08T02:59:26.967Z",
               "EditorCaption": ""
             }
           ]
