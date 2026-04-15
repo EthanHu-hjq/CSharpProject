@@ -1,0 +1,7 @@
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\bin\Debug\TimeSyncTool.exe.config
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\bin\Debug\TimeSyncTool.exe
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\bin\Debug\TimeSyncTool.pdb
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\obj\Debug\TimeSyncTool.csproj.AssemblyReference.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\obj\Debug\TimeSyncTool.csproj.CoreCompileInputs.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\obj\Debug\TimeSyncTool.exe
+D:\Project\Git\CSharpProject\NamePipeTest\TimeSyncToolNew\obj\Debug\TimeSyncTool.pdb

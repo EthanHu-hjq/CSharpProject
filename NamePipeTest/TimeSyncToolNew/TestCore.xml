@@ -1,0 +1,3045 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestCore</name>
+    </assembly>
+    <members>
+        <member name="T:TestCore.DelegateCommand">
+            <summary>
+            Delegate Command For WPF MVVM
+            </summary>
+        </member>
+        <member name="T:TestCore.TF_Base">
+            <summary>
+            Base Class For All. Contains the Const Value, and Log Function
+            </summary>
+        </member>
+        <member name="P:TestCore.TF_Base.TRUE_STRING">
+            <summary>
+            Const of Boolean String
+            </summary>
+        </member>
+        <member name="M:TestCore.TF_Base.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:TestCore.TF_Base.Info(System.Object)">
+            <summary>
+            Info. For record the Normal message for tracing process of program
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:TestCore.TF_Base.Debug(System.Object)">
+            <summary>
+            Debug. For record the detail message for engineer watch the variant of  program
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:TestCore.TF_Base.Warn(System.Object)">
+            <summary>
+            Warn. For record the known exception which had been handled or could be ignored
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:TestCore.TF_Base.Error(System.Object)">
+            <summary>
+            Error. For record the exception which might not be know and the program should keep working
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:TestCore.TF_Base.Fatal(System.Object)">
+            <summary>
+            Fatal. For record the exception which will make program crashed.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:TestCore.TF_Base.StaticLog(System.String)">
+            <summary>
+            For Log the message in Static Method.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:TestCore.SingleLog">
+            <summary>
+            SingleLog is for record the log which should depends on some staff but not the date.
+            </summary>
+        </member>
+        <member name="M:TestCore.SingleLog.#ctor(System.String,System.String)">
+            <summary>
+            ctor
+            </summary>
+            <param name="dir">dir for storing log file</param>
+            <param name="head">tag of this log file</param>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.ServerAddress">
+            <summary>
+            Remote Server Address
+            </summary>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.RemoteServiceDir">
+            <summary>
+            Root dir of remote service
+            </summary>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.TempDownloadDir">
+            <summary>
+            Temp dir for download file from remote service
+            </summary>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.LicensePath">
+            <summary>
+            Path of lic file. Could be relative
+            </summary>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.ServerAccount">
+            <summary>
+            Account of the lic.
+            </summary>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.ReleaseCode">
+            <summary>
+            Reserved
+            </summary>
+        </member>
+        <member name="P:TestCore.RemoteServiceConfig.DataSync">
+            <summary>
+            Enable Data Sync
+            </summary>
+        </member>
+        <member name="F:TestCore.RemoteServiceConfig.Instance">
+            <summary>
+            Singletone
+            </summary>
+        </member>
+        <member name="T:TestCore.IXmlSerializable">
+            <summary>
+            Xml Serialization and Deserialization
+            </summary>
+        </member>
+        <member name="M:TestCore.IXmlSerializable.XmlSerialize">
+            <summary>
+            Serialize object into xml.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.IXmlSerializable.XmlDeserialize(System.Xml.Linq.XElement)">
+            <summary>
+            Deserialize the xml into Object. NOTE: the current instance might be modified.
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Extension.XmlDeserialize``1(TestCore.Nest{``0},System.Xml.Linq.XElement)">
+            <summary>
+            XmlDeserialize for Nest
+            if the xml of T has the sub elements, make the untaged element to be null.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="nest"></param>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Extension.Assert``2(TestCore.Abstraction.Base.INest{``0},TestCore.Abstraction.Base.INest{``1},System.Func{``0,``1,System.Boolean})">
+            <summary>
+            if element count false, if predict false, false and return immediately
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="nest"></param>
+            <param name="target"></param>
+            <param name="predict"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.Base.IGroupItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TestCore.Base.IGroupItem.Generator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TestCore.Base.IGroupItem.Load">
+            <summary>
+            Load items from Source
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Base.IGroupItem.Generate">
+            <summary>
+            Generate the Source.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Base.IGroupItem.Save">
+            <summary>
+            Save items into Source
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.Base.TF_GroupItem`1">
+            <summary>
+            Group Item is for app implement a customizable options for Users 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TestCore.Base.XmlSerializerHelper.Serialize(System.Object)">
+            <summary>
+            Serialize an object using the XmlSerializer.
+            </summary>
+            <param name="item">The object that must be serialized</param>
+            <returns>A XML string.</returns>
+        </member>
+        <member name="M:TestCore.Base.XmlSerializerHelper.Deserialize(System.String,System.Type)">
+            <summary>
+            Deserialize an XML string into an object using the XmlSerializer.
+            </summary>
+            <param name="item">The string that must be deserialized.</param>
+            <param name="type">The type of the serialized object.</param>
+            <returns>The object deserialized.</returns>
+        </member>
+        <member name="T:TestCore.BlockingQueue">
+            <summary>
+            Default BlockingQueue of BolckingQueue of object
+            </summary>
+        </member>
+        <member name="T:TestCore.BlockingQueue`1">
+            <summary>
+            Queue with block when Enqueue and Dequeue
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:TestCore.BlockingQueue`1.Count">
+            <summary>
+            Count of queue
+            </summary>
+        </member>
+        <member name="M:TestCore.BlockingQueue`1.Dequeue(`0@,System.Int32)">
+            <summary>
+            Dequeue. if there is no element, wait till timeout
+            </summary>
+            <param name="result"></param>
+            <param name="timeout_ms"></param>
+            <returns>
+            true: dequeue succeed
+            false: dequeue failed
+            </returns>
+        </member>
+        <member name="M:TestCore.BlockingQueue`1.Enqueue(`0,System.Int32)">
+            <summary>
+            Enqueue. if queue is full, wait till timeout
+            </summary>
+            <param name="value"></param>
+            <param name="timeout_ms"></param>
+            <returns>
+            true: enqueue succeed
+            false: enqueue failed
+            </returns>
+        </member>
+        <member name="T:TestCore.NamedPipeQueueServer">
+            <summary>
+            Named Pipe Queue. Server, is blocking queue
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:TestCore.Nest`1.Parent" -->
+        <member name="M:TestCore.Nest`1.Run(System.Action{`0})">
+            <summary>
+            
+            </summary>
+            <param name="func">Function to exec Element</param>
+        </member>
+        <member name="M:TestCore.Nest`1.Run``1(System.Action{`0,``0},``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="X"></typeparam>
+            <param name="func"></param>
+            <param name="p1"></param>
+        </member>
+        <member name="M:TestCore.Nest`1.Run``2(System.Action{`0,``0,``1},``0,``1)">
+            <summary>
+            
+            </summary>
+            <typeparam name="X"></typeparam>
+            <typeparam name="Y"></typeparam>
+            <param name="func"></param>
+            <param name="p1"></param>
+            <param name="p2"></param>
+        </member>
+        <member name="M:TestCore.Nest`1.SyncRun``1(TestCore.Nest{``0},System.Action{`0,``0})">
+            <summary>
+            Need the Structure is totally matched
+            </summary>
+            <typeparam name="V"></typeparam>
+            <param name="nest"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:TestCore.Nest`1.ContainNest``1(TestCore.Nest{``0},System.Func{`0,``0,System.Boolean})">
+            <summary>
+            Top Element will not compared
+            </summary>
+            <typeparam name="V"></typeparam>
+            <param name="target"></param>
+            <param name="predict"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TestCore.BiNest`1.Children">
+            <summary>
+            Children. which will be created on constructor
+            </summary>
+        </member>
+        <member name="M:TestCore.FlatNest`1.ContainFlat``1(TestCore.FlatNest{``0},System.Func{`0,``0,System.Boolean})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flat"></param>
+            <param name="target"></param>
+            <param name="predict"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.FlatNest`1.SyncRunFlat``1(TestCore.FlatNest{``0},System.Action{`0,``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flat"></param>
+            <param name="target"></param>
+            <param name="predict"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.TF_Utility">
+            <summary>
+            General Utility for Normal usage
+            </summary>
+        </member>
+        <member name="M:TestCore.TF_Utility.DecToArbitraryScale(System.Int32,System.Char[])">
+            <summary>
+            Default is to 0-9A-Z, 36
+            </summary>
+            <param name="num"></param>
+            <param name="chartable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.DecToZnum_2Char(System.Int32)">
+            <summary>
+            Friendly Convert Decimal to Znum. 00-99, 0A-0Z-9A-9Z, A0-AZ-Z0-ZZ
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.ZnumToDec_2Char(System.String)">
+            <summary>
+            Friendly Revert Decimal from Znum. 00-99, 0A-0Z-9A-9Z, A0-AZ-Z0-ZZ
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.GetMetaFromRecordName(System.String,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.DateTime@,System.Boolean@,TestCore.TF_TestStatus@,System.String[]@)">
+            <summary>
+            
+            </summary>
+            <param name="filename"></param>
+            <param name="sn">Any charactor</param>
+            <param name="customer">only word</param>
+            <param name="product">only word and -</param>
+            <param name="station">any word</param>
+            <param name="stationid">2 charactor, 00-99,A0-ZZ</param>
+            <param name="slotid">1 or more charactor, 0-9, 10-99, A0-ZZ</param>
+            <param name="datetime"></param>
+            <param name="issfc"></param>
+            <param name="status">Pass, Fail, Error</param>
+        </member>
+        <member name="M:TestCore.TF_Utility.TsReportNameTransformer(System.String,System.Boolean)">
+            <summary>
+            Transform TS report name to TYM Standard. SN mightbe contain "_", required by Sidney
+            </summary>
+            <param name="rawname"></param>
+            <param name="online"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.ReportNameTransformer(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            For Support SN containing _
+            add support 20250415 11AM1982CP0000658_Harman_PBS_AMP-BAP_2025 3 25 星期二_10 40 00_00_0_Failed.xml
+            </summary>
+            <param name="rawname"></param>
+            <param name="customer"></param>
+            <param name="project"></param>
+            <param name="station"></param>
+            <param name="online"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.AvailablePingTest(System.String[])">
+            <summary>
+            it will take about 9-10s for ping.send timeout.
+            ping.sendpingasnyc could not work properly
+            </summary>
+            <param name="ips"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.CheckNetwork(System.String@,System.String@,System.String@)">
+            <summary>
+            Check the intranat network info which is Dns-Eligible.
+            This method is trying to be compatiable directly connection, connection via router
+            </summary>
+            <returns>True if there is NIC available</returns>
+        </member>
+        <member name="F:TestCore.TF_Utility.re_route">
+            <summary>
+                      0.0.0.0          0.0.0.0      192.168.1.1    192.168.1.144     80
+            </summary>
+        </member>
+        <member name="M:TestCore.TF_Utility.GetCheckValue(System.String)">
+            <summary>
+            For check the string to prevent modification.
+            </summary>
+            <param name="source"></param>
+            <returns>XOR Byte String</returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.SnRuleToRegex(System.String)">
+            <summary>
+            convert sn rule to regex
+            </summary>
+            <param name="snrule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.TF_Utility.GenerateAutoVersion(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Auto Version
+            </summary>
+            <param name="major">Default 0</param>
+            <param name="minor">Default 0</param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.AuthType">
+            <summary>
+            Role of User
+            </summary>
+        </member>
+        <member name="F:TestCore.AuthType.Anonymous">
+            <summary>
+            No Login
+            </summary>
+        </member>
+        <member name="F:TestCore.AuthType.Tester">
+            <summary>
+            Login with name Only. TODO, Verify uid
+            </summary>
+        </member>
+        <member name="F:TestCore.AuthType.LineLeader">
+            <summary>
+            For product line leader
+            </summary>
+        </member>
+        <member name="F:TestCore.AuthType.Maintainer">
+            <summary>
+            For test technician.
+            </summary>
+        </member>
+        <member name="F:TestCore.AuthType.Engineer">
+            <summary>
+            For Engineer.
+            </summary>
+        </member>
+        <member name="F:TestCore.AuthType.Admin">
+            <summary>
+            Admin
+            </summary>
+        </member>
+        <member name="T:TestCore.Location">
+            <summary>
+            Location.
+            </summary>
+        </member>
+        <member name="T:TestCore.TF_ItemStatus">
+            <summary>
+            Item Status, for item result
+            </summary>
+        </member>
+        <member name="T:TestCore.TF_TestStatus">
+            <summary>
+            Test Status. For Test Conclusion
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.IDLE">
+            <summary>
+            After Initialization, before entering test loop
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.WAIT_DUT">
+            <summary>
+            After DUT Identification, before Testing
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.TEST_INIT">
+            <summary>
+            Initializing
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.TESTING">
+            <summary>
+            Testing
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.PASSED">
+            <summary>
+            Test Passed
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.FAILED">
+            <summary>
+            Test Failed
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.WAIVE">
+            <summary>
+            Test Waive
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.TERMINATED">
+            <summary>
+            Test Terminated
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.ABORT">
+            <summary>
+            Test Abort
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.ERROR">
+            <summary>
+            Test Error
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.NULL">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestStatus.DISABLED">
+            <summary>
+            Test Slot Has been disabled
+            </summary>
+        </member>
+        <member name="T:TestCore.CaseType">
+            <summary>
+            Test Case Type
+            </summary>
+        </member>
+        <member name="T:TestCore.Comparison">
+            <summary>
+            Comparison Type
+            </summary>
+        </member>
+        <member name="T:TestCore.TF_TestMode">
+            <summary>
+            Test Mode
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestMode.ONLINE">
+            <summary>
+            Online, for normal
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:TestCore.TF_TestMode.OFFLINE" -->
+        <member name="F:TestCore.TF_TestMode.DEBUG">
+            <summary>
+            Debug. with more log, and with break point enable
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_TestMode.LOOP">
+            <summary>
+            Loop Test Mode. TODO
+            </summary>
+        </member>
+        <member name="T:TestCore.RunMode">
+            <summary>
+            Mode to run test sequence
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Normal">
+            <summary>
+            As default set, no change
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Sequential">
+            <summary>
+            Sequential Mode
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Parallel">
+            <summary>
+            Parallel Mode
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Batch">
+            <summary>
+            Batch Mode
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Default_Sequential">
+            <summary>
+            Sequential mode in Origin
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Default_Parallel">
+            <summary>
+            Parallel mode in Origin
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Default_Batch">
+            <summary>
+            Batch mode in Origin
+            </summary>
+        </member>
+        <member name="F:TestCore.RunMode.Customized">
+            <summary>
+            For load Customized Model
+            </summary>
+        </member>
+        <member name="T:TestCore.InputSnMode">
+            <summary>
+            Interaction mode of Input SN
+            </summary>
+        </member>
+        <member name="F:TestCore.InputSnMode.Normal">
+            <summary>
+            One SN per Slot, with code to enable Slot
+            </summary>
+        </member>
+        <member name="F:TestCore.InputSnMode.Simple">
+            <summary>
+            One SN per slot, and the order by slot index automatically
+            </summary>
+        </member>
+        <member name="F:TestCore.InputSnMode.Inherit">
+            <summary>
+            One SN for all slot
+            </summary>
+        </member>
+        <member name="F:TestCore.InputSnMode.PostfixByMainSn">
+            <summary>
+            One Prefix SN scanned. and all slot sn was generated by this Prefix sn and relative information.
+            </summary>
+        </member>
+        <member name="T:TestCore.TF_StationNames">
+            <summary>
+            Standard Station Name. CG-A-003 PTE ABBREVIATION DEFINITIONS v1.0.1
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.BDL">
+            <summary>
+            Board Level Firmware Download
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.BFT">
+            <summary>
+            Board Level functional Test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.BRF">
+            <summary>
+            Board Level RF(BT/Wifi/Zigbee)
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.BAP">
+            <summary>
+            Board Level AP Test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.SFT">
+            <summary>
+            Sub assemble function test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.SAP">
+            <summary>
+            Sub assemble AP Test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.SASF">
+            <summary>
+            Sub assemble Safety test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.AFT">
+            <summary>
+            Assembly functional test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.AAL">
+            <summary>
+            Assembly Airleak Test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.ARF">
+            <summary>
+            Assembly RF test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.AAC">
+            <summary>
+            Assemblyacoustic
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.AAP">
+            <summary>
+            Assembly AP test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.RIT">
+            <summary>
+            Run in test/ Burn in Test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.FST">
+            <summary>
+            Factory shipment setup
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.ALT">
+            <summary>
+            Assembly Listening Test
+            </summary>
+        </member>
+        <member name="F:TestCore.TF_StationNames.LBP">
+            <summary>
+            Label print
+            </summary>
+        </member>
+        <member name="T:TestCore.Configuration.GeneralConfig">
+            <summary>
+            General Config, basically for Test Engine
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.RestrictLimit">
+            <summary>
+            If true, the spec will be from SPEC file, otherwise using SEQ setting
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.AutoCapitalSn">
+            <summary>
+            If true, the Serial Number will be capitalize automatically
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.RE_SerialNumber">
+            <summary>
+            Regular Expression for Serial Number, such as .+ means any not null input
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.RE_SubSn">
+            <summary>
+            means the RE to replace the part of Main SN, if no match, the SubSN will insert into the word matched.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.SubSN">
+            <summary>
+            formular of sub sn. d2 means deciamal, and 2 characters. start from 1.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.CustomizeInputSn">
+            <summary>
+            Reserved
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.RE_SocketNumber">
+            <summary>
+            Regular Expression for Slot Number, if input match the RE, the relative slot will be actived
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.InputUserName">
+            <summary>
+            if true, promote a input box for UserName, otherwise use default
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.ReportPath">
+            <summary>
+            Report path for TestCore csv 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.RunMode">
+            <summary>
+            Run Mode. Normal, Batch, etc...
+            Default is Normal
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.InputSnMode">
+            <summary>
+            Input Sn Mode. Normal, Simple, Inherit, PostfixByMainSn
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.Raw_ReportPath">
+            <summary>
+            Report path for raw report 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.AdditionalReportPath">
+            <summary>
+            Report path for additional report 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.PushAdditionalReport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.AutoBreakWhenFailure">
+            <summary>
+            Break the Execution when Failure
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.AutoCleanupWhenFailure">
+            <summary>
+            Goto Cleanup when Failure
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.SocketCount">
+            <summary>
+            Count of Socket Count, if less than 1, should be treated as 1
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.LoopTest">
+            <summary>
+            Loop Test Count, if less than 1, should be treated as 1. If more than 1, the test should ignore input SN to make test loopped.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.SpecName">
+            <summary>
+            Default is null. to load specific spec name if RestrictLimit is enabled 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.SpecVersion">
+            <summary>
+            Default is null. to load specific spec version if RestrictLimit is enabled 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.Prefix_DefectCode">
+            <summary>
+            default D-
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.RestrictLimitOnlyForDefectCode">
+            <summary>
+            Should be Hiden field. default false for inherit defect code Only
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.DisableRemoteReport">
+            <summary>
+            Should be Hiden field. default false
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.TestTimeout">
+            <summary>
+            time out for each test cycle
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.ErrorHandle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.ScreenshotOnFailure">
+            <summary>
+            Screenshot when failure
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.EnableAdditionalFileForAll">
+            <summary>
+            Save Additonal file in any case
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.EnableAdditionalFileOnFailure">
+            <summary>
+            Save additional file when failure
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.EnableTymReport">
+            <summary>
+            Save report as Tym format
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.CalibrationPeriod">
+            <summary>
+            Unit Day
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.CalibrationWarning">
+            <summary>
+            Unit Day
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.ReferencePeriod">
+            <summary>
+            Unit Day
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.ReferenceWarning">
+            <summary>
+            Unit Day
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.VerificationPeriod">
+            <summary>
+            Unit Day
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.VerificationWarning">
+            <summary>
+            Unit Day
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.FixtureTestCountWarning">
+            <summary>
+            if the limit gt 0, and warning gt 0, warning before the test count + warning count less then limit count
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.GeneralConfig.SecondarySpecs">
+            <summary>
+            For Binning, Key is the spec path, Value is Bin Tag. the empty path means current effective one
+            For dict does not promise the order. DO NOT remove items,
+            Using Dictionay for check duplication. the spec path should not be duplicated
+            </summary>
+        </member>
+        <member name="T:TestCore.Configuration.GlobalConfiguration">
+            <summary>
+            Replace to GlobalConfiguration.Default
+            This Singleton class is for the Global Configration which could be in all appdomain.
+            Since the test seq will be run under apps, the config file need to be duplicated
+            Priority: App folder, DEFAULT_PATH.
+            </summary>
+        </member>
+        <member name="T:TestCore.Configuration.SFCsConfig">
+            <summary>
+            SFCs Config. For MES
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.IsNetworkAvailable">
+            <summary>
+            If network is available, do validation and and return the result
+            via ping tymphany.com
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.EnableSfc">
+            <summary>
+            Enable Sfc funciton or not, if false, all sfcs function will not work
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.DisableCheckStation">
+            <summary>
+            Disable Check Station, Hidden property, default false
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.PostCheckStation">
+            <summary>
+            Check Station after commit data which for confirm if the dut need to be retest, Hidden property, default false
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.SfcsTable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.SfcsUploadData">
+            <summary>
+            If upload test data into Sfc.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.Product">
+            <summary>
+            SFC Product, if empty, using Station.Project as default
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.Station">
+            <summary>
+            SFC Station, if empty, using Station.Station as default
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.SfcsDataMode">
+            <summary>
+            Data mode for upload into SFCs. Attr of SfcsUploadData
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.GetPartNoApi">
+            <summary>
+            SFCs Api for Getting PartNo, default Get_Model
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.GetDsnApi">
+            <summary>
+            Get DSN From SFCs, for Automation
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.GetSpecialValueApi">
+            <summary>
+            SFCs Api for Getting Special Value, the parameter of API must be SN
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.Version">
+            <summary>
+            Tymphany Requirements
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.Lock">
+            <summary>
+            Lock the Sfcs Status, to prevent switch Sfcs Status manually
+            Default False
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.PersitPartNo">
+            <summary>
+            Persitent PartNo
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.PersitLineNo">
+            <summary>
+            Persit LineNo
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.MachineId">
+            <summary>
+            For Compatible with Primax SMT
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.IsValid">
+            <summary>
+            Do not Commit Result if there PassFail item failed
+            For Apx, Default False
+            Implement by Hook, Do not config anymore
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.SFCsConfig.NetworkTestTarget">
+            <summary>
+            if not set, the default is ftpXd.tymphany.com, X means the 2nd part of IPv4
+            </summary>
+        </member>
+        <member name="T:TestCore.Configuration.StationConfig">
+            <summary>
+            Station Config for Physical Station.
+            1 instance might map to multiple type of station
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.BU">
+            <summary>
+            Business Unit. For internal usage, Set to be "Tymphany", Reserved
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.CustomerName">
+            <summary>
+            Customer Name. DO USE the customer Alias. For internal usage, Set to be PTE 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.ProjectName">
+            <summary>
+            Project Name. DO USE the internal project Alias. 
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.StationName">
+            <summary>
+            Station Name
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.StationType">
+            <summary>
+            System, Electronics, Module, Driver. Default System
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.StationID">
+            <summary>
+            Station Id. Write Station ID persistantly need call WriteStationIDIntoRegistry
+            If stationid is null, it will try to call ReadStationIDFromRegistry to get local setting
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.ProductName">
+            <summary>
+            Product Name. Be same as Project Name.
+            Tranditionally, product name is a product which belongs to a seria product in one project.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.ProcessNo">
+            <summary>
+            Procedure Number, Be Same As StaionName in TYMPHANY
+            Tranditionally, Procedure Number is to identify the procedure improvement.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.LineNo">
+            <summary>
+            Product Line Number of this station
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.Location">
+            <summary>
+            Manufactory Site. it will be updated to be Vendor when setting Vendor
+            if Location is Auto, it will be determinated by IPAddress
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.Vendor">
+            <summary>
+            Default is Empty, if not, the Location will autoset to be Vendor
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.Host">
+            <summary>
+            Server Host Address
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.Stage">
+            <summary>
+            Reserved. xVT/MP
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.SiteFlag">
+            <summary>
+            Site Flag, for tag the domain name of servers. such as ftpXd, ravenX
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.IpAddress">
+            <summary>
+            Test Machine IPAddress. Warning Need Updated With MAC both.
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.IPAddress">
+            <summary>
+            Obsoleted. Please use IpAddress instead
+            </summary>
+        </member>
+        <member name="P:TestCore.Configuration.StationConfig.MAC">
+            <summary>
+            TestStation MAC. Warning Need Updated With IPAddress both.
+            </summary>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Construct from system.xml, which will auto detect the ipaddress and location
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            For Handling Offline Data
+            </summary>
+            <param name="bu"></param>
+            <param name="customername"></param>
+            <param name="projectname"></param>
+            <param name="productname"></param>
+            <param name="stationname"></param>
+            <param name="stationid"></param>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.ReadFromRegistry">
+            <summary>
+            Read Station Config from Registy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.WriteLocationFromRegistry(System.String,System.String)">
+            <summary>
+            Write the site name and site host into Registry as location and host
+            </summary>
+            <param name="sitename"></param>
+            <param name="sitehost"></param>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.Equals(System.Object)">
+            <summary>
+            Compare with BU, CustomerName, ProjectName, ProductName, LineNo, StationName, ProcessNo, StationID, Stage
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.XmlSerialize">
+            <summary>
+            Do not serialize Location, since this should not specified for software, it should read from in Lark
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Configuration.StationConfig.CheckNetwork">
+            <summary>
+            Check the internat network info which is Dns-Eligible.
+            This method is trying to be compatiable directly connection, connection via router
+            </summary>
+            <returns>True if there is NIC available</returns>
+        </member>
+        <member name="T:TestCore.Ctrls.GeneralSetting">
+            <summary>
+            Interaction logic for GeneralSetting.xaml
+            </summary>
+            <summary>
+            GeneralSetting
+            </summary>
+        </member>
+        <member name="M:TestCore.Ctrls.GeneralSetting.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TestCore.Ctrls.HexNumber">
+            <summary>
+            Interaction logic for HexNumber.xaml
+            </summary>
+            <summary>
+            HexNumber
+            </summary>
+        </member>
+        <member name="M:TestCore.Ctrls.HexNumber.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TestCore.Ctrls.SfcsSetting">
+            <summary>
+            Interaction logic for SfcsSetting.xaml
+            </summary>
+            <summary>
+            SfcsSetting
+            </summary>
+        </member>
+        <member name="M:TestCore.Ctrls.SfcsSetting.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:TestCore.Ctrls.SlotInfo.Index">
+            <summary>
+            Slot Index, Start with 0
+            </summary>
+        </member>
+        <member name="E:TestCore.Ctrls.SlotInfo.SfcsStatusChanged">
+            <summary>
+            Sfcs Statust, could be SFCs_Online/SFCs_Offline/NoNetWork/Disabled
+            depends on GlobalConfiguration.Instance.SFCs.EnableSfc and Network
+            </summary>
+        </member>
+        <member name="P:TestCore.Ctrls.SlotInfo.TestCnt">
+            <summary>
+            Test Count, will increase when Result status change to Testing
+            </summary>
+        </member>
+        <member name="F:TestCore.Ctrls.SlotInfo.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TestCore.Ctrls.SlotInfo.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TestCore.Ctrls.SlotInfo.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.Extension.Fetch(TestCore.Nest{TestCore.Data.TF_StepData},System.String[])">
+            <summary>
+            Fetch sub items by name iteratively
+            if no match item, return null
+            </summary>
+            <param name="nest"></param>
+            <param name="items">sub item's names</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Data.Extension.GenerateReportName(TestCore.Data.TF_Result,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="rs"></param>
+            <param name="ext">without .</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Data.Extension.VerifyLimit(TestCore.Nest{TestCore.Data.TF_Limit},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,TestCore.Data.StepFormatError}},System.String)">
+            <summary>
+            Verify if the Limits Structure is legal
+            </summary>
+            <param name="nest"></param>
+            <param name="errors"></param>
+            <param name="prefix"></param>
+        </member>
+        <member name="F:TestCore.Data.StepFormatError.DynamicLimit">
+            <summary>
+            Warning, 
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.X">
+            <summary>
+            X-axis, could using double.NaN to split it to multiple curves.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.X_Unit">
+            <summary>
+            XUnit. it will be set to String.Empty if it is null
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.Y_Unit">
+            <summary>
+            YUnit. it will be set to String.Empty if it is null
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.XLog">
+            <summary>
+            If X is Log Type. For Visualization and Resampling
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.YLog">
+            <summary>
+            If X is Log Type. For Visualization and Resampling
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.Tag">
+            <summary>
+            Misc
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Curve.DeltaX">
+            <summary>
+            if DeltaX is not null, the X would be generate by DeltaX and XLog
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_Curve.#ctor(System.Double[],System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor. the Y will be initial as a default double[]
+            </summary>
+            <param name="x"></param>
+            <param name="xunit"></param>
+            <param name="yunit"></param>
+        </member>
+        <member name="M:TestCore.Data.TF_Curve.#ctor">
+            <summary>
+            For Serializable
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_Curve.Resample(System.UInt32)">
+            <summary>
+            Resample the curve from less point to more.
+            </summary>
+            <param name="count">the count of point for the first to the last of X-axis</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Data.TF_Curve.Resample(TestCore.Data.TF_Curve)">
+            <summary>
+            Resample the curve to match the template. Which means the X-axis should be contained by the template's
+            After Resampling, the missing point will be set to be NaN
+            the properties (unit, xlog, ylog) are inherit from source curve.
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Data.TF_Curve.ToString">
+            <summary>
+            convert the Curve to string. 
+            {x_unit,yunit:xlogylog:x0,y0 x1,y1 ...}
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Data.TF_Curve.Parse(System.String)">
+            <summary>
+            Parse to Curve from format string {xunit,yunit:xlogylog:x0,y0 x1,y1 ...}
+            Exception: InvalidOperationException.
+                if the str not match the format {(.*),(.*):{.*}:(.+)}
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TestCore.Data.TF_ItemData.TestCase">
+            <summary>
+            Reserve for TestCase/CaseID
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_ItemData.#ctor(System.String,TestCore.Data.TF_Limit)">
+            <summary>
+            Construct TF_ItemData
+            </summary>
+            <param name="name">name of Item</param>
+            <param name="limit">TF_Limit. NOTE: For Ref value, the limit will be a copy of the input</param>
+        </member>
+        <member name="M:TestCore.Data.TF_ItemData.Begin">
+            <summary>
+            Default value to be NaN/Maxvalue/False, to make the item be supposed to be false by default.
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_ItemData.End">
+            <summary>
+            Will run automatically when Value updated
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_ItemData.SetValue(System.Double)">
+            <summary>
+            To adjust for TestStand
+            Bool should be treated as 1 / 0
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Id">
+            <summary>
+            For Persistence
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Name">
+            <summary>
+            Limit Name, should be the same as test item, for readability.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.USL">
+            <summary>
+            The upper limit, Only work for GELE/GELT/GTLE/GTLT, others will be ignored to be.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.LSL">
+            <summary>
+            The lower limit, work as the limit on single side comparison as well
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Comp">
+            <summary>
+            Comparison. Include Numeric, String, Log. 
+            Especially for NULL means it will compare and log nothing, and just as a data structure.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Unit">
+            <summary>
+            Unit. For Complex Data Type, this field will use to store the data structure of data type
+            e.g.: For TF_Curve. The unit need store the string of template TF_Curve. for persistence requrirement
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Format">
+            <summary>
+            Format. determine how the display the data in report. default is F3
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Sfc">
+            <summary>
+            Sfc. if True, the item will be able to push to sfcs/mes, which depends on global config as well
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Skip">
+            <summary>
+            Skip. If True, this item should be not to test. just for reserved
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.AdditionInfo">
+            <summary>
+            Addition Info for the limit object.
+            For TF_Curve Limit, it stores the template TF_Curve.
+            Especially for Log Comparison, the Tag need to be a example data as Data
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Limit.Tag">
+            <summary>
+            Tag as a pipe data.
+            
+            </summary>
+        </member>
+        <member name="T:TestCore.Data.TF_Result">
+            <summary>
+            Test Result, data recording for each test
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.StationConfig">
+            <summary>
+            Station Information
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.SFCsConfig">
+            <summary>
+            SFCs Information
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.GeneralConfig">
+            <summary>
+            Test Configuration
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.Status">
+            <summary>
+            Test Status. Conclusion
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.Defect">
+            <summary>
+            Defect Information List
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.PartNo">
+            <summary>
+            Part Number of DUT
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.LineNo">
+            <summary>
+            Line number of DUT
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.Properties">
+            <summary>
+            Mes DUT Data Property
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.AttachProperties">
+            <summary>
+            Dynamic Attached properties. e.g. Carrier SN, Should be shown in Report Name for searching
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.SocketId">
+            <summary>
+            SocketId, start from 1;
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.SocketIndex">
+            <summary>
+            Socket Index, Start From 0, for the SocketId might be ruled, so the socketid could be editable
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.TestSoftwareVersion">
+            <summary>
+            Test Software Version. Test Software means the program set which is developed for specific project only 
+            e.g. Test Stand programs. this should point to TestStand sequence version
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.TestGuiVersion">
+            <summary>
+            Test Gui Version. Test Gui means the top Application which runs test software
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.ProductInfo">
+            <summary>
+            product information which link to the DUT and requires to store in Result
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.RawFile">
+            <summary>
+            raw test file path
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.SerialNumber">
+            <summary>
+            DUT Serial Number
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.Operator">
+            <summary>
+            Operator Id
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.IsSFC">
+            <summary>
+            Whether the result uploaded into SFCs or not 
+            </summary>
+        </member>
+        <member name="F:TestCore.Data.TF_Result.Traceability">
+            <summary>
+            Reserved. Information of Test Equipment
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.Specification">
+            <summary>
+            Test Limis
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.ErrorMessage">
+            <summary>
+            Error Message if Error occurred
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.StepDatas">
+            <summary>
+            Test Data. NEED Match to Specification.
+            </summary>
+        </member>
+        <member name="E:TestCore.Data.TF_Result.TestStart">
+            <summary>
+            Called when Test Result Begin. calling at Begin()
+            </summary>
+        </member>
+        <member name="E:TestCore.Data.TF_Result.TestEnd">
+            <summary>
+            Called when Test Result Complete calling at End()
+            </summary>
+        </member>
+        <member name="E:TestCore.Data.TF_Result.TestStatusChanged">
+            <summary>
+            Called when Test Result status changed
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.SpecialData">
+            <summary>
+            Map to BarcodePart
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Result.AdditionalFiles">
+            <summary>
+            For store related files.
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_Result.XmlDeserialize(System.Xml.Linq.XElement)">
+            <summary>
+            TODO
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultGroup.Results">
+            <summary>
+            Data Set
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultGroup.RepresentResults">
+            <summary>
+            Data Set to Represent. For feature filter.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultGroup.DataSource">
+            <summary>
+            The path of files where data load from
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:TestCore.Data.TF_ResultGroup.FilterResult(System.String,System.String@)" -->
+        <member name="M:TestCore.Data.TF_ResultGroup.FilterResults(System.Text.RegularExpressions.Regex)">
+            <summary>
+            fetch the results which sn matched the regular expression
+            </summary>
+            <param name="re_sn"></param>
+        </member>
+        <member name="M:TestCore.Data.TF_ResultGroup.FilterResults(System.DateTime,System.DateTime)">
+            <summary>
+            if t0 was default(Datetime), fetch the results that time is earlier than t1
+            if t1 was default(Datetime), fetch the results that time is later than t0
+            otherwise fetch the results that time between t0 and t1
+            </summary>
+            <param name="t0"></param>
+            <param name="t1"></param>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultSet.Template">
+            <summary>
+            Template Result
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultSet.IsIncludeNoLimit">
+            <summary>
+            if Data cantains limitness data
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultSet.FilePattern">
+            <summary>
+            file name pattern of ResultSet source file 
+            Should be like *.xxx, e.g. *.xlsx
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultSet.ResultGroup">
+            <summary>
+            Result Group. 
+            Each time loading files will add a new group. even 0 result
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultSet.ErrorFileFolder">
+            <summary>
+            Error File Folder
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_ResultSet.Tag">
+            <summary>
+            For Data link on programming
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Spec.FilePath">
+            <summary>
+            Only work on Toucan V2, V1R1 should no call it for compatibility
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Spec.CheckValue">
+            <summary>
+            Check Value of Spec. to VERIFY if the data is legal.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_Spec.Limit">
+            <summary>
+            Root Node of Limit.
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_Spec.#ctor(System.String,System.String)">
+            <summary>
+            Create the Instance with a default Limits as the Root Node
+            </summary>
+            <param name = "name" > spec name</param>
+            <param name="ver">spec version</param>
+        </member>
+        <member name="M:TestCore.Data.TF_Spec.UniformDefectCode(System.String)">
+            <summary>
+            Tag the uniform Defect Code for Limits, and correct if duplicted
+            </summary>
+        </member>
+        <member name="T:TestCore.Data.TF_StepData">
+            <summary>
+            StepData, for action
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.Id">
+            <summary>
+            For Persistence
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.Name">
+            <summary>
+            StepData Name, should be the same as Step
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.StartTime">
+            <summary>
+            the start time of a test. will be updated when call Begin()
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.EndTime">
+            <summary>
+            the end time of a test, will be updated when call End()
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.TotalTime">
+            <summary>
+            Elapsed time of this step
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.Timeout_ms">
+            <summary>
+            If the step run over timeout_s, the step should be terminated and set result to be TF_ItemStatus.Timeout
+            default 0, which means no timeout.
+            </summary>
+        </member>
+        <member name="P:TestCore.Data.TF_StepData.Result">
+            <summary>
+            Step Result, All type of step should be resulted into TF_ItemStatus.
+            for the step, it could be DONE/ERROR
+            for the item, it would be PASSED/FAILED/TESTING/
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_StepData.Begin">
+            <summary>
+            This fuction is for a step to do initialize before step executed
+            </summary>
+        </member>
+        <member name="M:TestCore.Data.TF_StepData.End">
+            <summary>
+            Must Override it. This function is for handling calculation and other conclusion staff after step executing;
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.Assembly">
+            <summary>
+            整机
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.SubAssembly">
+            <summary>
+            半成品
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.MainBoard">
+            <summary>
+            主控板
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.AmpBoard">
+            <summary>
+            功放板
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.IOBoard">
+            <summary>
+            IO板
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.MicBoard">
+            <summary>
+            Mic板
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.DutType.LedBoard">
+            <summary>
+            Led板
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Customer">
+            <summary>
+            Meta Data for All site
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Customer.Abbreviation">
+            <summary>
+            Abbreviation of customer. could used for security, unique code seed etc
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.Info_Customer._Projects">
+            <summary>
+            Internal Projects variable
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Customer.Projects">
+            <summary>
+            Projects of customer.
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.IDocumentHost.RefreshDocument">
+            <summary>
+            Refresh Document
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.IDocumentHost.InsertNewDocument(System.String,System.String)">
+            <summary>
+            Insert New Document
+            </summary>
+            <param name="path"></param>
+            <param name="name">if null. use file name instead</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.IDocumentHost.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            Remove Document
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.IDocumentHost.RemoveAllDocument">
+            <summary>
+            Remove All Documents;
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Equipment">
+            <summary>
+            Equipment Info. to classify the equipment.
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Equipment.Type">
+            <summary>
+            Equipment Type
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Equipment.Domain">
+            <summary>
+            Equipment Domain
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Equipment.SubClass">
+            <summary>
+            Customized classification
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Equipment.CalibPeriod">
+            <summary>
+            Period for Calibration. Unit Days. if less equal to 0, no need to calibrate
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Equipment.IsControllable">
+            <summary>
+            If the equipment could be controlled in program
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Equipment.ReferenceLink">
+            <summary>
+            Link for reference, such as Driver, Document, Example
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Equipment.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Equipment.FetchSimilar">
+            <summary>
+            Fetch the list that the info similar with current
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.EquipmentType">
+            <summary>
+            Equipment Type.
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Instrument">
+            <summary>
+            Component for general usage, such as DC Source, E-Load, DAQ. Most of them are controllable
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Jig">
+            <summary>
+            Test Jig, 纯夹具
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Fixture">
+            <summary>
+            Component for specified project, such as Fixture, specified chamber, 工装，包含部分电气设备
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Machine">
+            <summary>
+            such as Common Chamber, Shieldbox, 机构，设备。如A9测试柜，公共的声学旋转门
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Accessory">
+            <summary>
+            Such as wiring, such as Probe, Mic, Jack, Counter, PLC
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.ToolBoard">
+            <summary>
+            Tool Board, such as RelayBoard
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Software">
+            <summary>
+            Equipment Software
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentType.Firmware">
+            <summary>
+            Equipment Firmware
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.General">
+            <summary>
+            General or other hardly to classify. Such as Switch
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.Comm">
+            <summary>
+            For Communication. such as USB_UART, IIC Adapter, BT_Dongle,
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.Power">
+            <summary>
+            For Power, such as AC Source, E_Load, Bat Simulator,
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.Acoustic">
+            <summary>
+            For Acoustic, such as AP515, SoundCard.
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.RF">
+            <summary>
+            For RF Test, Such as Anritsu MT8852, Litepoint M6
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.Vision">
+            <summary>
+            For Vision Test, include Camera Test, Led Test. such as Camera, Light Source, ChessBoard etc.
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.EquipmentDomain.Sensor">
+            <summary>
+            proximity Sensor, Temperature Sensor, LedSensor
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.Info_EquipmentInstance">
+            <summary>
+            Equipment Instance
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_EquipmentInstance.Equipment">
+            <summary>
+            the Equipment which the Instance is
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_EquipmentInstance.ExpiredDate">
+            <summary>
+            The last data do Calibration. if no need, use default(Datetime)
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_EquipmentInstance.SerialNumber">
+            <summary>
+            Equipment SerialNumber of vendor
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_EquipmentInstance.AssetNumber">
+            <summary>
+            Asset Number of internal
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_EquipmentInstance.Comment">
+            <summary>
+            Comments
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_EquipmentInstance.Config">
+            <summary>
+            Config which the equipment requires. Reserved
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_EquipmentInstance.ReadQcEquipmentInstance(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            Get Equipment Instance Meta Data from QcEquipment string
+            </summary>
+            <param name="qcstr"></param>
+            <param name="vendor"></param>
+            <param name="model"></param>
+            <param name="sn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_EquipmentInstance.GeneQcEquipmentInstance">
+            <summary>
+            Generate QcStation string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_EquipmentInstance.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Product">
+            <summary>
+            Meta Data of Product. It should be a set of Part which has similar feature. and the test resource should be able to share
+            eg. a Smart Audio Project. with a optional feature, such as the UWP/HDMI support. it could be separated to be two product.
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Product.Project">
+            <summary>
+            the Project the Product belongs to
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Product.Abbreviation">
+            <summary>
+            Abbreviation of customer. could used for security, unique code seed etc
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Product.UPH">
+            <summary>
+            UPH for the Product
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Product.TargetYield">
+            <summary>
+            Target Yield Rate
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.Info_Product._Stations">
+            <summary>
+            Procedure for produce the product.
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Product.Documents">
+            <summary>
+            Documents for project, such as schema, TO
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Product.Remove(TestCore.MetaData.Info_Station)">
+            <summary>
+            Remover station in Product, and delete the station
+            </summary>
+            <param name="station"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Product.InsertNewDocument(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Product.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Project">
+            <summary>
+            Meta Data of Project, which should be the cost center of a set for Product
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Project.Documents">
+            <summary>
+            Documents for project, such as schema, TO
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Project.InsertNewPart(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Create a new Part which belongs to this project
+            </summary>
+            <param name="partno"></param>
+            <param name="partname"></param>
+            <param name="descritpion"></param>
+            <param name="parttype"></param>
+            <param name="vendor"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Project.RefreshDocument">
+            <summary>
+            Refresh Document
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Project.InsertNewDocument(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Project.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Root">
+            <summary>
+            Root for filter MetaData. Should be filter in Level Station
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Software">
+            <summary>
+            Information of Software
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Station">
+            <summary>
+            Station which this software should used for
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Version">
+            <summary>
+            Software Version
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Time">
+            <summary>
+            Time of software. might be the time of packing, the time of committing, or time of modifying
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Variant">
+            <summary>
+            For tag the software. e.g: the software is for White DUT
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Description">
+            <summary>
+            Comment for the Software
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Author">
+            <summary>
+            Author of Software
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.EntryPoint">
+            <summary>
+            Entrypoint File Path
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.UniqueName">
+            <summary>
+            Unique Name of Software by name and version
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Caller">
+            <summary>
+            the caller to execute the software
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Software.Psp">
+            <summary>
+            Raw package of Software, virtual for Loading file Later
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Software.Run(System.Collections.Generic.IEnumerable{TestCore.Misc.PcpFile},System.String[])">
+            <summary>
+            Execute the software
+            </summary>
+            <param name="pcp">Run with Pcp file, with will copy the pcp context into target folder</param>
+            <param name="args">args if required</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Software.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="F:TestCore.MetaData.SoftwareStatus.Effective">
+            <summary>
+            Current Effective Version
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.SoftwareStatus.CouldBeUpdated">
+            <summary>
+            Effective version is not a force update version, and version is lower than effective one 
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.SoftwareStatus.OnDebug">
+            <summary>
+            Vesion which is higher than effective version
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.SoftwareStatus.NeedToBeUpdated">
+            <summary>
+            Effective version is a force update version, and version is lower than effective one 
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.SoftwareStatus.Obsoleted">
+            <summary>
+            effective version which is tag as invalid
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.IRemoteStation">
+            <summary>
+            for Remote Info deployment
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.Info_Station">
+            <summary>
+            Meta Data of Station Info
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.Product">
+            <summary>
+            the Product the Station belongs to
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.StationId">
+            <summary>
+            Current Station Id, Should not persist.
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.CycleTime_est">
+            <summary>
+            Estimated CycleTime. Could be Target CycleTime
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.Documents">
+            <summary>
+            Doc of station, such as wiring, fixture schema, SOP
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.Info_Station._Equipments">
+            <summary>
+            Internal variable of Equipments
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.Equipments">
+            <summary>
+            Equipment the station used
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.Info_Station._Softwares">
+            <summary>
+            Internal variable of Softwares
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.Softwares">
+            <summary>
+            Software the station used
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.Info_Station._Instances">
+            <summary>
+            Internal variable of Instances
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_Station.Instances">
+            <summary>
+            Station Instances
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.InsertNewSoftware(TestCore.MetaData.Info_Software)">
+            <summary>
+            Insert New Software
+            </summary>
+            <param name="software"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.RefreshDocument">
+            <summary>
+            Refresh Document
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.InsertNewDocument(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="name">if null. use file name instead</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.Remove(TestCore.MetaData.Info_Software)">
+            <summary>
+            Remover software in station, and delete the software
+            </summary>
+            <param name="software"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.ClearInstance">
+            <summary>
+            Clear Instances
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.AddInstance(TestCore.MetaData.Info_StationInstance)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.AddRangeInstance(System.Collections.Generic.IEnumerable{TestCore.MetaData.Info_StationInstance})">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:TestCore.MetaData.Info_Station.UpdateEquipment(System.Collections.Generic.KeyValuePair{TestCore.MetaData.Info_Equipment,System.String[]})">
+            <summary>
+            Update Station Bom
+            </summary>
+            <param name="eqvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.InternalStation">
+            <summary>
+            http://intranet.tymphany.com/Departments/pte/Process/Standards/PTE Abbreviation Definitions.docx
+            V1.0.3
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.BDL">
+            <summary>
+            Board Level Firmware Download
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.BFT">
+            <summary>
+            Board Level functional Test
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.BRF">
+            <summary>
+            Board Level RF(BT/Wifi/Zigbee)
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.BAP">
+            <summary>
+            Board Level AP Test
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.AWT">
+            <summary>
+            Assembly Weight Test 系统称重测试
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.ADA">
+            <summary>
+            Assembly DIDA 系统DIDA测试
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.InternalStation.ADV">
+            <summary>
+            Assembly DIDV 系统DIDV测试
+            </summary>
+        </member>
+        <member name="T:TestCore.MetaData.Info_StationInstance">
+            <summary>
+            Station Instance. For specified Station
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.Station">
+            <summary>
+            Station which the instance is
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.StationId">
+            <summary>
+            Station Id
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.Equipments">
+            <summary>
+            Equipments
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.LineNo">
+            <summary>
+            Line No which the intance belongs to
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.StationConfig">
+            <summary>
+            Config for the station instance
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.re_QcStation">
+            <summary>
+            Regex for Qcode of station instance
+            Match Result.
+            1: Root, 2: Customer, 3: Project, 4: Product, 5: Station, 6: Station ID, 7: CheckValue
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.Info_StationInstance.QCode">
+            <summary>
+            Quick Code of Instance
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.Info_StationInstance.ReadQcStationInstance(System.String,System.String@,System.String@,System.String@,System.String@,System.String@)">
+            <summary>
+            Get Station Instance Meta Data from QcStation string
+            </summary>
+            <param name="qcstr"></param>
+            <param name="customer"></param>
+            <param name="project"></param>
+            <param name="product"></param>
+            <param name="station"></param>
+            <param name="stationid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_StationInstance.ApplyEquipmentCalibData(System.String)">
+            <summary>
+            IF CalibFilePath is null, apply to basepath
+            if it is abs path, apply it to abs path
+            if it is rel path, apply it to rel path under basepath
+            </summary>
+            <param name="basepath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.Info_StationInstance.RemoveDocument(TestCore.MetaData.Info_Document)">
+            <summary>
+            
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.INode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.INode.Name">
+            <summary>
+            Root Name
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.INode.Alias">
+            <summary>
+            Root FriendlyName
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.INode.Refresh">
+            <summary>
+            Refresh the Node Property
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.INode.Update">
+            <summary>
+            Updata Property into persistence
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.MetaData.INode.Delete">
+            <summary>
+            Delete the node from persistence
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TestCore.MetaData.IPart.PartNo">
+            <summary>
+            Part No, Unique
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.IPart.PartName">
+            <summary>
+            Part Name
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.IPart.Alias">
+            <summary>
+            Part Alias, Friendly Name
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.IPart.Description">
+            <summary>
+            Part Description. 
+            </summary>
+        </member>
+        <member name="P:TestCore.MetaData.IPart.PartType">
+            <summary>
+            PartType
+            </summary>
+        </member>
+        <member name="M:TestCore.MetaData.IPart.FindCallers">
+            <summary>
+            Find where this part is used
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.MetaData.PartType">
+            <summary>
+            Type of Part. Value should less than 99, for part No generator
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.Assembly">
+            <summary>
+            Final Assembly Product
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.SubAssembly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.Module">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.PCBA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.Component">
+            <summary>
+            Component. include the device which was purchased outside. such as Sensor, R/C/L/D/Q/LED/Chipset, Battery etc.
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.Software">
+            <summary>
+            Software for Product
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.Equipment">
+            <summary>
+            Accessory. such as Probe, Mic, Jack, Counter, PLC
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.CustomerProvide">
+            <summary>
+            the Part the Customer provide
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.CustomerSpecify">
+            <summary>
+            the part the Customer specify.
+            </summary>
+        </member>
+        <member name="F:TestCore.MetaData.PartType.Others">
+            <summary>
+            Others which hardly to classify
+            </summary>
+        </member>
+        <member name="F:TestCore.Misc.PcpFile.CONFIG_EXT">
+            <summary>
+            Pcp File Extension
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PcpFile.Name">
+            <summary>
+            Pcp Name
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PcpFile.Path">
+            <summary>
+            Pcp File Path
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PcpFile.IsLocal">
+            <summary>
+            If Pcpfile in Local
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PcpFile.Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TestCore.Misc.PcpFile.UnpackConfig(System.String,System.String)">
+            <summary>
+            Unpack the configfile to dest
+            </summary>
+            <param name="filepath">config file package path</param>
+            <param name="dest">destination</param>
+            <returns>1: OK</returns>
+        </member>
+        <member name="M:TestCore.Misc.PcpFile.PackConfig(System.String,System.String)">
+            <summary>
+            Pack the Config file to be Tymphany format.
+            file name should be the "stationid.pcp"
+            </summary>
+            <param name="dir">the target folder of config file. for there might be more than 1 file</param>
+            <param name="fname">if null, the name will be the name of folder name</param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.Misc.PspFile">
+            <summary>
+            Psp file is a package of software and sequence. which contains software and dependencies info
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.Time">
+            <summary>
+            Create Time. Which means Packing time
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.Author">
+            <summary>
+            default is PC user name
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.ConfigFileFolder">
+            <summary>
+            ConfigFileFolder
+            Relative path preferred. Could be absolute path
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.Name">
+            <summary>
+            Psp File Name, should be the folder name. Prevent the package file name been modified.
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.Version">
+            <summary>
+            Should be software version
+            Default, ProductVersion of File
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.Description">
+            <summary>
+            Description about this package. such as what changes, what is it for
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.Type">
+            <summary>
+            File Type. traditionaly it would be the extension of startup file.
+            example: .exe
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.FilePath">
+            <summary>
+            Only for exist Psp file path. To pass the pspfile path for call. 
+            DO Not Serialize it.
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.PspFile.SetupConfig">
+            <summary>
+            SetupConfig of pspfile
+            </summary>
+        </member>
+        <member name="M:TestCore.Misc.PspFile.Pack(System.String,System.String,System.String,System.String,System.String,System.String,TestCore.Misc.SetupConfig,System.String)">
+            <summary>
+            Pack all the file/folder in the folder as same as swfile.
+            </summary>
+            <param name="swfile">Startup file of you software, need to be under the top folder</param>
+            <param name="filename">Name of the psp file. If null, set to be the top folder name as default</param>
+            <param name="version">if exe, the version could be auto detected, otherwise, use datetime to generate version as default (0.0.DDDD.TTTT)</param>
+            <param name="desc"></param>
+            <param name="configfilepath"></param>
+            <param name="author"></param>
+            <param name="setupconfig"></param>
+            <param name="dest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Misc.PspFile.Unpack(System.String,System.String@)">
+            <summary>
+            Unpack the file into the dest folder
+            it will create a new folder named as filename under the dest folder
+            </summary>
+            <param name="filepath">packed file path</param>
+            <param name="dest">dest folder</param>
+            <returns>
+            1: Succeed
+            -1: file error
+            -2: folder error
+            </returns>
+        </member>
+        <member name="M:TestCore.Misc.PspFile.UnpackWithPcp(System.String@,System.Collections.Generic.IEnumerable{TestCore.Misc.PcpFile})">
+            <summary>
+            Unpack psp file and Load the Config file if there is
+            </summary>
+            <param name="swdest"></param>
+            <param name="pcps"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Misc.PspFile.GenerateAutoVersion(System.Int32,System.Int32)">
+            <summary>
+            Auto Version
+            </summary>
+            <param name="major">Default 0</param>
+            <param name="minor">Default 0</param>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.Misc.SetupConfig">
+            <summary>
+            this class is for running Psp file automatically
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.SetupConfig.BaseDir">
+            <summary>
+            For AutoUpdate, the base dir of setupconfigration.
+            For Exe file, it will be set to AppContext.BaseDir
+            For other file, it should be the seq folder.
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.SetupConfig.EntryPoint">
+            <summary>
+            the entrypoint of the software package. This is Required Field.
+            if it is *.exe, it will be the startup file
+            if it is not, this field should be the file which will be called by startupexec
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.SetupConfig.StartUpExec">
+            <summary>
+            the startupexec is the exe file for startup
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.SetupConfig.Args">
+            <summary>
+            Args for calling startupexec and entry point.
+            the call is like:
+                StartUpExec EntryPoint Args.
+            e.g.
+               EntryPoint is example.seq
+               StartUpExec is Toucan.exe
+               Args is -hidden
+            the CLI runs as:
+               Toucan.exe example.seq -hidden
+            </summary>
+        </member>
+        <member name="P:TestCore.Misc.SetupConfig.ExecuteFileVersion">
+            <summary>
+            the execute file version is the limitation for startupexec if set.
+            </summary>
+        </member>
+        <member name="T:TestCore.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:TestCore.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:TestCore.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:TestCore.Properties.Resources.tymphany">
+            <summary>
+              查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:TestCore.Properties.Resources.TymphanyLogo">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:TestCore.Services.IAuthService">
+            <summary>
+            For Authentication and Authorization
+            </summary>
+        </member>
+        <member name="M:TestCore.Services.IAuthService.Login(System.String,System.String)">
+            <summary>
+            Login
+            </summary>
+            <param name="username">user name</param>
+            <param name="password">password</param>
+            <returns>Authorization</returns>
+        </member>
+        <member name="M:TestCore.Services.IAuthService.Logout">
+            <summary>
+            Logout
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TestCore.Services.IAuthService.CurrentAuthType">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IAuthService.ShowLoginDialog">
+            <summary>
+            Show the UI for Login
+            </summary>
+        </member>
+        <member name="T:TestCore.Services.IFileService">
+            <summary>
+            Service for operate File
+            </summary>
+        </member>
+        <member name="M:TestCore.Services.IFileService.Push(System.String,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="sourcePath"></param>
+            <param name="destPath"></param>
+            <param name="overwrite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IFileService.Pull(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sourcePath"></param>
+            <param name="destPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IFileService.Exists(System.String)">
+            <summary>
+            Check if File or Dir Exists
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IFileService.GetBaseDir">
+            <summary>
+            Get Root Dir
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IFileService.CreateFolder(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:TestCore.Services.IFileService.List(System.Collections.Generic.ICollection{System.Object},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="files"></param>
+            <param name="path"></param>
+        </member>
+        <member name="T:TestCore.Services.IReportService">
+            <summary>
+            For Handling Report Standard Storage
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.IReportService.CountInQueue">
+            <summary>
+            File in Pushing Queue
+            </summary>
+        </member>
+        <member name="T:TestCore.Services.IService">
+            <summary>
+            Service interface
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.IService.Name">
+            <summary>
+            Service Name
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.IService.IsInitialized">
+            <summary>
+            If the service initialized, to avoid multiple initialization
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.IService.IsStarted">
+            <summary>
+            if the service started, might mean IsConnected in some services
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.IService.IsBusy">
+            <summary>
+            If the service is busy, for detect if it could be stop when app is closing
+            </summary>
+        </member>
+        <member name="M:TestCore.Services.IService.StartAsync">
+            <summary>
+            Start Service Task
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IService.StopAsync">
+            <summary>
+            Stop Service
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IService.Initialize">
+            <summary>
+            Init the Service, such as establish the connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestCore.Services.IService.Clear">
+            <summary>
+            Clear the Service. such as destroy the connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TestCore.Services.ITimeService">
+            <summary>
+            Service about Time
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.ITimeService.CurrentTime">
+            <summary>
+            Current Time in Real. for the local time is untrustable
+            </summary>
+        </member>
+        <member name="T:TestCore.Services.IToolboxService">
+            <summary>
+            For Tool/Program deployment and version control
+            </summary>
+        </member>
+        <member name="T:TestCore.Services.ServiceStatic">
+            <summary>
+            Static property and method for Service
+            </summary>
+        </member>
+        <member name="F:TestCore.Services.ServiceStatic.RootKey">
+            <summary>
+            Root Registry Key. Do NOT Dispose it.
+            </summary>
+        </member>
+        <member name="F:TestCore.Services.ServiceStatic.RootDataDir">
+            <summary>
+            Root Dir for Application Data
+            </summary>
+        </member>
+        <member name="F:TestCore.Services.ServiceStatic.AppDir">
+            <summary>
+            Default Path to Install Apps
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.ServiceStatic.TempDownloadDir">
+            <summary>
+            Temp dir for download file.
+            </summary>
+        </member>
+        <member name="P:TestCore.Services.ServiceStatic.TempExecuteDir">
+            <summary>
+            Temp dir for execute software or sequence
+            it will be tring to delete all file and folders under it once initialize.
+            </summary>
+        </member>
+        <member name="M:TestCore.Services.ServiceStatic.ToolboxService">
+            <summary>
+            Toolbox Service
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:TestCore.UI.ConfigStationId.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.ConfigStationId.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TestCore.UI.ConfigStationId.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TestCore.UI.Configuration.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.Configuration.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TestCore.UI.Configuration.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TestCore.UI.InputBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.InputBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TestCore.UI.InputBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TestCore.UI.NetworkHelper">
+            <summary>
+            NetworkHelper.xaml 的交互逻辑
+            </summary>
+            <summary>
+            NetworkHelper
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.NetworkHelper.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TestCore.UI.PspPackage">
+            <summary>
+            PspPackage.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PspPackage
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.PspPackage.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path">Entrypoint file path</param>
+        </member>
+        <member name="M:TestCore.UI.PspPackage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TestCore.UI.Setting">
+            <summary>
+            Interaction logic for Setting.xaml
+            </summary>
+            <summary>
+            Setting
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.Setting.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TestCore.UI.Setting_Toolbox">
+            <summary>
+            Setting_Toolbox.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Setting_Toolbox
+            </summary>
+        </member>
+        <member name="M:TestCore.UI.Setting_Toolbox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

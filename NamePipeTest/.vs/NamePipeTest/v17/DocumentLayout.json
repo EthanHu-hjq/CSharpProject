@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DB001E90-6819-4990-9F91-3648BE5E6D8C}|TYM_DataUploadTool.Client\\TYM_DataUploadTool.Client.csproj|d:\\project\\git\\csharpproject\\namepipetest\\tym_datauploadtool.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DB001E90-6819-4990-9F91-3648BE5E6D8C}|TYM_DataUploadTool.Client\\TYM_DataUploadTool.Client.csproj|solutionrelative:tym_datauploadtool.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{817A2CDF-CF42-40DD-A57D-38824BC4F178}|TestBat\\TestBat.csproj|d:\\project\\git\\csharpproject\\namepipetest\\testbat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817A2CDF-CF42-40DD-A57D-38824BC4F178}|TestBat\\TestBat.csproj|solutionrelative:testbat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\bin\\Release\\Run_MultiStep_EXE.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TestBat\\bin\\Release\\Run_MultiStep_EXE.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +26,27 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Run_MultiStep_EXE.bat",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\bin\\Release\\Run_MultiStep_EXE.bat",
+              "RelativeDocumentMoniker": "TestBat\\bin\\Release\\Run_MultiStep_EXE.bat",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\bin\\Release\\Run_MultiStep_EXE.bat",
+              "RelativeToolTip": "TestBat\\bin\\Release\\Run_MultiStep_EXE.bat",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAH0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000614|",
+              "WhenOpened": "2026-04-14T06:58:55.8Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TYM_DataUploadTool.Client\\Program.cs",
-              "RelativeDocumentMoniker": "TYM_DataUploadTool.Client\\Program.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TYM_DataUploadTool.Client\\Program.cs",
-              "RelativeToolTip": "TYM_DataUploadTool.Client\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwA4AAAAxAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\Program.cs",
+              "RelativeDocumentMoniker": "TestBat\\Program.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\Program.cs",
+              "RelativeToolTip": "TestBat\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T02:59:26.967Z",
+              "WhenOpened": "2026-04-14T02:27:46.865Z",
               "EditorCaption": ""
             }
           ]

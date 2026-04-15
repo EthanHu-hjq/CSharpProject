@@ -14,9 +14,9 @@ namespace ProgramB
         /// </summary>
         static async Task Main(string[] args)
         {
-            Console.WriteLine("=== 命名管道服务器（重构版）===");
-            Console.WriteLine("功能：可靠的消息通信，支持确认机制和超时重发");
-            Console.WriteLine("按Ctrl+C可强制退出程序");
+            Info("=== 命名管道服务器（重构版）===");
+            Info("功能：可靠的消息通信，支持确认机制和超时重发");
+            Info("按Ctrl+C可强制退出程序");
 
             try
             {
@@ -26,8 +26,8 @@ namespace ProgramB
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"服务器异常终止: {ex.Message}");
-                Console.WriteLine("按任意键退出...");
+                Info($"服务器异常终止: {ex.Message}");
+                Info("按任意键退出...");
                 Console.ReadKey();
             }
         }

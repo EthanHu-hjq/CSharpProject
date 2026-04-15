@@ -500,7 +500,7 @@ namespace ProgramA
         /// </summary>
         public static void Test()
         {
-            Console.WriteLine("=== SimpleNamedPipeClient 测试 ===");
+            Info("=== SimpleNamedPipeClient 测试 ===");
 
             // 创建客户端实例
             var client = new SimpleNamedPipeClient("testPipe");
@@ -512,71 +512,71 @@ namespace ProgramA
             client.MessageReceived += (sender, e) =>
             {
                 messageReceivedCount++;
-                Console.WriteLine($"[{e.Timestamp:HH:mm:ss.fff}] 收到: {e.Message}");
+                Info($"[{e.Timestamp:HH:mm:ss.fff}] 收到: {e.Message}");
             };
 
             client.MessageSent += (sender, e) =>
             {
                 messageSentCount++;
-                Console.WriteLine($"[{e.Timestamp:HH:mm:ss.fff}] 已发送: {e.Message}");
+                Info($"[{e.Timestamp:HH:mm:ss.fff}] 已发送: {e.Message}");
             };
 
             client.ConnectionStatusChanged += (sender, e) =>
             {
-                Console.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] 连接状态: {(e.IsConnected ? "已连接" : "已断开")} {e.Message}");
+                Info($"[{DateTime.Now:HH:mm:ss.fff}] 连接状态: {(e.IsConnected ? "已连接" : "已断开")} {e.Message}");
             };
 
             client.ErrorOccurred += (sender, e) =>
             {
-                Console.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] 错误: {e.Message}");
+                Info($"[{DateTime.Now:HH:mm:ss.fff}] 错误: {e.Message}");
             };
 
             try
             {
                 // 测试连接（预期会失败，因为没有服务器）
-                Console.WriteLine("测试连接（预期失败）...");
+                Info("测试连接（预期失败）...");
                 try
                 {
                     client.Connect();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"连接失败（预期中）: {ex.Message}");
+                    Info($"连接失败（预期中）: {ex.Message}");
                 }
 
                 // 测试属性
-                Console.WriteLine($"\n状态检查:");
-                Console.WriteLine($"  IsConnected: {client.IsConnected}");
-                Console.WriteLine($"  IsRunning: {client.IsRunning}");
-                Console.WriteLine($"  QueuedMessages: {client.QueuedMessages}");
+                Info($"\n状态检查:");
+                Info($"  IsConnected: {client.IsConnected}");
+                Info($"  IsRunning: {client.IsRunning}");
+                Info($"  QueuedMessages: {client.QueuedMessages}");
 
                 // 测试发送消息（应该抛出异常）
-                Console.WriteLine($"\n测试发送消息（预期异常）...");
+                Info($"\n测试发送消息（预期异常）...");
                 try
                 {
                     client.Send("Test message");
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Console.WriteLine($"发送失败（预期中）: {ex.Message}");
+                    Info($"发送失败（预期中）: {ex.Message}");
                 }
 
                 // 测试断开连接
-                Console.WriteLine($"\n测试断开连接...");
+                Info($"\n测试断开连接...");
                 client.DisconnectAsync().Wait();
 
                 // 测试清理
-                Console.WriteLine($"\n测试资源清理...");
+                Info($"\n测试资源清理...");
                 client.Dispose();
 
-                Console.WriteLine($"\n测试结果:");
-                Console.WriteLine($"  收到消息数: {messageReceivedCount}");
-                Console.WriteLine($"  发送消息数: {messageSentCount}");
-                Console.WriteLine("测试完成！");
+                Info($"\n测试结果:");
+                Info($"  收到消息数: {messageReceivedCount}");
+                Info($"  发送消息数: {messageSentCount}");
+                Info("测试完成！");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"测试过程中发生错误: {ex.Message}");
+                Info($"测试过程中发生错误: {ex.Message}");
             }
         }
     }

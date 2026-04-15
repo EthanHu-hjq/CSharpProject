@@ -31,7 +31,7 @@ namespace ProgramA
             {
                 if(!File.Exists(processPath))
                 {
-                    Console.WriteLine($"Error: The file '{processPath}' does not exist.");
+                    Info($"Error: The file '{processPath}' does not exist.");
                     return;
                 }
 
@@ -46,7 +46,7 @@ namespace ProgramA
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error starting process: {ex.Message}");
+                Info($"Error starting process: {ex.Message}");
             }
         }
     }

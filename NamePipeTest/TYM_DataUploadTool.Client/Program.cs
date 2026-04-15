@@ -27,10 +27,10 @@ namespace TYM_DataUploadTool.Client
             // 1. 检查服务端是否已运行
             if (!IsServerRunning())
             {
-                Console.WriteLine("服务端未运行，正在启动...");
+                Info("服务端未运行，正在启动...");
                 if (!StartServer())
                 {
-                    Console.WriteLine("服务端启动失败！");
+                    Info("服务端启动失败！");
                     return;
                 }
                 // 等待服务端初始化管道（建议3-5秒）
@@ -38,7 +38,7 @@ namespace TYM_DataUploadTool.Client
             }
             else
             {
-                Console.WriteLine("服务端已在运行。");
+                Info("服务端已在运行。");
             }
 
             // 2. 通过命名管道发送消息
@@ -46,7 +46,7 @@ namespace TYM_DataUploadTool.Client
             {
                 using (var client = new NamedPipeClientStream(".", PipeName, PipeDirection.InOut, PipeOptions.Asynchronous))
                 {
-                    Console.WriteLine("正在连接服务端管道...");
+                    Info("正在连接服务端管道...");
                     // 多次重试连接
                     int retry = 5;
                     while (retry-- > 0)
@@ -59,7 +59,7 @@ namespace TYM_DataUploadTool.Client
                         catch
                         {
                             if (retry == 0) throw;
-                            Console.WriteLine("管道连接失败，重试...");
+                            Info("管道连接失败，重试...");
                             await Task.Delay(1000);
                         }
                     }
@@ -75,26 +75,26 @@ namespace TYM_DataUploadTool.Client
                     await client.WriteAsync(bytes, 0, bytes.Length);
                     await client.FlushAsync();
 
-                    Console.WriteLine($"已发送消息: {msg.Command} {msg.Data}");
+                    Info($"已发送消息: {msg.Command} {msg.Data}");
 
                     var buffer = new byte[4096];
                     int len = await client.ReadAsync(buffer, 0, buffer.Length);
                     var replyJson = Encoding.UTF8.GetString(buffer, 0, len);
                     var reply = JsonSerializer.Deserialize<PipeMessage>(replyJson);
 
-                    Console.WriteLine($"收到服务端回复: {reply?.Command} {reply?.Data}");
+                    Info($"收到服务端回复: {reply?.Command} {reply?.Data}");
                 }
             }
             catch (TimeoutException)
             {
-                Console.WriteLine("连接服务端超时。");
+                Info("连接服务端超时。");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"管道通信异常: {ex.Message}");
+                Info($"管道通信异常: {ex.Message}");
             }
 
-            Console.WriteLine("按任意键退出...");
+            Info("按任意键退出...");
             Console.ReadKey();
         }
 
@@ -111,7 +111,7 @@ namespace TYM_DataUploadTool.Client
             {
                 if (!File.Exists(ServerExePath))
                 {
-                    Console.WriteLine($"未找到服务端文件: {ServerExePath}");
+                    Info($"未找到服务端文件: {ServerExePath}");
                     return false;
                 }
                 Process.Start(new ProcessStartInfo
@@ -123,7 +123,7 @@ namespace TYM_DataUploadTool.Client
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"启动服务端异常: {ex.Message}");
+                Info($"启动服务端异常: {ex.Message}");
                 return false;
             }
         }

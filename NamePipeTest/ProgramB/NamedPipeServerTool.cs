@@ -48,7 +48,7 @@ namespace ProgramB
         /// </summary>
         public async Task StartServerAsync()
         {
-            Console.WriteLine("服务器已启动...");
+            Info("服务器已启动...");
 
             while (true) // 外层循环：服务器持续运行，支持重连
             {
@@ -61,10 +61,10 @@ namespace ProgramB
                     PipeOptions.Asynchronous
                 );
 
-                Console.WriteLine("等待客户端连接...");
+                Info("等待客户端连接...");
                 await _pipeServer.WaitForConnectionAsync();
-                Console.WriteLine("客户端已连接！");
-                Console.WriteLine("您可以输入消息并按Enter发送给客户端，或等待客户端发送消息。");
+                Info("客户端已连接！");
+                Info("您可以输入消息并按Enter发送给客户端，或等待客户端发送消息。");
 
                 // 初始化组件
                 _cancellationTokenSource = new CancellationTokenSource();
@@ -80,14 +80,14 @@ namespace ProgramB
                 }
                 catch (Exception ex) when (!(ex is OperationCanceledException))
                 {
-                    Console.WriteLine($"通信异常: {ex.Message}");
+                    Info($"通信异常: {ex.Message}");
                 }
                 finally
                 {
                     CleanupResources();
                 }
 
-                Console.WriteLine("等待新客户端连接...");
+                Info("等待新客户端连接...");
             }
         }
 
@@ -162,20 +162,20 @@ namespace ProgramB
                         }
                         else if (bytesRead == 0)
                         {
-                            Console.WriteLine("客户端断开连接。");
+                            Info("客户端断开连接。");
                             break;
                         }
                     }
                     catch (Exception ex) when (ex is IOException || ex is ObjectDisposedException)
                     {
-                        Console.WriteLine($"接收消息异常: {ex.Message}");
+                        Info($"接收消息异常: {ex.Message}");
                         break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"接收消息任务异常: {ex.Message}");
+                Info($"接收消息任务异常: {ex.Message}");
             }
         }
 
@@ -185,7 +185,7 @@ namespace ProgramB
         private async Task ProcessReceivedDataAsync(NamedPipeServerStream pipeServer, byte[] buffer, int bytesRead, CancellationToken cancellationToken)
         {
             string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 收到客户端消息: {message}");
+            Info($"[{DateTime.Now:HH:mm:ss}] 收到客户端消息: {message}");
 
             // 判断是否是确认消息
             if (message.StartsWith("ACK: "))
@@ -210,7 +210,7 @@ namespace ProgramB
                 string originalMsg = message.Substring(index + 3);
                 if (_pendingAckMessages.TryRemove(originalMsg, out _))
                 {
-                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 收到客户端确认: {originalMsg}");
+                    Info($"[{DateTime.Now:HH:mm:ss}] 收到客户端确认: {originalMsg}");
                 }
             }
         }
@@ -249,14 +249,14 @@ namespace ProgramB
                     }
                     catch (Exception ex) when (ex is IOException || ex is ObjectDisposedException)
                     {
-                        Console.WriteLine($"发送消息异常: {ex.Message}");
+                        Info($"发送消息异常: {ex.Message}");
                         break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"发送消息任务异常: {ex.Message}");
+                Info($"发送消息任务异常: {ex.Message}");
             }
         }
 
@@ -272,7 +272,7 @@ namespace ProgramB
                 byte[] messageBytes = Encoding.UTF8.GetBytes(messageItem.Content);
                 await pipeServer.WriteAsync(messageBytes, 0, messageBytes.Length, cancellationToken);
                 await pipeServer.FlushAsync(cancellationToken);
-                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 已发送: {messageItem.Content} ");
+                Info($"[{DateTime.Now:HH:mm:ss}] 已发送: {messageItem.Content} ");
 
                 // 记录待确认的消息（仅首次发送）
                 if (!messageItem.IsRetried)
@@ -299,15 +299,15 @@ namespace ProgramB
                 byte[] ackBytes = Encoding.UTF8.GetBytes(ackMessage);
                 await pipeServer.WriteAsync(ackBytes, 0, ackBytes.Length, cancellationToken);
                 await pipeServer.FlushAsync(cancellationToken);
-                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 已回复确认消息: {ackMessage}");
+                Info($"[{DateTime.Now:HH:mm:ss}] 已回复确认消息: {ackMessage}");
             }
             catch (Exception ex) when (ex is IOException || ex is ObjectDisposedException)
             {
-                Console.WriteLine($"发送确认消息异常: {ex.Message}");
+                Info($"发送确认消息异常: {ex.Message}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"发送确认消息失败: {ex.Message}");
+                Info($"发送确认消息失败: {ex.Message}");
             }
         }
 
@@ -326,7 +326,7 @@ namespace ProgramB
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"检查确认超时任务异常: {ex.Message}");
+                Info($"检查确认超时任务异常: {ex.Message}");
             }
         }
 
@@ -343,7 +343,7 @@ namespace ProgramB
                 // 检查是否超时（超过3秒）且未重发过
                 if (DateTime.Now - sendTime > TimeSpan.FromMilliseconds(AckTimeoutMs) && !isRetried)
                 {
-                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] 消息[{message}]确认超时，准备重发...");
+                    Info($"[{DateTime.Now:HH:mm:ss}] 消息[{message}]确认超时，准备重发...");
 
                     // 标记为已重发
                     _pendingAckMessages[message] = (sendTime, true);
@@ -390,7 +390,7 @@ namespace ProgramB
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"输入处理任务异常: {ex.Message}");
+                Info($"输入处理任务异常: {ex.Message}");
             }
         }
 

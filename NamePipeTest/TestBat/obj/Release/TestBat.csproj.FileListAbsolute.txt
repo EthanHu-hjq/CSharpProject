@@ -1,0 +1,7 @@
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\bin\Release\TestBat.exe.config
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\bin\Release\TestBat.exe
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\bin\Release\TestBat.pdb
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\obj\Release\TestBat.csproj.AssemblyReference.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\obj\Release\TestBat.csproj.CoreCompileInputs.cache
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\obj\Release\TestBat.exe
+D:\Project\Git\CSharpProject\NamePipeTest\TestBat\obj\Release\TestBat.pdb

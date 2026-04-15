@@ -1,0 +1,7 @@
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\bin\Release\CMD_CallExe.exe.config
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\bin\Release\CMD_CallExe.exe
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\bin\Release\CMD_CallExe.pdb
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\obj\Release\CMD_CallExe.csproj.AssemblyReference.cache
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\obj\Release\CMD_CallExe.csproj.CoreCompileInputs.cache
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\obj\Release\CMD_CallExe.exe
+D:\Project\Git\CSharpProject\NamePipeTest\CMD_CallExe\obj\Release\CMD_CallExe.pdb
