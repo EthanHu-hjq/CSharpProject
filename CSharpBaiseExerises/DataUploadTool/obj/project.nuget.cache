@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IN5IqvfvUqc=",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\DataUploadTool\\DataUploadTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512"
+  ],
+  "logs": []
+}
