@@ -47,7 +47,7 @@ namespace CMD_CallExe
             );
             try
             {
-                RunExe(exePath, "ftp5d.tymphany.com", "0.1");
+                RunExe(exePath, "cn.pool.ntp.org", "0.1");
             }
             catch(Exception ex)
             {

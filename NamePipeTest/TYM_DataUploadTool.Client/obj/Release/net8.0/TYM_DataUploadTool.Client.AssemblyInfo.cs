@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TYM_DataUploadTool.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7530035d46d0fec150739224799fb4dfc3390ee0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+066c97c9a93ba1cb46041863f353dd384a74ebfb")]
 [assembly: System.Reflection.AssemblyProductAttribute("TYM_DataUploadTool.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TYM_DataUploadTool.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

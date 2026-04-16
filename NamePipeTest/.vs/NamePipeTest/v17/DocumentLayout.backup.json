@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{817A2CDF-CF42-40DD-A57D-38824BC4F178}|TestBat\\TestBat.csproj|d:\\project\\git\\csharpproject\\namepipetest\\testbat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C00BA48C-97B7-4D45-BEBD-64E39BE5A556}|CMD_CallExe\\CMD_CallExe.csproj|d:\\project\\git\\csharpproject\\namepipetest\\cmd_callexe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C00BA48C-97B7-4D45-BEBD-64E39BE5A556}|CMD_CallExe\\CMD_CallExe.csproj|solutionrelative:cmd_callexe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25B42463-3A0F-4535-8CEE-801D0C390086}|TimeSyncToolNew\\TimeSyncTool.csproj|d:\\project\\git\\csharpproject\\namepipetest\\timesynctoolnew\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25B42463-3A0F-4535-8CEE-801D0C390086}|TimeSyncToolNew\\TimeSyncTool.csproj|solutionrelative:timesynctoolnew\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817A2CDF-CF42-40DD-A57D-38824BC4F178}|TestBat\\TestBat.csproj|D:\\Project\\Git\\CSharpProject\\NamePipeTest\\testbat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{817A2CDF-CF42-40DD-A57D-38824BC4F178}|TestBat\\TestBat.csproj|solutionrelative:testbat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +34,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\CMD_CallExe\\Program.cs",
+              "RelativeDocumentMoniker": "CMD_CallExe\\Program.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\CMD_CallExe\\Program.cs",
+              "RelativeToolTip": "CMD_CallExe\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T13:45:56.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TimeSyncToolNew\\Program.cs",
+              "RelativeDocumentMoniker": "TimeSyncToolNew\\Program.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TimeSyncToolNew\\Program.cs",
+              "RelativeToolTip": "TimeSyncToolNew\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T11:32:09.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Run_MultiStep_EXE.bat",
               "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\bin\\Release\\Run_MultiStep_EXE.bat",
               "RelativeDocumentMoniker": "TestBat\\bin\\Release\\Run_MultiStep_EXE.bat",
@@ -38,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\NamePipeTest\\TestBat\\Program.cs",
               "RelativeDocumentMoniker": "TestBat\\Program.cs",
@@ -46,8 +80,7 @@
               "RelativeToolTip": "TestBat\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T02:27:46.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T02:27:46.865Z"
             }
           ]
         }
