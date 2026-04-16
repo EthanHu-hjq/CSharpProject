@@ -37,8 +37,8 @@ namespace TYM_DataUploadTool.Client
                 StartInfo = new ProcessStartInfo // 显式指定类型（解决C# 7.3报错）
                 {
                     FileName = @"D:\Project\Git\Ethan-Personal-Project\TYM_DataUploadTool\TYM_DataUploadTool\bin\Debug\net8.0-windows\TYM_DataUploadTool.exe", // 服务器程序名（如果不在同一目录，需写完整路径）
-                    UseShellExecute = false,
-                    CreateNoWindow = true
+                    UseShellExecute = true,
+                    CreateNoWindow = false
                 }
             };
             _serverProcess.Start();

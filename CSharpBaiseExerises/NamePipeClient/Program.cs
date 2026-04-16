@@ -18,7 +18,7 @@ namespace NamePipeClient
                 Console.WriteLine("已连接到服务器");
 
                 // 发送测试消息
-                var testMsg = new PipeMessage { Command = "Test", Data = "Hello Server" };
+                var testMsg = new PipeMessage { Command = "hello hi", Data = "Hello Server" };
                 await clientService.SendMessageAsync(testMsg);
 
                 Console.WriteLine("按任意键退出...");

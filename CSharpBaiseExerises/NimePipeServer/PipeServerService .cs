@@ -80,7 +80,7 @@ namespace NimePipeServer
                             }
 
                             // 创建回复消息
-                            var reply = new PipeMessage { Command = "Ack", Data = "OK" };
+                            var reply = new PipeMessage { Command = "I will Ack", Data = "OK" };
                             // 将回复消息序列化为JSON字符串，并转换为UTF8编码的字节数组
                             var replyBytes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(reply));
                             // 异步将回复消息写入管道
