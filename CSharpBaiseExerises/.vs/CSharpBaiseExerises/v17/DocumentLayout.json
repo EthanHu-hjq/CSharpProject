@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0610147-6D81-4F0C-9E4B-55259EFCF732}|NamePipeClient\\NamePipeClient.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\namepipeclient\\pipeclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0610147-6D81-4F0C-9E4B-55259EFCF732}|NamePipeClient\\NamePipeClient.csproj|solutionrelative:namepipeclient\\pipeclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}|\u503C\u7C7B\u578B\\ValueType.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\\u503C\u7C7B\u578B\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}|\u503C\u7C7B\u578B\\ValueType.csproj|solutionrelative:\u503C\u7C7B\u578B\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0610147-6D81-4F0C-9E4B-55259EFCF732}|NamePipeClient\\NamePipeClient.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\namepipeclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0610147-6D81-4F0C-9E4B-55259EFCF732}|NamePipeClient\\NamePipeClient.csproj|solutionrelative:namepipeclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}|\u503C\u7C7B\u578B\\ValueType.csproj|d:\\project\\git\\csharpproject\\csharpbaiseexerises\\\u503C\u7C7B\u578B\\valuetype.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B29F3AA2-1DBC-4725-BD13-35138C69B8D8}|\u503C\u7C7B\u578B\\ValueType.csproj|solutionrelative:\u503C\u7C7B\u578B\\valuetype.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PipeClientService.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\NamePipeClient\\PipeClientService.cs",
-              "RelativeDocumentMoniker": "NamePipeClient\\PipeClientService.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\NamePipeClient\\PipeClientService.cs",
-              "RelativeToolTip": "NamePipeClient\\PipeClientService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAA1wDkAAAAlAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\\u503C\u7C7B\u578B\\Program.cs",
+              "RelativeDocumentMoniker": "\u503C\u7C7B\u578B\\Program.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\\u503C\u7C7B\u578B\\Program.cs*",
+              "RelativeToolTip": "\u503C\u7C7B\u578B\\Program.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAA0wCQAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T07:16:31.576Z",
+              "WhenOpened": "2026-04-21T02:36:38.369Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\NamePipeClient\\Program.cs",
-              "RelativeDocumentMoniker": "NamePipeClient\\Program.cs",
-              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\NamePipeClient\\Program.cs",
-              "RelativeToolTip": "NamePipeClient\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvxAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T07:11:53.227Z",
+              "Title": "ValueType",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\\u503C\u7C7B\u578B\\ValueType.csproj",
+              "RelativeDocumentMoniker": "\u503C\u7C7B\u578B\\ValueType.csproj",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\\u503C\u7C7B\u578B\\ValueType.csproj",
+              "RelativeToolTip": "\u503C\u7C7B\u578B\\ValueType.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-21T02:36:34.57Z",
               "EditorCaption": ""
             }
           ]
