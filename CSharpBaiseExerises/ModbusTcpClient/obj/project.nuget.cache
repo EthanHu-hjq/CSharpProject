@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "rzvT4BBxedE=",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Git\\CSharpProject\\CSharpBaiseExerises\\ModbusTcpClient\\ModbusTcpClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\costura.fody\\6.1.0\\costura.fody.6.1.0.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\fody\\6.9.3\\fody.6.9.3.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.7\\microsoft.extensions.dependencyinjection.10.0.7.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.7\\microsoft.extensions.dependencyinjection.abstractions.10.0.7.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\nmodbus\\3.0.83\\nmodbus.3.0.83.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\serilog\\4.3.1\\serilog.4.3.1.nupkg.sha512",
+    "C:\\Users\\ethan.hu\\.nuget\\packages\\serilog.sinks.file\\7.0.0\\serilog.sinks.file.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
