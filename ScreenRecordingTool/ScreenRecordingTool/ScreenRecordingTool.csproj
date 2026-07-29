@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <!-- 引入 System.Drawing（GDI 抓屏与 JPEG 编码所需），属于 .NET 内置桌面框架，非第三方依赖 -->
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 移除 WinForms 隐式 using，避免与 WPF 的 Application 等类型产生歧义 -->
+    <Using Remove="System.Windows.Forms" />
+  </ItemGroup>
+
+</Project>

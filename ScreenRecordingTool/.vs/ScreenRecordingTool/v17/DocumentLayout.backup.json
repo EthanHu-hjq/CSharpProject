@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|d:\\project\\git\\csharpproject\\screenrecordingtool\\screenrecordingtool\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|solutionrelative:screenrecordingtool\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|d:\\project\\git\\csharpproject\\screenrecordingtool\\screenrecordingtool\\services\\gdiscreenrecorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|solutionrelative:screenrecordingtool\\services\\gdiscreenrecorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|d:\\project\\git\\csharpproject\\screenrecordingtool\\screenrecordingtool\\services\\namedpipecommandserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|solutionrelative:screenrecordingtool\\services\\namedpipecommandserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|d:\\project\\git\\csharpproject\\screenrecordingtool\\screenrecordingtool\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08CB2AEC-4A23-4443-9BF4-DAF3B2A3A949}|ScreenRecordingTool\\ScreenRecordingTool.csproj|solutionrelative:screenrecordingtool\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 290,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NamedPipeCommandServer.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\Services\\NamedPipeCommandServer.cs",
+              "RelativeDocumentMoniker": "ScreenRecordingTool\\Services\\NamedPipeCommandServer.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\Services\\NamedPipeCommandServer.cs",
+              "RelativeToolTip": "ScreenRecordingTool\\Services\\NamedPipeCommandServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T08:36:05.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GdiScreenRecorderService.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\Services\\GdiScreenRecorderService.cs",
+              "RelativeDocumentMoniker": "ScreenRecordingTool\\Services\\GdiScreenRecorderService.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\Services\\GdiScreenRecorderService.cs",
+              "RelativeToolTip": "ScreenRecordingTool\\Services\\GdiScreenRecorderService.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAWwEgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T07:29:13.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ScreenRecordingTool\\Views\\MainWindow.xaml",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "ScreenRecordingTool\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-29T07:09:40.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ScreenRecordingTool\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "D:\\Project\\Git\\CSharpProject\\ScreenRecordingTool\\ScreenRecordingTool\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ScreenRecordingTool\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAEwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T07:07:15.297Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

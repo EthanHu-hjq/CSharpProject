@@ -1,0 +1,8 @@
+﻿<Application x:Class="ScreenRecordingTool.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- 不使用 StartupUri，改为在 App.xaml.cs 的 OnStartup 中创建窗口并注入 ViewModel -->
+    <Application.Resources>
+
+    </Application.Resources>
+</Application>
